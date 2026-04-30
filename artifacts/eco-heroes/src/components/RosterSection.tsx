@@ -4,7 +4,7 @@ const heroes: EcoHero[] = [
   {
     id: "light-guardian",
     name: "Light Guardian",
-    studentName: "[Student Name]",
+    studentName: "Veggie Man",
     power: "Lights out, planet saved!",
     description: "The Light Guardian patrols the hallways and classrooms. When a room is empty, they swoop in with lightning speed to switch off the lights. They know that every watt counts!",
     color: "bg-yellow-300",
@@ -13,7 +13,7 @@ const heroes: EcoHero[] = [
   {
     id: "heat-keeper",
     name: "Heat Keeper",
-    studentName: "[Student Name]",
+    studentName: "Eloise",
     power: "Stay warm, waste less!",
     description: "Armed with a thermal sense, the Heat Keeper monitors radiators and makes sure precious heat doesn't escape through open doors and windows during winter.",
     color: "bg-red-400",
@@ -22,7 +22,7 @@ const heroes: EcoHero[] = [
   {
     id: "plug-puller",
     name: "Plug Puller",
-    studentName: "[Student Name]",
+    studentName: "Kaizen Ken",
     power: "Standby is energy wasted!",
     description: "The Plug Puller has a special power to detect devices left on standby. Tablets, computers, smartboards—nothing escapes their watchful eye. They pull the plug on energy vampires!",
     color: "bg-blue-400",
@@ -31,7 +31,7 @@ const heroes: EcoHero[] = [
   {
     id: "renewable-ranger",
     name: "Renewable Ranger",
-    studentName: "[Student Name]",
+    studentName: "Heather O'Hare",
     power: "Sun, wind and water power us!",
     description: "A champion of Northern Ireland's natural forces. The Renewable Ranger educates classmates about wind turbines, solar panels, and how nature can power our school cleanly.",
     color: "bg-green-400",
@@ -40,7 +40,7 @@ const heroes: EcoHero[] = [
   {
     id: "energy-auditor",
     name: "Energy Auditor",
-    studentName: "[Student Name]",
+    studentName: "Ashara",
     power: "We measure, we improve!",
     description: "The brains of the operation! The Energy Auditor tracks the school's electricity and heating bills. They create charts, spot trends, and prove that the Eco-Heroes are saving the day.",
     color: "bg-purple-400",
