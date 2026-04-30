@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "wHIoSWhIHl0JX4oxYCIhE"
+uri = "file://artifacts/eco-heroes/public/banner.png"
+type = "image"
+title = "Green eco energy theme banner"
+
+[[generated]]
+id = "uEnbmvGhy3NB0wnQAXSnz"
+uri = "file://artifacts/eco-heroes/public/hero-1.png"
+type = "image"
+title = "Light Guardian superhero icon"
+
+[[generated]]
+id = "5kcCUGmf2RakcYMSukuvQ"
+uri = "file://artifacts/eco-heroes/public/hero-2.png"
+type = "image"
+title = "Heat Keeper superhero icon"
+
+[[generated]]
+id = "QsP6OMLpzPznx54W4lF-L"
+uri = "file://artifacts/eco-heroes/public/hero-3.png"
+type = "image"
+title = "Plug Puller superhero icon"
+
+[[generated]]
+id = "NwCx59AAKS76X-55SlYgh"
+uri = "file://artifacts/eco-heroes/public/hero-4.png"
+type = "image"
+title = "Renewable Ranger superhero icon"
+
+[[generated]]
+id = "DmLZ5DfN1MgS18TLHxcM4"
+uri = "file://artifacts/eco-heroes/public/hero-5.png"
+type = "image"
+title = "Energy Auditor superhero icon"
