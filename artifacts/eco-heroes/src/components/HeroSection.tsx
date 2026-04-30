@@ -16,7 +16,7 @@ export function HeroSection() {
               Our School <span className="text-secondary">Eco-Heroes</span>
             </h1>
             <p className="mt-4 text-xl md:text-2xl font-bold text-foreground/80 italic">
-              Thid all.NI Schools
+              All NI schools take part! Counted toward your Energy Green Flag
             </p>
             <p className="mt-2 text-lg font-bold text-foreground/60">
               Led by <span className="text-primary font-black">Max</span> — and the Eco-Heroes Squad!
