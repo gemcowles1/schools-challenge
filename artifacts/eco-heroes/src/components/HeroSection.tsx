@@ -12,6 +12,12 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 animate-in slide-in-from-bottom-8 duration-700">
+            <div className="flex justify-center mb-4">
+              <span className="text-8xl drop-shadow-lg" role="img" aria-label="Laptop for your Eco-committee">💻</span>
+            </div>
+            <p className="text-lg md:text-xl font-bold text-foreground/70 mb-3 tracking-wide uppercase">
+              Laptop for your Eco-committee
+            </p>
             <h1 className="text-5xl md:text-7xl font-black text-primary drop-shadow-[0_4px_0_hsl(var(--foreground))]">
               Our School <span className="text-secondary">Eco-Heroes</span>
             </h1>
