@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export function GoalSection() {
+  const [galleryOpen, setGalleryOpen] = useState(false);
+
   return (
     <section className="py-24 bg-secondary relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform rotate-180">
@@ -10,8 +14,17 @@ export function GoalSection() {
       <div className="container mx-auto px-4 mt-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
           
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-foreground comic-shadow flex items-center justify-center flex-shrink-0 relative overflow-hidden animate-[spin_20s_linear_infinite]">
-            <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="w-full h-full object-cover" />
+          <div className="flex flex-col items-center gap-3">
+            <button
+              onClick={() => setGalleryOpen(!galleryOpen)}
+              className="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-foreground comic-shadow flex items-center justify-center flex-shrink-0 relative overflow-hidden animate-[spin_20s_linear_infinite] hover:scale-105 transition-transform cursor-pointer focus:outline-none"
+              aria-label="Click to see the Green Flag gallery"
+            >
+              <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="w-full h-full object-cover" />
+            </button>
+            <p className="text-sm font-bold text-foreground/70 animate-pulse tracking-wide">
+              {galleryOpen ? "▲ Click logo to close" : "▼ Click logo to see the Green Flag!"}
+            </p>
           </div>
 
           <div className="text-center md:text-left">
@@ -30,34 +43,38 @@ export function GoalSection() {
 
         </div>
 
-        {/* Eco-Flag Photo Gallery & Sponsor Section */}
-        <div className="mt-20 max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h3 className="text-4xl font-black font-display text-foreground drop-shadow-[2px_2px_0_#fff] mb-2">
-              THE ECO-SCHOOLS GREEN FLAG
-            </h3>
-            <p className="text-lg font-bold text-foreground/80">
-              Sponsored by the <strong>NI Housing Executive</strong> — supporting the Energy Flag &amp; Topic across NI Schools
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            <div className="rounded-2xl overflow-hidden border-4 border-foreground comic-shadow transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-              <img src="/eco-flag-1.jpeg" alt="Schools celebrating the Eco-Schools Green Flag" className="w-full h-56 object-cover" />
+        {/* Eco-Flag Photo Gallery — revealed on logo click */}
+        <div
+          className={`overflow-hidden transition-all duration-700 ease-in-out ${galleryOpen ? "max-h-[800px] opacity-100 mt-20" : "max-h-0 opacity-0 mt-0"}`}
+        >
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h3 className="text-4xl font-black font-display text-foreground drop-shadow-[2px_2px_0_#fff] mb-2">
+                THE ECO-SCHOOLS GREEN FLAG
+              </h3>
+              <p className="text-lg font-bold text-foreground/80">
+                Sponsored by the <strong>NI Housing Executive</strong> — supporting the Energy Flag &amp; Topic across NI Schools
+              </p>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
-              <div className="rounded-2xl overflow-hidden border-4 border-foreground comic-shadow bg-white p-4">
-                <img src="/eco-flag-logo.png" alt="Eco-Schools Green Flag Award" className="w-40 mx-auto object-contain" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+              <div className="rounded-2xl overflow-hidden border-4 border-foreground comic-shadow transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                <img src="/eco-flag-1.jpeg" alt="Schools celebrating the Eco-Schools Green Flag" className="w-full h-56 object-cover" />
               </div>
-              <div className="bg-white border-4 border-foreground rounded-2xl px-5 py-3 comic-shadow text-center">
-                <p className="font-black text-foreground text-sm uppercase tracking-wider">Could this be your school?</p>
-                <p className="font-bold text-primary text-lg">Win the Green Flag! 🏴</p>
-              </div>
-            </div>
 
-            <div className="rounded-2xl overflow-hidden border-4 border-foreground comic-shadow transform rotate-1 hover:rotate-0 transition-transform duration-300">
-              <img src="/eco-flag-2.jpeg" alt="Eco-Schools Green Flag ceremony" className="w-full h-56 object-cover" />
+              <div className="flex flex-col items-center gap-4">
+                <div className="rounded-2xl overflow-hidden border-4 border-foreground comic-shadow bg-white p-4">
+                  <img src="/eco-flag-logo.png" alt="Eco-Schools Green Flag Award" className="w-40 mx-auto object-contain" />
+                </div>
+                <div className="bg-white border-4 border-foreground rounded-2xl px-5 py-3 comic-shadow text-center">
+                  <p className="font-black text-foreground text-sm uppercase tracking-wider">Could this be your school?</p>
+                  <p className="font-bold text-primary text-lg">Win the Green Flag! 🏴</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden border-4 border-foreground comic-shadow transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <img src="/eco-flag-2.jpeg" alt="Eco-Schools Green Flag ceremony" className="w-full h-56 object-cover" />
+              </div>
             </div>
           </div>
         </div>
