@@ -55,17 +55,17 @@ export function HeroSection() {
                   Together we heroes keep waste away! 🦸‍♂️🦸‍♀️
                 </p>
               </div>
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-secondary rounded-full border-4 border-foreground flex items-center justify-center animate-wiggle comic-shadow">
-                <span className="text-3xl">⭐</span>
+              <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border-4 border-foreground comic-shadow bg-white overflow-hidden animate-wiggle">
+                <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
           
           <div className="mt-8 animate-in fade-in duration-1000 delay-500">
             <img 
-              src="/banner.png" 
-              alt="Eco Energy Banner" 
-              className="w-full max-w-3xl mx-auto rounded-2xl border-4 border-foreground comic-shadow object-cover h-64"
+              src="/winning-heroes.png" 
+              alt="The Eco-Heroes Squad" 
+              className="w-full max-w-3xl mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
             />
           </div>
         </div>

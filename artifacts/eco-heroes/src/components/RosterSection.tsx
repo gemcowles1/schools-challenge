@@ -2,49 +2,49 @@ import { EcoHero, HeroCard } from "./HeroCard";
 
 const heroes: EcoHero[] = [
   {
-    id: "light-guardian",
-    name: "Light Guardian",
-    studentName: "Veggie Man",
+    id: "electric-laoise",
+    name: "Electric Laoise",
+    studentName: "Light Guardian",
     power: "Lights out, planet saved!",
-    description: "The Light Guardian patrols the hallways and classrooms. When a room is empty, they swoop in with lightning speed to switch off the lights. They know that every watt counts!",
-    color: "bg-yellow-300",
-    imageSrc: "/hero-1.png"
+    description: "Electric Laoise crackles with energy — literally! She patrols every hallway and classroom, zapping lights off the moment a room is empty. Nothing escapes her electric senses. Every watt saved is a win!",
+    color: "bg-pink-300",
+    imageSrc: "/hero-laoise.jpg"
   },
   {
-    id: "heat-keeper",
-    name: "Heat Keeper",
-    studentName: "Eloise",
+    id: "water",
+    name: "Water",
+    studentName: "Heat Keeper",
     power: "Stay warm, waste less!",
-    description: "Armed with a thermal sense, the Heat Keeper monitors radiators and makes sure precious heat doesn't escape through open doors and windows during winter.",
-    color: "bg-red-400",
-    imageSrc: "/hero-2.png"
+    description: "Calm, cool and in complete control — Water monitors every radiator and keeps heat exactly where it's needed. She makes sure doors and windows stay closed in winter, conserving precious warmth and energy.",
+    color: "bg-green-300",
+    imageSrc: "/hero-water.jpg"
   },
   {
-    id: "plug-puller",
-    name: "Plug Puller",
-    studentName: "Kaizen Ken",
-    power: "Standby is energy wasted!",
-    description: "The Plug Puller has a special power to detect devices left on standby. Tablets, computers, smartboards—nothing escapes their watchful eye. They pull the plug on energy vampires!",
-    color: "bg-blue-400",
-    imageSrc: "/hero-3.png"
-  },
-  {
-    id: "renewable-ranger",
-    name: "Renewable Ranger",
-    studentName: "Heather O'Hare",
+    id: "veggie-man",
+    name: "Veggie Man",
+    studentName: "Renewable Ranger",
     power: "Sun, wind and water power us!",
-    description: "A champion of Northern Ireland's natural forces. The Renewable Ranger educates classmates about wind turbines, solar panels, and how nature can power our school cleanly.",
-    color: "bg-green-400",
-    imageSrc: "/hero-4.png"
+    description: "Soaring above Northern Ireland's wind farms and solar panels, Veggie Man champions renewable energy. He teaches his classmates how the power of nature — sun, wind and water — can fuel our future cleanly!",
+    color: "bg-yellow-300",
+    imageSrc: "/hero-veggieman.jpg"
   },
   {
-    id: "energy-auditor",
-    name: "Energy Auditor",
-    studentName: "Ashara",
+    id: "heather-ohare",
+    name: "Heather O'Hare",
+    studentName: "Plug Puller",
+    power: "Standby is energy wasted!",
+    description: "With lightning-fast reflexes and a sixth sense for standby lights, Heather O'Hare pulls the plug on energy vampires! Tablets, smartboards, computers — nothing gets left on her watch.",
+    color: "bg-purple-300",
+    imageSrc: "/hero-heather.jpg"
+  },
+  {
+    id: "kaizen-ken",
+    name: "Kaizen Ken",
+    studentName: "Energy Auditor",
     power: "We measure, we improve!",
-    description: "The brains of the operation! The Energy Auditor tracks the school's electricity and heating bills. They create charts, spot trends, and prove that the Eco-Heroes are saving the day.",
-    color: "bg-purple-400",
-    imageSrc: "/hero-5.png"
+    description: "The brains behind the squad! Kaizen Ken tracks every unit of electricity and heating used in school. Armed with data and determination, he spots waste, charts progress and proves the Eco-Heroes are making a real difference.",
+    color: "bg-blue-300",
+    imageSrc: "/hero-kaizen.jpg"
   }
 ];
 
