@@ -10,13 +10,8 @@ export function GoalSection() {
       <div className="container mx-auto px-4 mt-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
           
-          <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full border-8 border-foreground comic-shadow flex items-center justify-center flex-shrink-0 relative">
-            <div className="absolute inset-2 border-4 border-dashed border-primary rounded-full animate-[spin_20s_linear_infinite]"></div>
-            <div className="text-center z-10">
-              <span className="text-8xl block mb-2">🌍</span>
-              <span className="font-black text-2xl font-display text-primary block leading-none">GREEN FLAG</span>
-              <span className="font-bold text-foreground text-sm tracking-widest">MISSION</span>
-            </div>
+          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-foreground comic-shadow flex items-center justify-center flex-shrink-0 relative overflow-hidden animate-[spin_20s_linear_infinite]">
+            <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="w-full h-full object-cover" />
           </div>
 
           <div className="text-center md:text-left">
