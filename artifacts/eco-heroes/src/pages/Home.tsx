@@ -13,8 +13,9 @@ export default function Home() {
       
       <footer className="bg-foreground text-white py-12 text-center">
         <div className="container mx-auto px-4">
-          <p className="font-bold text-xl mb-4 font-display">Powered by Eco-Schools Northern Ireland 🌍</p>
-          <p className="text-white/60 font-medium">Designed for the Green Flag Energy Challenge</p>
+          <p className="font-bold text-xl mb-2 font-display">Powered by NIEAS Energy Awareness Programme</p>
+          <p className="text-white/80 font-bold text-lg mb-1">Housing Executive for Eco-Schools NI</p>
+          <p className="text-white/50 font-medium text-sm mt-3">Designed for the Green Flag Energy Challenge</p>
         </div>
       </footer>
     </div>
