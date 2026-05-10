@@ -1,8 +1,8 @@
 export function PrizesSection() {
   const prizes = [
-    { medal: "🥇", title: "1st Place", prize: "💻 Laptop", desc: "For your school's Eco-Committee", bg: "bg-yellow-100", border: "border-yellow-400" },
-    { medal: "🥈", title: "2nd Place", prize: "💻 Laptop", desc: "For your NE Eco-Committee", bg: "bg-gray-100", border: "border-gray-400" },
-    { medal: "🥉", title: "3rd Place", prize: "💻 Laptop", desc: "For your NE Eco-Committee", bg: "bg-orange-100", border: "border-orange-400" },
+    { medal: "🥇", title: "1st Place", prize: "💻 Laptop", desc: "For your NEW Eco-Committee", bg: "bg-yellow-100", border: "border-yellow-400" },
+    { medal: "🥈", title: "2nd Place", prize: "💻 Laptop", desc: "For your NEW Eco-Committee", bg: "bg-gray-100", border: "border-gray-400" },
+    { medal: "🥉", title: "3rd Place", prize: "💻 Laptop", desc: "For your NEW Eco-Committee", bg: "bg-orange-100", border: "border-orange-400" },
     { medal: "🌟", title: "Every Entrant", prize: "FREE", desc: "Printable certificate + digital badge", bg: "bg-primary/10", border: "border-primary" },
   ];
 
@@ -15,7 +15,7 @@ export function PrizesSection() {
           <h2 className="text-5xl font-black font-display text-accent drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
             🏆 PRIZES
           </h2>
-          <p className="text-xl font-bold text-foreground/70">What you could win for your Eco-Committee</p>
+          <p className="text-xl font-bold text-foreground/70">Win a laptop for your NEW Eco-Committee!</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
