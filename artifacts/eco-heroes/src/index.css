@@ -131,6 +131,10 @@
   50% { transform: rotate(3deg); }
 }
 
+/* Prevent orphaned words on all headings and paragraphs */
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
 .comic-shadow {
   box-shadow: 6px 6px 0px 0px hsl(var(--foreground));
   border: 3px solid hsl(var(--foreground));

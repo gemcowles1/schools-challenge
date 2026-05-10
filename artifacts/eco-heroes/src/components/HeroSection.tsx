@@ -15,18 +15,18 @@ export function HeroSection() {
             <div className="flex justify-center mb-4">
               <span className="text-8xl drop-shadow-lg" role="img" aria-label="Laptop for your Eco-Committee">💻</span>
             </div>
-            <p className="text-base md:text-lg font-bold text-foreground/60 mb-1 tracking-widest uppercase">
+            <p className="text-sm md:text-base font-bold text-foreground/60 mb-1 tracking-wide md:tracking-widest uppercase">
               Win a Laptop for your Eco-Committee
             </p>
-            <div className="mb-5 bg-foreground text-background rounded-2xl px-6 py-4 inline-block border-4 border-foreground comic-shadow">
-              <p className="text-base md:text-lg font-bold tracking-widest uppercase text-background/70 mb-1">
+            <div className="mb-5 bg-foreground text-background rounded-2xl px-4 md:px-6 py-4 block w-full max-w-sm mx-auto border-4 border-foreground comic-shadow">
+              <p className="text-xs md:text-base font-bold tracking-wide uppercase text-background/70 mb-1 text-balance">
                 🎖️ Your Mission, If You Choose To Accept It...
               </p>
-              <p className="text-2xl md:text-3xl font-black uppercase tracking-wide text-secondary">
+              <p className="text-xl md:text-3xl font-black uppercase tracking-wide text-secondary whitespace-nowrap">
                 Our Eco-Hero Competition
               </p>
-              <p className="text-sm md:text-base font-bold text-red-400 mt-2 animate-pulse tracking-wider uppercase">
-                ⚠️ This poster will self destruct in 1 week! ⚠️
+              <p className="text-xs md:text-sm font-bold text-red-400 mt-2 animate-pulse tracking-wide uppercase whitespace-nowrap">
+                ⚠️ Self destructs in 1 week! ⚠️
               </p>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-primary drop-shadow-[0_4px_0_hsl(var(--foreground))]">
