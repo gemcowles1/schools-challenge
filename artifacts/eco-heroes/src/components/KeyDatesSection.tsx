@@ -24,7 +24,7 @@ function useCountdown(target: Date) {
 const dates = [
   { date: "12 May", label: "Competition Opens", emoji: "🚀", rotate: "-rotate-1" },
   { date: "1 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
-  { date: "21 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
+  { date: "10 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
 ];
 
 function Pad(n: number) {
