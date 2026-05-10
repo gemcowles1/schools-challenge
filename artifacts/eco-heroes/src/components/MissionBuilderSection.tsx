@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Confetti } from "@/components/Confetti";
 
 const ACTIONS = [
   "reduce our energy use by 10%",
@@ -49,6 +50,8 @@ export function MissionBuilderSection() {
 
   const [submitted, setSubmitted] = useState(false);
   const [flagGreen, setFlagGreen] = useState(false);
+  const [confetti, setConfetti] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const dateStr = date
     ? new Date(date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
@@ -65,6 +68,20 @@ export function MissionBuilderSection() {
       return;
     }
     setSubmitted(true);
+    setConfetti(true);
+    setTimeout(() => setConfetti(false), 4000);
+  }
+
+  function getMissionText() {
+    if (missionMode === "freetext") return freeText;
+    return `We are ${schoolDisplay} and we pledge to ${action} so that we can ${outcome} by ${dateStr}.`;
+  }
+
+  function handleCopy() {
+    navigator.clipboard.writeText(getMissionText()).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
   }
 
   function handlePrint() {
@@ -109,6 +126,8 @@ export function MissionBuilderSection() {
     setIsEcoSchool(null);
     setHasEnergyFlag(null);
     setSubmitted(false);
+    setConfetti(false);
+    setFlagGreen(false);
     setFreeText("");
     setSchool("");
     setDate("");
@@ -277,18 +296,31 @@ export function MissionBuilderSection() {
         </div>
       )}
 
+      <Confetti active={confetti} />
+
       <div className="max-w-3xl mx-auto">
         {submitted ? (
           <div className="bg-primary text-white border-4 border-foreground rounded-2xl p-10 comic-shadow text-center transform rotate-1">
             <div className="text-6xl mb-4">🎉</div>
             <h3 className="text-3xl font-black font-display mb-4">Mission Submitted!</h3>
-            <p className="text-xl font-bold opacity-90 mb-6">Your pledge has been saved. Good luck, Eco-Heroes!</p>
-            <button
-              onClick={reset}
-              className="bg-white text-primary border-4 border-foreground font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform"
-            >
-              Start Again
-            </button>
+            <p className="text-xl font-bold opacity-90 mb-4">Your pledge has been saved. Good luck, Eco-Heroes!</p>
+            <div className="bg-white/20 rounded-xl px-5 py-4 mb-6 italic font-bold text-lg">
+              "{getMissionText()}"
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={handleCopy}
+                className="bg-white text-primary border-4 border-white/50 font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform"
+              >
+                {copied ? "✅ Copied!" : "📋 Copy to Clipboard"}
+              </button>
+              <button
+                onClick={reset}
+                className="bg-white/20 text-white border-4 border-white/50 font-black px-6 py-3 rounded-xl hover:bg-white/30 transition-colors"
+              >
+                Start Again
+              </button>
+            </div>
           </div>
         ) : missionMode === "builder" ? (
           <>
@@ -327,6 +359,9 @@ export function MissionBuilderSection() {
                 <span className="text-primary not-italic font-black">{outcome}</span> by{" "}
                 <span className="text-primary not-italic font-black">{dateStr}</span>.
               </p>
+              <button onClick={handleCopy} className="mt-4 border-4 border-foreground bg-white text-foreground font-black px-5 py-2 rounded-xl comic-shadow hover:scale-105 transition-transform text-sm">
+                {copied ? "✅ Copied!" : "📋 Copy"}
+              </button>
             </div>
           </>
         ) : (
