@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ACTIONS = [
   "reduce our energy use by 10%",
@@ -48,6 +48,7 @@ export function MissionBuilderSection() {
   const [freeText, setFreeText] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
+  const [flagGreen, setFlagGreen] = useState(false);
 
   const dateStr = date
     ? new Date(date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
@@ -147,12 +148,39 @@ export function MissionBuilderSection() {
 
   // ── Step 2: Do you have your Energy Flag? ───────────────────────────────
   if (step === "energy-flag") {
+    function handleYes() {
+      setFlagGreen(true);
+      setHasEnergyFlag(true);
+      setTimeout(() => setStep("next-flag"), 1600);
+    }
+
     return (
       <SectionShell>
         <Heading />
         <div className="max-w-2xl mx-auto text-center">
           <div className="bg-white border-4 border-foreground rounded-2xl p-10 comic-shadow">
-            <div className="text-5xl mb-4">🏴</div>
+
+            {/* Animated flag */}
+            <div className="flex justify-center mb-6">
+              <div
+                className="relative w-44 h-44"
+                style={{ transition: "transform 0.4s", transform: flagGreen ? "scale(1.15)" : "scale(1)" }}
+              >
+                <img
+                  src="/eco-flag-logo.png"
+                  alt="Eco-Schools Green Flag"
+                  className="w-full h-full object-contain"
+                  style={{
+                    filter: flagGreen ? "grayscale(0%) drop-shadow(0 0 18px #22c55e)" : "grayscale(100%)",
+                    transition: "filter 1.2s ease, transform 0.4s ease",
+                  }}
+                />
+                {flagGreen && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-ping rounded-full bg-green-400 opacity-20" />
+                )}
+              </div>
+            </div>
+
             <h3 className="text-3xl font-black font-display text-foreground mb-2">
               Have you already earned your <span className="text-primary">Energy Flag</span>?
             </h3>
@@ -162,7 +190,7 @@ export function MissionBuilderSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ChoiceBtn
                 label="⚡ Yes — we have it!"
-                onClick={() => { setHasEnergyFlag(true); setStep("next-flag"); }}
+                onClick={handleYes}
                 primary
               />
               <ChoiceBtn
@@ -170,6 +198,12 @@ export function MissionBuilderSection() {
                 onClick={() => { setHasEnergyFlag(false); setStep("mission"); }}
               />
             </div>
+
+            {flagGreen && (
+              <p className="mt-6 text-2xl font-black text-primary animate-bounce">
+                🎉 Brilliant — your flag is GREEN!
+              </p>
+            )}
           </div>
           <button onClick={() => setStep("eco-school")} className="mt-4 text-sm font-bold text-foreground/50 underline">← Back</button>
         </div>
