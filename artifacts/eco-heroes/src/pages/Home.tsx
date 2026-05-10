@@ -1,6 +1,10 @@
 import { HeroSection } from "@/components/HeroSection";
 import { RosterSection } from "@/components/RosterSection";
+import { WhyEnterSection } from "@/components/WhyEnterSection";
+import { MissionBuilderSection } from "@/components/MissionBuilderSection";
 import { TipsSection } from "@/components/TipsSection";
+import { PrizesSection } from "@/components/PrizesSection";
+import { KeyDatesSection } from "@/components/KeyDatesSection";
 import { GoalSection } from "@/components/GoalSection";
 
 export default function Home() {
@@ -8,7 +12,11 @@ export default function Home() {
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary selection:text-white">
       <HeroSection />
       <RosterSection />
+      <WhyEnterSection />
+      <MissionBuilderSection />
       <TipsSection />
+      <PrizesSection />
+      <KeyDatesSection />
       <GoalSection />
       
       <footer className="bg-foreground text-white py-12 text-center">
