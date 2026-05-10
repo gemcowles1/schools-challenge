@@ -13,9 +13,9 @@ export function WhyEnterSection() {
       rotate: "rotate-1",
     },
     {
-      emoji: "🎒",
-      title: "Win Kit for Your School",
-      body: "Prizes up to £500 in energy efficiency equipment. Every entrant gets a certificate.",
+      emoji: "💻",
+      title: "Win a Laptop",
+      body: "Win a laptop for your Eco-Committee. Every entrant gets a free certificate.",
       rotate: "-rotate-1",
     },
     {
