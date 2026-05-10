@@ -1,47 +1,4 @@
-const MISSIONS = [
-  {
-    school: "Oakgrove Integrated PS, Derry",
-    mission: "We are Oakgrove Integrated PS and we pledge to switch off lights in every empty room so that we can reduce our carbon footprint by June 2026.",
-    action: "Switch off lights",
-    initials: "OI",
-    color: "bg-primary",
-  },
-  {
-    school: "St. Mary's PS, Belfast",
-    mission: "We are St. Mary's PS and we pledge to turn off all whiteboards and screens when not in use so that we can earn our Eco-Schools Green Flag by May 2026.",
-    action: "Screen switch-off",
-    initials: "SM",
-    color: "bg-accent",
-  },
-  {
-    school: "Lagan Valley PS, Lisburn",
-    mission: "We are Lagan Valley PS and we pledge to keep every door closed to trap heat so that we can protect nature for the next generation by March 2026.",
-    action: "Door closing",
-    initials: "LV",
-    color: "bg-secondary border-4 border-foreground",
-  },
-  {
-    school: "Strandtown PS, Belfast",
-    mission: "We are Strandtown PS and we pledge to wear our jumpers before asking to turn up the heating so that we can make our school a greener place to learn by April 2026.",
-    action: "Jumper pledge",
-    initials: "SP",
-    color: "bg-primary",
-  },
-  {
-    school: "Gaelscoil na Móna, Belfast",
-    mission: "We are Gaelscoil na Móna and we pledge to unplug all chargers at the end of every day so that we can help fight climate change by June 2026.",
-    action: "Charger unplug",
-    initials: "GM",
-    color: "bg-accent",
-  },
-  {
-    school: "Portstewart PS",
-    mission: "We are Portstewart PS and we pledge to use natural light instead of electric lights so that we can reduce our school's carbon footprint by May 2026.",
-    action: "Natural light",
-    initials: "PP",
-    color: "bg-secondary border-4 border-foreground",
-  },
-];
+const SLOTS = Array.from({ length: 6 });
 
 const rotations = ["-rotate-1", "rotate-1", "-rotate-1", "rotate-1", "-rotate-1", "rotate-1"];
 
@@ -59,23 +16,13 @@ export function WallOfFameSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {MISSIONS.map((m, i) => (
+          {SLOTS.map((_, i) => (
             <div
-              key={m.school}
-              className={`bg-white border-4 border-foreground rounded-2xl p-6 comic-shadow ${rotations[i]} hover:rotate-0 transition-transform duration-300`}
+              key={i}
+              className={`bg-white border-4 border-dashed border-foreground/30 rounded-2xl p-6 comic-shadow ${rotations[i]} min-h-[160px] flex flex-col items-center justify-center text-center gap-3`}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 rounded-full ${m.color} text-white flex items-center justify-center font-black text-lg flex-shrink-0`}>
-                  {m.initials}
-                </div>
-                <div>
-                  <p className="font-black text-foreground text-sm leading-tight">{m.school}</p>
-                  <span className="inline-block bg-secondary border-2 border-foreground text-foreground font-bold text-xs px-2 py-0.5 rounded-full mt-1">
-                    {m.action}
-                  </span>
-                </div>
-              </div>
-              <p className="text-foreground/80 font-medium text-sm leading-relaxed italic">"{m.mission}"</p>
+              <div className="text-4xl opacity-20">🏫</div>
+              <p className="font-black text-foreground/25 text-lg uppercase tracking-wide">Coming soon…</p>
             </div>
           ))}
         </div>
