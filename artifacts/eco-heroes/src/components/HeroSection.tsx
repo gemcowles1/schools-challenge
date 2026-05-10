@@ -32,8 +32,8 @@ export function HeroSection() {
             <h1 className="text-5xl md:text-7xl font-black text-primary drop-shadow-[0_4px_0_hsl(var(--foreground))]">
               Our School <span className="text-secondary">Eco-Heroes</span>
             </h1>
-            <p className="mt-4 text-xl md:text-2xl font-bold text-foreground/80 italic">
-              Across all NI Schools and as part of your Energy Green Flag (or other if you've already got your flag!)
+            <p className="mt-4 text-xl md:text-2xl font-bold text-foreground/80 italic text-center">
+              Our School Eco-Heroes — Bring Down Energy!
             </p>
             <p className="mt-2 text-lg font-bold text-foreground/60">
               Led by <span className="text-primary font-black">Max</span> — and the Eco-Heroes Squad!
