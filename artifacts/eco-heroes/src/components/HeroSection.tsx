@@ -13,10 +13,10 @@ export function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 animate-in slide-in-from-bottom-8 duration-700">
             <div className="flex justify-center mb-4">
-              <span className="text-8xl drop-shadow-lg" role="img" aria-label="Laptop for your Eco-committee">💻</span>
+              <span className="text-8xl drop-shadow-lg" role="img" aria-label="Prizes up to £500">⚡</span>
             </div>
             <p className="text-base md:text-lg font-bold text-foreground/60 mb-1 tracking-widest uppercase">
-              Laptop for your Eco-committee
+              Prizes up to £500 in energy efficiency equipment
             </p>
             <div className="mb-5 bg-foreground text-background rounded-2xl px-6 py-4 inline-block border-4 border-foreground comic-shadow">
               <p className="text-base md:text-lg font-bold tracking-widest uppercase text-background/70 mb-1">
