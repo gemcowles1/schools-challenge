@@ -65,7 +65,7 @@ export function HeroSection() {
             <img 
               src="/winning-heroes.png" 
               alt="The Eco-Heroes Squad" 
-              className="w-full max-w-lg mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
+              className="w-full max-w-xs mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
             />
           </div>
         </div>

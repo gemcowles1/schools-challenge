@@ -49,13 +49,6 @@ export function WhyEnterSection() {
           ))}
         </div>
 
-        {/* Teacher quote */}
-        <div className="mt-14 max-w-2xl mx-auto bg-foreground text-white rounded-2xl px-8 py-8 border-4 border-foreground comic-shadow transform -rotate-1 text-center">
-          <p className="text-xl font-bold italic leading-relaxed mb-4">
-            "Our pupils loved coming up with their mission. It gave them real ownership of our energy topic."
-          </p>
-          <p className="text-white/70 font-bold text-sm uppercase tracking-wider">— Ms. O'Neill, St. Mary's PS, Belfast</p>
-        </div>
       </div>
     </section>
   );
