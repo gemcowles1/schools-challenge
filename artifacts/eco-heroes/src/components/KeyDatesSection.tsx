@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const DEADLINE = new Date("2026-06-18T23:59:59");
+const DEADLINE = new Date("2026-06-01T23:59:59");
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -23,7 +23,7 @@ function useCountdown(target: Date) {
 
 const dates = [
   { date: "12 May", label: "Competition Opens", emoji: "🚀", rotate: "-rotate-1" },
-  { date: "18 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
+  { date: "1 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
   { date: "21 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
 ];
 
