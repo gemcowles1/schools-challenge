@@ -27,7 +27,7 @@ export function SavingsCalculatorSection() {
           <h2 className="text-5xl font-black font-display text-foreground drop-shadow-[3px_3px_0_#fff] mb-3">
             ⚡ ENERGY SAVINGS CALCULATOR
           </h2>
-          <p className="text-xl font-bold text-foreground/70">
+          <p className="text-xl font-bold text-white">
             See how much your pledge could save your school
           </p>
         </div>

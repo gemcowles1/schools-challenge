@@ -46,8 +46,8 @@ export function WhyEnterSection() {
               className={`bg-secondary border-4 border-foreground rounded-2xl p-6 comic-shadow ${r.rotate} hover:rotate-0 transition-transform duration-300`}
             >
               <div className="text-5xl mb-4">{r.emoji}</div>
-              <h3 className="font-black text-xl text-foreground mb-2 font-display">{r.title}</h3>
-              <p className="text-foreground/80 font-medium leading-relaxed">{r.body}</p>
+              <h3 className="font-black text-xl text-white mb-2 font-display">{r.title}</h3>
+              <p className="text-white/90 font-medium leading-relaxed">{r.body}</p>
             </div>
           ))}
         </div>

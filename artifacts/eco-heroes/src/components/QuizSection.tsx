@@ -165,8 +165,8 @@ export function QuizSection() {
 
             {showFact && (
               <div className="mt-5 bg-secondary border-4 border-foreground rounded-xl p-4">
-                <p className="font-black text-foreground text-sm uppercase mb-1">💡 Did you know?</p>
-                <p className="font-bold text-foreground/80">{q.fact}</p>
+                <p className="font-black text-white text-sm uppercase mb-1">💡 Did you know?</p>
+                <p className="font-bold text-white/90">{q.fact}</p>
               </div>
             )}
           </div>

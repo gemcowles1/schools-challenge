@@ -24,7 +24,7 @@ export function GoalSection() {
             >
               <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="w-full h-full object-cover" />
             </button>
-            <p className="text-sm font-bold text-foreground/70 animate-pulse tracking-wide">
+            <p className="text-sm font-bold text-white/80 animate-pulse tracking-wide">
               {galleryOpen ? "▲ Click logo to close" : "▼ Click logo to see the Green Flag!"}
             </p>
           </div>
@@ -33,7 +33,7 @@ export function GoalSection() {
             <h2 className="text-5xl font-black font-display text-foreground mb-6 drop-shadow-[2px_2px_0_#fff]">
               OUR MISSION TARGET
             </h2>
-            <p className="text-2xl font-bold text-foreground/90 mb-6 leading-relaxed">
+            <p className="text-2xl font-bold text-white mb-6 leading-relaxed">
               We are working hard on the "Energy" topic to achieve our <strong className="text-primary bg-white px-2 rounded-md border-2 border-foreground comic-shadow transform rotate-1 inline-block">Eco-Schools Green Flag</strong> in Northern Ireland!
             </p>
             <div className="inline-block bg-white border-4 border-foreground rounded-2xl px-6 py-4 comic-shadow transform rotate-2">
@@ -54,7 +54,7 @@ export function GoalSection() {
               <h3 className="text-4xl font-black font-display text-foreground drop-shadow-[2px_2px_0_#fff] mb-2">
                 THE ECO-SCHOOLS GREEN FLAG
               </h3>
-              <p className="text-lg font-bold text-foreground/80">
+              <p className="text-lg font-bold text-white/90">
                 Sponsored by the <strong>NI Housing Executive</strong> — supporting the Energy Flag &amp; Topic across NI Schools
               </p>
             </div>

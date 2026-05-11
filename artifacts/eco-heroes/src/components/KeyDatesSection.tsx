@@ -54,7 +54,7 @@ export function KeyDatesSection() {
             >
               <div className="text-5xl mb-3">{d.emoji}</div>
               <div className="text-4xl font-black text-white font-display mb-1">{d.date}</div>
-              <div className="font-bold text-foreground/80 text-lg">{d.label}</div>
+              <div className="font-bold text-white/90 text-lg">{d.label}</div>
             </div>
           ))}
         </div>

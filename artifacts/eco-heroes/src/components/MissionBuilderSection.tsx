@@ -281,8 +281,8 @@ export function MissionBuilderSection() {
               return (
                 <div key={t.topic} className={`bg-secondary border-4 border-foreground rounded-2xl p-6 comic-shadow ${rots[i]} hover:rotate-0 transition-transform duration-300`}>
                   <div className="text-4xl mb-2">{t.emoji}</div>
-                  <h4 className="font-black text-xl text-foreground font-display mb-1">{t.topic}</h4>
-                  <p className="text-foreground/70 font-medium text-sm leading-relaxed">{t.desc}</p>
+                  <h4 className="font-black text-xl text-white font-display mb-1">{t.topic}</h4>
+                  <p className="text-white/85 font-medium text-sm leading-relaxed">{t.desc}</p>
                 </div>
               );
             })}
@@ -383,8 +383,8 @@ export function MissionBuilderSection() {
             </div>
 
             <div className="bg-secondary border-4 border-dashed border-foreground rounded-2xl p-8 comic-shadow mb-6 text-center transform -rotate-1">
-              <h3 className="font-black text-2xl text-foreground font-display mb-4 uppercase">✨ Your Mission Statement</h3>
-              <p className="text-xl md:text-2xl font-bold text-foreground leading-relaxed italic">
+              <h3 className="font-black text-2xl text-white font-display mb-4 uppercase">✨ Your Mission Statement</h3>
+              <p className="text-xl md:text-2xl font-bold text-white leading-relaxed italic">
                 <span className="text-white not-italic font-black">We are {schoolDisplay}</span> and we pledge to{" "}
                 <span className="text-white not-italic font-black">{action}</span> so that we can{" "}
                 <span className="text-white not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
@@ -415,7 +415,7 @@ export function MissionBuilderSection() {
 
             {freeText.trim() && (
               <div className="bg-secondary border-4 border-dashed border-foreground rounded-2xl p-8 comic-shadow mb-6 text-center transform -rotate-1">
-                <h3 className="font-black text-2xl text-foreground font-display mb-4 uppercase">✨ Your Mission Statement</h3>
+                <h3 className="font-black text-2xl text-white font-display mb-4 uppercase">✨ Your Mission Statement</h3>
                 <p className="text-xl font-bold text-white leading-relaxed italic">{freeText}</p>
               </div>
             )}
