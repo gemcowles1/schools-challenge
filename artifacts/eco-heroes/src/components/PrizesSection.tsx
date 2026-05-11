@@ -3,7 +3,7 @@ export function PrizesSection() {
     {
       icon: "💻",
       title: "A Laptop",
-      desc: "Win a laptop for your school",
+      desc: "Win a laptop for your school's Eco-Committee",
       bg: "bg-yellow-100",
       border: "border-yellow-400",
       rotate: "-rotate-2",
