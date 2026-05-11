@@ -853,6 +853,15 @@ function printMission() {
   const base = window.location.origin;
   const w = window.open('', '_blank');
   w.document.write(`<html><head><title>Eco-Hero Mission</title>
+  <script>
+    function tryPrint() {
+      var imgs = document.images, loaded = 0;
+      if (!imgs.length) { window.print(); return; }
+      for (var i = 0; i < imgs.length; i++) { if (imgs[i].complete) loaded++; }
+      if (loaded === imgs.length) window.print(); else setTimeout(tryPrint, 200);
+    }
+    window.onload = function() { setTimeout(tryPrint, 100); };
+  <\/script>
   <style>
     body{font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#d4edda;}
     .p{background:white;padding:50px 60px;border-radius:20px;max-width:640px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.15);border:6px solid #1a5c26;}

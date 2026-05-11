@@ -122,6 +122,19 @@ export function MissionBuilderSection() {
           .footer { color:#aaa; margin-top:24px; font-size:0.8rem; border-top:2px solid #f0f0f0; padding-top:14px; }
           @media print { body { background:white; } .poster { box-shadow:none; border:4px solid #1a5c26; } }
         </style>
+        <script>
+          function tryPrint() {
+            const imgs = document.images;
+            let loaded = 0;
+            if (imgs.length === 0) { window.print(); return; }
+            for (let i = 0; i < imgs.length; i++) {
+              if (imgs[i].complete) loaded++;
+            }
+            if (loaded === imgs.length) { window.print(); }
+            else { setTimeout(tryPrint, 200); }
+          }
+          window.onload = function() { setTimeout(tryPrint, 100); };
+        </script>
       </head><body>
         <div class="poster">
           <div class="logos">
@@ -136,7 +149,6 @@ export function MissionBuilderSection() {
       </body></html>
     `);
     printWindow.document.close();
-    printWindow.print();
   }
 
   function reset() {
