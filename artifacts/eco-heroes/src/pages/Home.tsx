@@ -45,16 +45,19 @@ export default function Home() {
       </div>
       <GoalSection />
 
-      <footer className="bg-foreground text-white py-12 text-center">
-        <div className="container mx-auto px-4 flex flex-col items-center gap-4">
-          <div className="flex items-center justify-center gap-10 flex-wrap">
-            <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white/30 animate-[spin_12s_linear_infinite] shadow-xl">
-              <img src="/niseeap-logo.jpg" alt="NISEEAP Logo" className="w-full h-full object-cover" />
-            </div>
-            <div className="bg-white rounded-2xl px-5 py-3 shadow-xl">
-              <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-14 w-auto object-contain" />
-            </div>
+      <footer className="bg-foreground text-white text-center">
+        {/* White logo stripe */}
+        <div className="bg-white border-b-2 border-gray-100 flex items-center px-4 py-1.5">
+          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-7 w-auto object-contain" />
+          <span className="ml-3 text-xs font-bold text-gray-400 uppercase tracking-widest hidden sm:block">
+            NI Housing Executive / NIEAS Energy Awareness Programme
+          </span>
+          <div className="ml-auto w-9 h-9 rounded-full overflow-hidden border-2 border-gray-200">
+            <img src="/niseeap-logo.jpg" alt="NISEEAP" className="w-full h-full object-cover" />
           </div>
+        </div>
+        {/* Navy content */}
+        <div className="container mx-auto px-4 py-10 flex flex-col items-center gap-3">
           <p className="font-bold text-xl font-display">Powered by NIEAS Energy Awareness Programme</p>
           <p className="text-white/80 font-bold text-lg">Housing Executive for Eco-Schools NI</p>
           <p className="text-white/50 font-medium text-sm">Designed for the Green Flag Energy Challenge</p>
