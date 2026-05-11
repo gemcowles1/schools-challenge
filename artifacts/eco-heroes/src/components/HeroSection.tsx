@@ -44,7 +44,7 @@ export function HeroSection() {
             <div className="absolute -inset-2 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl opacity-50 blur-lg"></div>
             <div className="relative bg-white border-4 border-foreground rounded-3xl p-8 md:p-12 comic-shadow transform rotate-1">
               <h2 className="text-3xl font-display font-black text-accent mb-6 uppercase tracking-wider">
-                The Eco-Hero Oath
+                The Eco-Hero Mission
               </h2>
               <div className="space-y-4 text-xl md:text-2xl font-bold text-foreground leading-relaxed">
                 <p>We switch off the lights when we leave the room, 💡</p>
