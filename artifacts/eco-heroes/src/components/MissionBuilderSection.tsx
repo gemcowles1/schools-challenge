@@ -367,10 +367,10 @@ export function MissionBuilderSection() {
             <div className="bg-secondary border-4 border-dashed border-foreground rounded-2xl p-8 comic-shadow mb-6 text-center transform -rotate-1">
               <h3 className="font-black text-2xl text-foreground font-display mb-4 uppercase">✨ Your Mission Statement</h3>
               <p className="text-xl md:text-2xl font-bold text-foreground leading-relaxed italic">
-                <span className="text-primary not-italic font-black">We are {schoolDisplay}</span> and we pledge to{" "}
-                <span className="text-primary not-italic font-black">{action}</span> so that we can{" "}
-                <span className="text-primary not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
-                <span className="text-primary not-italic font-black">{dateStr}</span>.
+                <span className="text-white not-italic font-black">We are {schoolDisplay}</span> and we pledge to{" "}
+                <span className="text-white not-italic font-black">{action}</span> so that we can{" "}
+                <span className="text-white not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
+                <span className="text-white not-italic font-black">{dateStr}</span>.
               </p>
               <button onClick={handleCopy} className="mt-4 border-4 border-foreground bg-white text-foreground font-black px-5 py-2 rounded-xl comic-shadow hover:scale-105 transition-transform text-sm">
                 {copied ? "✅ Copied!" : "📋 Copy"}
@@ -398,7 +398,7 @@ export function MissionBuilderSection() {
             {freeText.trim() && (
               <div className="bg-secondary border-4 border-dashed border-foreground rounded-2xl p-8 comic-shadow mb-6 text-center transform -rotate-1">
                 <h3 className="font-black text-2xl text-foreground font-display mb-4 uppercase">✨ Your Mission Statement</h3>
-                <p className="text-xl font-bold text-primary leading-relaxed italic">{freeText}</p>
+                <p className="text-xl font-bold text-white leading-relaxed italic">{freeText}</p>
               </div>
             )}
           </>

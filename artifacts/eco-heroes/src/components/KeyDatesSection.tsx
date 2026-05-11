@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const DEADLINE = new Date("2026-06-01T23:59:59");
+const DEADLINE = new Date("2026-06-05T23:59:59");
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -22,9 +22,9 @@ function useCountdown(target: Date) {
 }
 
 const dates = [
-  { date: "12 May", label: "Competition Opens", emoji: "🚀", rotate: "-rotate-1" },
-  { date: "1 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
-  { date: "10 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
+  { date: "Fri 15 May", label: "Competition Opens", emoji: "🚀", rotate: "-rotate-1" },
+  { date: "Fri 5 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
+  { date: "17 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
 ];
 
 function Pad(n: number) {
@@ -51,7 +51,7 @@ export function KeyDatesSection() {
               className={`bg-secondary border-4 border-foreground rounded-2xl px-8 py-8 comic-shadow ${d.rotate} hover:rotate-0 transition-transform duration-300 text-center flex-1 min-w-[200px]`}
             >
               <div className="text-5xl mb-3">{d.emoji}</div>
-              <div className="text-4xl font-black text-primary font-display mb-1">{d.date}</div>
+              <div className="text-4xl font-black text-white font-display mb-1">{d.date}</div>
               <div className="font-bold text-foreground/80 text-lg">{d.label}</div>
             </div>
           ))}

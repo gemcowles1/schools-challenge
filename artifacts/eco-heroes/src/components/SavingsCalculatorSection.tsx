@@ -82,7 +82,7 @@ export function SavingsCalculatorSection() {
             </div>
             <div className="bg-secondary border-4 border-foreground rounded-2xl p-6 comic-shadow text-center transform -rotate-1">
               <div className="text-5xl mb-2">📚</div>
-              <div className="text-5xl font-black font-display mb-1 text-primary">{Math.round(saving / 8)}</div>
+              <div className="text-5xl font-black font-display mb-1 text-white">{Math.round(saving / 8)}</div>
               <div className="font-bold text-lg text-foreground/80">Books you could buy</div>
               <div className="text-sm text-foreground/50 mt-1">with those savings</div>
             </div>
