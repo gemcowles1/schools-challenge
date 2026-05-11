@@ -38,8 +38,8 @@ export function HeroSection() {
             <p className="mt-4 text-xl md:text-2xl font-bold text-foreground/80 italic text-center">
               Bring Down Energy!
             </p>
-            <p className="mt-2 text-base font-semibold text-foreground/50">
-              Design a Mission Statement for your school, below.
+            <p className="mt-3 text-lg md:text-xl font-black text-foreground uppercase tracking-wide">
+              Design a Mission Statement for <span className="text-primary">Your School</span> <span className="text-foreground/50 normal-case">(below)</span>
             </p>
           </div>
 
