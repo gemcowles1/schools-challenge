@@ -112,9 +112,9 @@ export function MissionBuilderSection() {
         <style>
           body { font-family: Arial, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; background:#d4edda; }
           .poster { background:white; padding:50px 60px; border-radius:20px; max-width:640px; width:100%; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,0.15); border:6px solid #1a5c26; }
-          .logos { display:flex; align-items:center; justify-content:center; gap:24px; margin-bottom:18px; flex-wrap:wrap; }
-          .logos img { height:52px; width:auto; object-fit:contain; }
-          .logos .niseeap { height:52px; width:52px; border-radius:50%; object-fit:cover; border:2px solid #e0e0e0; }
+          .logos { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px; }
+          .logos img { height:72px; width:auto; object-fit:contain; }
+          .logos .niseeap { height:72px; width:72px; border-radius:50%; object-fit:cover; border:2px solid #e0e0e0; }
           h1 { color:#1a5c26; font-size:1.9rem; margin-bottom:6px; }
           .sub { color:#888; font-size:.9rem; margin-bottom:0; }
           .mission { font-size:1.35rem; line-height:1.9; color:#333; margin:28px 0; font-style:italic; border-left:4px solid #22c55e; padding-left:18px; text-align:left; }
@@ -139,7 +139,7 @@ export function MissionBuilderSection() {
         <div class="poster">
           <div class="logos">
             <img src="${base}/nihe-logo.jpg" alt="NI Housing Executive" />
-            <img src="${base}/niseeap-logo.jpg" alt="NISEEAP" class="niseeap" />
+            <img src="${base}/niseeap-logo.jpg" alt="Schools Energy" class="niseeap" />
           </div>
           <h1>🌿 Eco-Hero Mission Statement</h1>
           <p class="sub">Eco-Schools Northern Ireland — Energy Challenge 2026</p>
