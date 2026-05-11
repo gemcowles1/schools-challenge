@@ -325,6 +325,7 @@
       border-radius: 2px;
       animation: cffall linear forwards;
     }
+    @keyframes flagProg { from { width: 0% } to { width: 100% } }
     @keyframes cffall {
       0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
       85%  { opacity: 1; }
@@ -482,6 +483,12 @@
           <button class="btn btn-white" onclick="goStep('step-builder')">🚀 Not yet — working on it</button>
         </div>
         <p class="flag-celebrate" id="flagCelebrate">🎉 Brilliant — your flag is GREEN!</p>
+        <div id="flagProgressBar" style="display:none;margin:10px auto 0;max-width:320px">
+          <div style="background:#e5e7eb;border-radius:999px;height:10px;border:2px solid #1a1a2e;overflow:hidden">
+            <div class="bar-fill" style="height:100%;background:#1a5c26;border-radius:999px;width:0"></div>
+          </div>
+          <p style="font-size:.8rem;color:#888;margin-top:6px;font-weight:700">Loading your next steps…</p>
+        </div>
         <a class="back-link" onclick="goStep('step-1')">← Back</a>
       </div>
     </div>
@@ -777,9 +784,11 @@ function goStep(id) {
 function flagYes() {
   const img = document.getElementById('flagImg');
   const cel = document.getElementById('flagCelebrate');
+  const bar = document.getElementById('flagProgressBar');
   img.classList.add('green');
   cel.classList.add('show');
-  setTimeout(() => goStep('step-3'), 1700);
+  if (bar) { bar.style.display = ''; bar.querySelector('.bar-fill').style.animation = 'flagProg 6s linear forwards'; }
+  setTimeout(() => goStep('step-3'), 6000);
 }
 
 function setMode(mode) {
@@ -841,16 +850,31 @@ function submitMission() {
 
 function printMission() {
   const mission = getMissionText();
+  const base = window.location.origin;
   const w = window.open('', '_blank');
   w.document.write(`<html><head><title>Eco-Hero Mission</title>
-  <style>body{font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#d4edda;}
-  .p{background:white;padding:60px;border-radius:20px;max-width:600px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.15);border:6px solid #1a5c26;}
-  h1{color:#1a5c26;font-size:2rem;margin-bottom:10px;}.m{font-size:1.4rem;line-height:1.9;color:#333;margin:30px 0;font-style:italic;}
-  .f{color:#888;margin-top:30px;font-size:.85rem;border-top:2px solid #e0e0e0;padding-top:16px;}
-  @media print{body{background:white;}.p{box-shadow:none;}}</style></head>
-  <body><div class="p"><div style="font-size:4rem">🌿⚡</div><h1>Eco-Hero Mission Statement</h1>
-  <div class="m">${mission}</div>
-  <div class="f">Eco-Schools Northern Ireland • Eco-Hero Challenge 2026<br>Sponsored by NI Housing Executive / NIEAS Energy Awareness Programme</div>
+  <style>
+    body{font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#d4edda;}
+    .p{background:white;padding:50px 60px;border-radius:20px;max-width:640px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.15);border:6px solid #1a5c26;}
+    .logos{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:18px;flex-wrap:wrap;}
+    .logos img{height:52px;width:auto;object-fit:contain;}
+    .logos .niseeap{height:52px;width:52px;border-radius:50%;object-fit:cover;border:2px solid #e0e0e0;}
+    h1{color:#1a5c26;font-size:1.9rem;margin-bottom:6px;}
+    .sub{color:#888;font-size:.9rem;margin-bottom:0;}
+    .m{font-size:1.35rem;line-height:1.9;color:#333;margin:28px 0;font-style:italic;border-left:4px solid #22c55e;padding-left:18px;text-align:left;}
+    .hl{color:#1a5c26;font-weight:bold;}
+    .f{color:#aaa;margin-top:24px;font-size:.8rem;border-top:2px solid #f0f0f0;padding-top:14px;}
+    @media print{body{background:white;}.p{box-shadow:none;border:4px solid #1a5c26;}}
+  </style></head>
+  <body><div class="p">
+    <div class="logos">
+      <img src="${base}/images/nihe-logo.jpg" alt="NI Housing Executive">
+      <img src="${base}/images/niseeap-logo.jpg" alt="NISEEAP" class="niseeap">
+    </div>
+    <h1>🌿 Eco-Hero Mission Statement</h1>
+    <p class="sub">Eco-Schools Northern Ireland — Energy Challenge 2026</p>
+    <div class="m">${mission}</div>
+    <div class="f">Sponsored by NI Housing Executive / NIEAS Energy Awareness Programme<br>Green Flag Energy Topic Challenge — Northern Ireland Schools</div>
   </div></body></html>`);
   w.document.close(); w.print();
 }

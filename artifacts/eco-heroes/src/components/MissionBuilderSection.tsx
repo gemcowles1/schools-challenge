@@ -103,6 +103,7 @@ export function MissionBuilderSection() {
            <span class="highlight">${dateStr}</span>.`
         : `<span class="highlight">${freeText}</span>`;
 
+    const base = window.location.origin;
     const printWindow = window.open("", "_blank");
     if (!printWindow) return;
     printWindow.document.write(`
@@ -110,20 +111,27 @@ export function MissionBuilderSection() {
         <title>Eco-Hero Mission — ${schoolDisplay}</title>
         <style>
           body { font-family: Arial, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; background:#d4edda; }
-          .poster { background:white; padding:60px; border-radius:20px; max-width:600px; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,0.15); border:6px solid #1a5c26; }
-          h1 { color:#1a5c26; font-size:2rem; margin-bottom:10px; }
-          .mission { font-size:1.4rem; line-height:1.9; color:#333; margin:30px 0; font-style:italic; }
+          .poster { background:white; padding:50px 60px; border-radius:20px; max-width:640px; width:100%; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,0.15); border:6px solid #1a5c26; }
+          .logos { display:flex; align-items:center; justify-content:center; gap:24px; margin-bottom:18px; flex-wrap:wrap; }
+          .logos img { height:52px; width:auto; object-fit:contain; }
+          .logos .niseeap { height:52px; width:52px; border-radius:50%; object-fit:cover; border:2px solid #e0e0e0; }
+          h1 { color:#1a5c26; font-size:1.9rem; margin-bottom:6px; }
+          .sub { color:#888; font-size:.9rem; margin-bottom:0; }
+          .mission { font-size:1.35rem; line-height:1.9; color:#333; margin:28px 0; font-style:italic; border-left:4px solid #22c55e; padding-left:18px; text-align:left; }
           .highlight { color:#1a5c26; font-weight:bold; }
-          .footer { color:#888; margin-top:30px; font-size:0.85rem; border-top:2px solid #e0e0e0; padding-top:16px; }
-          .logo { font-size:4rem; margin-bottom:10px; }
-          @media print { body { background:white; } .poster { box-shadow:none; } }
+          .footer { color:#aaa; margin-top:24px; font-size:0.8rem; border-top:2px solid #f0f0f0; padding-top:14px; }
+          @media print { body { background:white; } .poster { box-shadow:none; border:4px solid #1a5c26; } }
         </style>
       </head><body>
         <div class="poster">
-          <div class="logo">🌿⚡</div>
-          <h1>Eco-Hero Mission Statement</h1>
+          <div class="logos">
+            <img src="${base}/nihe-logo.jpg" alt="NI Housing Executive" />
+            <img src="${base}/niseeap-logo.jpg" alt="NISEEAP" class="niseeap" />
+          </div>
+          <h1>🌿 Eco-Hero Mission Statement</h1>
+          <p class="sub">Eco-Schools Northern Ireland — Energy Challenge 2026</p>
           <div class="mission">${missionHtml}</div>
-          <div class="footer">Eco-Schools Northern Ireland • Eco-Hero Challenge 2026<br>Sponsored by NI Housing Executive / NIEAS Energy Awareness Programme</div>
+          <div class="footer">Sponsored by NI Housing Executive / NIEAS Energy Awareness Programme<br>Green Flag Energy Topic Challenge — Northern Ireland Schools</div>
         </div>
       </body></html>
     `);
@@ -181,7 +189,7 @@ export function MissionBuilderSection() {
     function handleYes() {
       setFlagGreen(true);
       setHasEnergyFlag(true);
-      setTimeout(() => setStep("next-flag"), 1600);
+      setTimeout(() => setStep("next-flag"), 6000);
     }
 
     return (
@@ -230,9 +238,18 @@ export function MissionBuilderSection() {
             </div>
 
             {flagGreen && (
-              <p className="mt-6 text-2xl font-black text-primary animate-bounce">
-                🎉 Brilliant — your flag is GREEN!
-              </p>
+              <div className="mt-6">
+                <p className="text-2xl font-black text-primary animate-bounce mb-4">
+                  🎉 Brilliant — your flag is GREEN!</p>
+                <div className="w-full bg-gray-200 rounded-full h-3 border-2 border-foreground overflow-hidden">
+                  <div
+                    className="h-full bg-primary rounded-full"
+                    style={{ animation: "flagProgress 6s linear forwards" }}
+                  />
+                </div>
+                <p className="text-sm font-bold text-foreground/50 mt-2">Loading your next steps…</p>
+                <style>{`@keyframes flagProgress { from { width: 0% } to { width: 100% } }`}</style>
+              </div>
             )}
           </div>
           <button onClick={() => setStep("eco-school")} className="mt-4 text-sm font-bold text-foreground/50 underline">← Back</button>
