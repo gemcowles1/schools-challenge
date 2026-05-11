@@ -16,7 +16,7 @@ export function HeroSection() {
               <span className="text-8xl drop-shadow-lg" role="img" aria-label="Laptop for your Eco-Committee">💻</span>
             </div>
             <p className="text-sm md:text-base font-bold text-foreground/60 mb-1 tracking-wide md:tracking-widest uppercase">
-              Win a Laptop for your Eco-Committee
+              Win a Laptop · Eco-Flag Points · Free Competition Entry
             </p>
             <div className="mb-5 bg-foreground text-background rounded-2xl px-4 md:px-6 py-4 block w-full max-w-sm mx-auto border-4 border-foreground comic-shadow">
               <p className="text-xs md:text-base font-bold tracking-wide uppercase text-background/70 mb-1 text-balance">

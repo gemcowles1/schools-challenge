@@ -1,12 +1,30 @@
 export function PrizesSection() {
   const prizes = [
-    { medal: "🥇", title: "1st Place", prize: "💻 Laptop", desc: "For your Eco-Committee", bg: "bg-yellow-100", border: "border-yellow-400" },
-    { medal: "🥈", title: "2nd Place", prize: "💻 Laptop", desc: "For your Eco-Committee", bg: "bg-gray-100", border: "border-gray-400" },
-    { medal: "🥉", title: "3rd Place", prize: "💻 Laptop", desc: "For your Eco-Committee", bg: "bg-orange-100", border: "border-orange-400" },
-    { medal: "🌟", title: "Every Entrant", prize: "FREE", desc: "Printable certificate + digital badge", bg: "bg-primary/10", border: "border-primary" },
+    {
+      icon: "💻",
+      title: "A Laptop",
+      desc: "Win a laptop for your school",
+      bg: "bg-yellow-100",
+      border: "border-yellow-400",
+      rotate: "-rotate-2",
+    },
+    {
+      icon: "🏴",
+      title: "Eco-Flag Points",
+      desc: "Points towards your Energy Eco-Flag award",
+      bg: "bg-green-50",
+      border: "border-primary",
+      rotate: "rotate-1",
+    },
+    {
+      icon: "🎟️",
+      title: "Free Competition Entry",
+      desc: "Free entry to the Energy Challenge competition",
+      bg: "bg-blue-50",
+      border: "border-blue-400",
+      rotate: "-rotate-1",
+    },
   ];
-
-  const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"];
 
   return (
     <section className="py-20 bg-accent/10 relative overflow-hidden">
@@ -15,18 +33,19 @@ export function PrizesSection() {
           <h2 className="text-5xl font-black font-display text-accent drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
             🏆 PRIZES
           </h2>
-          <p className="text-xl font-bold text-foreground/70">Win a laptop for your Eco-Committee!</p>
+          <p className="text-xl font-bold text-foreground/70">
+            A laptop, Eco-Flag points and free competition entry!
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {prizes.map((p, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          {prizes.map((p) => (
             <div
               key={p.title}
-              className={`${p.bg} border-4 ${p.border} rounded-2xl p-6 comic-shadow ${rotations[i]} hover:rotate-0 transition-transform duration-300 text-center`}
+              className={`${p.bg} border-4 ${p.border} rounded-2xl p-8 comic-shadow ${p.rotate} hover:rotate-0 transition-transform duration-300 text-center`}
             >
-              <div className="text-6xl mb-3">{p.medal}</div>
-              <h3 className="font-black text-xl text-foreground mb-1 font-display">{p.title}</h3>
-              <div className="text-3xl font-black text-primary my-2">{p.prize}</div>
+              <div className="text-6xl mb-4">{p.icon}</div>
+              <h3 className="font-black text-xl text-foreground mb-2 font-display">{p.title}</h3>
               <p className="text-foreground/70 font-medium text-sm">{p.desc}</p>
             </div>
           ))}
