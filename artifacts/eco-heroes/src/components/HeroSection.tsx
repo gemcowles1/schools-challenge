@@ -1,8 +1,10 @@
 import { Link } from "wouter";
+import { NiheBadge } from "./NiheBadge";
 
 export function HeroSection() {
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+      <NiheBadge />
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full mix-blend-multiply filter blur-2xl animate-float"></div>
         <div className="absolute top-40 right-20 w-48 h-48 bg-secondary rounded-full mix-blend-multiply filter blur-2xl animate-float" style={{ animationDelay: "2s" }}></div>

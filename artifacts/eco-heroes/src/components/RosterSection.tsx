@@ -1,4 +1,5 @@
 import { EcoHero, HeroCard } from "./HeroCard";
+import { NiheBadge } from "./NiheBadge";
 
 const heroes: EcoHero[] = [
   {
@@ -51,6 +52,7 @@ const heroes: EcoHero[] = [
 export function RosterSection() {
   return (
     <section className="py-20 bg-foreground text-background relative overflow-hidden">
+      <NiheBadge className="border border-gray-200" />
       {/* Dynamic comic background pattern */}
       <div className="absolute inset-0 opacity-5" style={{ 
         backgroundImage: 'repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NiheBadge } from "./NiheBadge";
 
 const QUESTIONS = [
   {
@@ -114,6 +115,7 @@ export function QuizSection() {
 
   return (
     <section id="quiz" className="py-20 bg-background relative overflow-hidden">
+      <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">

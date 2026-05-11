@@ -1,3 +1,5 @@
+import { NiheBadge } from "./NiheBadge";
+
 export function WhyEnterSection() {
   const reasons = [
     {
@@ -28,6 +30,7 @@ export function WhyEnterSection() {
 
   return (
     <section className="py-20 bg-background relative overflow-hidden">
+      <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">

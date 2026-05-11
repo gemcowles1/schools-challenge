@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Confetti } from "@/components/Confetti";
+import { NiheBadge } from "@/components/NiheBadge";
 
 const ACTIONS = [
   "reduce our energy use by 10%",
@@ -430,6 +431,7 @@ export function MissionBuilderSection() {
 function SectionShell({ children }: { children: React.ReactNode }) {
   return (
     <section id="mission" className="py-20 bg-primary/10 relative overflow-hidden">
+      <NiheBadge />
       <div className="container mx-auto px-4">{children}</div>
     </section>
   );

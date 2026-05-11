@@ -1,3 +1,5 @@
+import { NiheBadge } from "./NiheBadge";
+
 export function TipsSection() {
   const tips = [
     {
@@ -23,7 +25,8 @@ export function TipsSection() {
   ];
 
   return (
-    <section className="py-24 bg-primary relative">
+    <section className="py-24 bg-primary relative overflow-hidden">
+      <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl p-8 md:p-12 border-4 border-foreground comic-shadow transform -rotate-1">

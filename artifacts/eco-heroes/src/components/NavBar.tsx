@@ -36,10 +36,9 @@ export function NavBar() {
       <div className="container mx-auto px-4 flex items-center justify-between h-14">
         <button
           onClick={() => scrollTo("#home")}
-          className="font-black text-secondary text-lg font-display tracking-wide hover:text-primary transition-colors flex items-center gap-2"
+          className="font-black text-secondary text-lg font-display tracking-wide hover:text-primary transition-colors"
         >
-          <img src="/nihe-logo.svg" alt="NI Housing Executive" className="h-7 w-auto" />
-          <span>🌿 ECO-HEROES</span>
+          🌿 ECO-HEROES
         </button>
 
         {/* Desktop links */}
@@ -53,6 +52,11 @@ export function NavBar() {
               {l.label}
             </button>
           ))}
+        </div>
+
+        {/* NIHE logo — right side */}
+        <div className="hidden md:flex items-center">
+          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-8 w-auto rounded" />
         </div>
 
         {/* Mobile hamburger */}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NiheBadge } from "./NiheBadge";
 
 const ACTIONS = [
   { label: "Switch off lights in every empty room", weekly: 12, annual: 180, co2: 95 },
@@ -20,6 +21,7 @@ export function SavingsCalculatorSection() {
 
   return (
     <section id="calculator" className="py-20 bg-secondary relative overflow-hidden">
+      <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-black font-display text-foreground drop-shadow-[3px_3px_0_#fff] mb-3">
