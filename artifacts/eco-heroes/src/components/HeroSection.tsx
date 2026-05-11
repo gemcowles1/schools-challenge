@@ -36,7 +36,7 @@ export function HeroSection() {
               Bring Down Energy!
             </p>
             <p className="mt-2 text-lg font-bold text-foreground/60">
-              Led by <span className="text-primary font-black">Max</span> — and the Eco-Heroes Squad!
+              Our School Eco-Heroes Committee, led by <span className="text-primary font-black">Max</span>, bringing energy down.
             </p>
           </div>
 
