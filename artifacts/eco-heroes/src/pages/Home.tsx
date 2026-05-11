@@ -47,8 +47,8 @@ export default function Home() {
 
       <footer className="bg-foreground text-white text-center">
         {/* White logo stripe */}
-        <div className="bg-white border-b-2 border-gray-100 flex items-center px-4 py-1.5">
-          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-7 w-auto object-contain" />
+        <div className="bg-white border-b-2 border-gray-100 flex items-center px-4 py-3">
+          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-16 w-auto object-contain" />
           <div className="ml-auto w-9 h-9 rounded-full overflow-hidden border-2 border-gray-200">
             <img src="/niseeap-logo.jpg" alt="NISEEAP" className="w-full h-full object-cover" />
           </div>
