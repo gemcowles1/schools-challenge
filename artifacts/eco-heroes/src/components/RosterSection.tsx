@@ -75,6 +75,12 @@ export function RosterSection() {
             <HeroCard key={hero.id} hero={hero} index={index} />
           ))}
         </div>
+
+        <div className="text-center mt-16">
+          <p className="text-6xl md:text-8xl font-black font-display text-secondary drop-shadow-[4px_4px_0_hsl(var(--primary))] animate-bounce">
+            WE'RE BACK!!
+          </p>
+        </div>
       </div>
     </section>
   );
