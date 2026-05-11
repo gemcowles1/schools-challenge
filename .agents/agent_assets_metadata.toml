@@ -47,3 +47,9 @@ id = "bCKE_BlzqDyRLfkqz63KQ"
 uri = "file://eco-heroes-export.zip"
 type = "unspecified"
 title = "eco-heroes-export.zip"
+
+[[outputs]]
+id = "fswcUIT8IS9H1YBPY4vMy"
+uri = "file://eco-heroes-export.tar"
+type = "unspecified"
+title = "eco-heroes-export.tar"
