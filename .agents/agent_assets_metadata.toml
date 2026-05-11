@@ -40,4 +40,10 @@ title = "Energy Auditor superhero icon"
 id = "BvENI3DXWOUZa7H7CVgTK"
 uri = "file://eco-heroes-export.tar.gz"
 type = "unspecified"
-title = "eco-heroes-export.tar.gz"
+title = "Eco-Heroes — HTML + Python export"
+
+[[outputs]]
+id = "bCKE_BlzqDyRLfkqz63KQ"
+uri = "file://eco-heroes-export.zip"
+type = "unspecified"
+title = "eco-heroes-export.zip"
