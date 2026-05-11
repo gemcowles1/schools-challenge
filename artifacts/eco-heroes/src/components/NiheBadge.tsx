@@ -4,7 +4,7 @@ export function NiheBadge({ className = "" }: { className?: string }) {
       <img
         src="/nihe-logo.jpg"
         alt="NI Housing Executive"
-        className="h-[280px] w-auto object-contain"
+        className="h-[140px] w-auto object-contain"
       />
     </div>
   );
