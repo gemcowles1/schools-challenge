@@ -20,7 +20,7 @@ export function SavingsCalculatorSection() {
   const co2 = Math.round((action.co2 / 52) * weeks);
 
   return (
-    <section id="calculator" className="py-20 bg-secondary relative overflow-hidden">
+    <section id="calculator" className="pb-20 bg-secondary relative overflow-hidden">
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

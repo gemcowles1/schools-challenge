@@ -5,7 +5,7 @@ export function GoalSection() {
   const [galleryOpen, setGalleryOpen] = useState(false);
 
   return (
-    <section className="py-24 bg-secondary relative overflow-hidden">
+    <section className="pb-24 bg-secondary relative overflow-hidden">
       <NiheBadge />
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform rotate-180">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[50px] fill-primary">

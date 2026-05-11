@@ -84,7 +84,7 @@ export function QuizSection() {
 
   if (done) {
     return (
-      <section id="quiz" className="py-20 bg-background relative overflow-hidden">
+      <section id="quiz" className="pb-20 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <div className={`${badge.color} text-white border-4 border-foreground rounded-2xl p-12 comic-shadow transform rotate-1`}>
@@ -114,7 +114,7 @@ export function QuizSection() {
   const q = QUESTIONS[current];
 
   return (
-    <section id="quiz" className="py-20 bg-background relative overflow-hidden">
+    <section id="quiz" className="pb-20 bg-background relative overflow-hidden">
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

@@ -51,7 +51,7 @@ const heroes: EcoHero[] = [
 
 export function RosterSection() {
   return (
-    <section className="py-20 bg-foreground text-background relative overflow-hidden">
+    <section className="pb-20 bg-foreground text-background relative overflow-hidden">
       <NiheBadge className="border border-gray-200" />
       {/* Dynamic comic background pattern */}
       <div className="absolute inset-0 opacity-5" style={{ 

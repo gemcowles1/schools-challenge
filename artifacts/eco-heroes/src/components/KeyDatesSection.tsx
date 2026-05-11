@@ -36,7 +36,7 @@ export function KeyDatesSection() {
   const { days, hours, minutes, seconds } = useCountdown(DEADLINE);
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="pb-20 bg-background relative overflow-hidden">
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

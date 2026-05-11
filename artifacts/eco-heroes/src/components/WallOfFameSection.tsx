@@ -6,7 +6,7 @@ const rotations = ["-rotate-1", "rotate-1", "-rotate-1", "rotate-1", "-rotate-1"
 
 export function WallOfFameSection() {
   return (
-    <section id="fame" className="py-20 bg-primary/10 relative overflow-hidden">
+    <section id="fame" className="pb-20 bg-primary/10 relative overflow-hidden">
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

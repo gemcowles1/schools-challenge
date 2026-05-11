@@ -29,7 +29,7 @@ export function PrizesSection() {
   ];
 
   return (
-    <section className="py-20 bg-accent/10 relative overflow-hidden">
+    <section className="pb-20 bg-accent/10 relative overflow-hidden">
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
