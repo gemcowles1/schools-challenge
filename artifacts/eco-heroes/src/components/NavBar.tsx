@@ -54,11 +54,6 @@ export function NavBar() {
           ))}
         </div>
 
-        {/* NIHE logo — right side */}
-        <div className="hidden md:flex items-center">
-          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-8 w-auto rounded" />
-        </div>
-
         {/* Mobile hamburger */}
         <button
           className="md:hidden text-white font-black text-2xl"
