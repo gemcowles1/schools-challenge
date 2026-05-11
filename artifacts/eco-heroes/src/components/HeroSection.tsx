@@ -33,7 +33,7 @@ export function HeroSection() {
               Our School<br /><span className="text-secondary">Eco-Heroes</span>
             </h1>
             <p className="mt-4 text-xl md:text-2xl font-bold text-foreground/80 italic text-center">
-              Our School Eco-Heroes —<br />Bring Down Energy!
+              Bring Down Energy!
             </p>
             <p className="mt-2 text-lg font-bold text-foreground/60">
               Led by <span className="text-primary font-black">Max</span> — and the Eco-Heroes Squad!
