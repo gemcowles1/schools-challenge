@@ -64,7 +64,7 @@ export function RosterSection() {
             MEET THE SQUAD
           </h2>
           <p className="text-xl font-bold text-background/80 max-w-2xl mx-auto">
-            Click on each hero to learn more about their energy-saving superpowers! (Teachers: Add student names here!)
+            Click on each hero to learn more about their energy-saving superpowers!
           </p>
         </div>
 
