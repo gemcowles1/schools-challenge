@@ -6,9 +6,6 @@ export function NiheBadge({ className = "" }: { className?: string }) {
         alt="NI Housing Executive"
         className="h-7 w-auto object-contain"
       />
-      <span className="ml-3 text-xs font-bold text-gray-400 uppercase tracking-widest hidden sm:block">
-        NI Housing Executive / NIEAS Energy Awareness Programme
-      </span>
     </div>
   );
 }
