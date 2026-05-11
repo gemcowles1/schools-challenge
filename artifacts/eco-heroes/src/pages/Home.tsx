@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary selection:text-white">
       <NavBar />
-      <div id="home" className="pt-14">
+      <div id="home" className="pt-14 bg-white">
         <HeroSection />
       </div>
       <div id="heroes">
@@ -47,11 +47,9 @@ export default function Home() {
 
       <footer className="bg-foreground text-white text-center">
         {/* White logo stripe */}
-        <div className="bg-white border-b-2 border-gray-100 flex items-center px-4 py-3">
-          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-[260px] w-auto object-contain" />
-          <div className="ml-auto w-9 h-9 rounded-full overflow-hidden border-2 border-gray-200">
-            <img src="/niseeap-logo.jpg" alt="NISEEAP" className="w-full h-full object-cover" />
-          </div>
+        <div className="bg-white border-b-2 border-gray-100 flex items-center justify-between px-4 py-3">
+          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-[130px] w-auto object-contain" />
+          <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="h-[130px] w-auto object-contain" />
         </div>
         {/* Navy content */}
         <div className="container mx-auto px-4 py-10 flex flex-col items-center gap-3">
