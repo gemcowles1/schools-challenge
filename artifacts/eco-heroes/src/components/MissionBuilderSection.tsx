@@ -426,7 +426,7 @@ function Heading() {
   return (
     <div className="text-center mb-10">
       <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
-        🚀 YOUR MISSION
+        📝 OUR MISSION STATEMENT COMPETITION
       </h2>
       <p className="text-xl font-bold text-foreground/70">
         Tell us about your school — we'll point you in the right direction!
