@@ -36,9 +36,10 @@ export function NavBar() {
       <div className="container mx-auto px-4 flex items-center justify-between h-14">
         <button
           onClick={() => scrollTo("#home")}
-          className="font-black text-secondary text-lg font-display tracking-wide hover:text-primary transition-colors"
+          className="font-black text-secondary text-lg font-display tracking-wide hover:text-primary transition-colors flex items-center gap-2"
         >
-          🌿 ECO-HEROES
+          <img src="/nihe-logo.svg" alt="NI Housing Executive" className="h-7 w-auto" />
+          <span>🌿 ECO-HEROES</span>
         </button>
 
         {/* Desktop links */}

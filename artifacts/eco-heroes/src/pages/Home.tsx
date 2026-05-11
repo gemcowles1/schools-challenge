@@ -47,8 +47,11 @@ export default function Home() {
 
       <footer className="bg-foreground text-white py-12 text-center">
         <div className="container mx-auto px-4 flex flex-col items-center gap-4">
-          <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white/30 animate-[spin_12s_linear_infinite] shadow-xl">
-            <img src="/niseeap-logo.jpg" alt="NISEEAP Logo" className="w-full h-full object-cover" />
+          <div className="flex items-center justify-center gap-8 flex-wrap">
+            <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white/30 animate-[spin_12s_linear_infinite] shadow-xl">
+              <img src="/niseeap-logo.jpg" alt="NISEEAP Logo" className="w-full h-full object-cover" />
+            </div>
+            <img src="/nihe-logo.svg" alt="NI Housing Executive" className="h-16 w-auto opacity-90" />
           </div>
           <p className="font-bold text-xl font-display">Powered by NIEAS Energy Awareness Programme</p>
           <p className="text-white/80 font-bold text-lg">Housing Executive for Eco-Schools NI</p>
