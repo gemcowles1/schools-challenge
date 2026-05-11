@@ -355,6 +355,12 @@ export function MissionBuilderSection() {
                 {copied ? "✅ Copied!" : "📋 Copy to Clipboard"}
               </button>
               <button
+                onClick={handlePrint}
+                className="bg-white text-primary border-4 border-white/50 font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform"
+              >
+                🖨️ Print Poster
+              </button>
+              <button
                 onClick={reset}
                 className="bg-white/20 text-white border-4 border-white/50 font-black px-6 py-3 rounded-xl hover:bg-white/30 transition-colors"
               >
