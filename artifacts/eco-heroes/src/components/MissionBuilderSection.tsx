@@ -48,6 +48,9 @@ export function MissionBuilderSection() {
   // Free-text field
   const [freeText, setFreeText] = useState("");
 
+  // Why it matters free text (builder mode)
+  const [whyMatters, setWhyMatters] = useState("");
+
   const [submitted, setSubmitted] = useState(false);
   const [flagGreen, setFlagGreen] = useState(false);
   const [confetti, setConfetti] = useState(false);
@@ -67,6 +70,10 @@ export function MissionBuilderSection() {
       alert("Please write your mission statement first!");
       return;
     }
+    const missionText = getMissionText();
+    const subject = encodeURIComponent("Eco-Hero Mission Statement — " + (school.trim() || "Our School"));
+    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nSubmitted via Eco Heroes NI`);
+    window.open(`mailto:Nienergyadvice@nihe.gov.uk?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
     setConfetti(true);
     setTimeout(() => setConfetti(false), 4000);
@@ -74,7 +81,8 @@ export function MissionBuilderSection() {
 
   function getMissionText() {
     if (missionMode === "freetext") return freeText;
-    return `We are ${schoolDisplay} and we pledge to ${action} so that we can ${outcome} by ${dateStr}.`;
+    const why = whyMatters.trim() || "[why it matters]";
+    return `We are ${schoolDisplay} and we pledge to ${action} so that we can ${why} by ${dateStr}.`;
   }
 
   function handleCopy() {
@@ -85,11 +93,12 @@ export function MissionBuilderSection() {
   }
 
   function handlePrint() {
+    const why = whyMatters.trim() || "[why it matters]";
     const missionHtml =
       missionMode === "builder"
         ? `<span class="highlight">We are ${schoolDisplay}</span> and we pledge to
            <span class="highlight">${action}</span> so that we can
-           <span class="highlight">${outcome}</span> by
+           <span class="highlight">${why}</span> by
            <span class="highlight">${dateStr}</span>.`
         : `<span class="highlight">${freeText}</span>`;
 
@@ -131,6 +140,7 @@ export function MissionBuilderSection() {
     setFreeText("");
     setSchool("");
     setDate("");
+    setWhyMatters("");
   }
 
   // ── Step 1: Are you already an Eco-School? ──────────────────────────────
@@ -339,10 +349,13 @@ export function MissionBuilderSection() {
               </div>
               <div>
                 <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Why It Matters</label>
-                <select value={outcome} onChange={(e) => setOutcome(e.target.value)}
-                  className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg bg-white focus:outline-none focus:border-primary">
-                  {OUTCOMES.map((o) => <option key={o} value={o}>{o}</option>)}
-                </select>
+                <textarea
+                  value={whyMatters}
+                  onChange={(e) => setWhyMatters(e.target.value)}
+                  rows={3}
+                  placeholder="e.g. help fight climate change and earn our Eco-Schools Green Flag"
+                  className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary resize-none"
+                />
               </div>
               <div>
                 <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your Target Date</label>
@@ -356,7 +369,7 @@ export function MissionBuilderSection() {
               <p className="text-xl md:text-2xl font-bold text-foreground leading-relaxed italic">
                 <span className="text-primary not-italic font-black">We are {schoolDisplay}</span> and we pledge to{" "}
                 <span className="text-primary not-italic font-black">{action}</span> so that we can{" "}
-                <span className="text-primary not-italic font-black">{outcome}</span> by{" "}
+                <span className="text-primary not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
                 <span className="text-primary not-italic font-black">{dateStr}</span>.
               </p>
               <button onClick={handleCopy} className="mt-4 border-4 border-foreground bg-white text-foreground font-black px-5 py-2 rounded-xl comic-shadow hover:scale-105 transition-transform text-sm">

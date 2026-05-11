@@ -32,11 +32,14 @@ export function HeroSection() {
             <h1 className="text-5xl md:text-7xl font-black text-primary drop-shadow-[0_4px_0_hsl(var(--foreground))]">
               Our School<br /><span className="text-secondary">Eco-Heroes</span>
             </h1>
+            <p className="mt-3 text-lg font-bold text-foreground/60">
+              Led by <span className="text-primary font-black">Max</span> — and the Eco-Heroes Committee
+            </p>
             <p className="mt-4 text-xl md:text-2xl font-bold text-foreground/80 italic text-center">
               Bring Down Energy!
             </p>
-            <p className="mt-2 text-lg font-bold text-foreground/60">
-              Our School Eco-Heroes Committee, led by <span className="text-primary font-black">Max</span>, bringing energy down.
+            <p className="mt-2 text-base font-semibold text-foreground/50">
+              Design a Mission Statement for your school, below.
             </p>
           </div>
 
