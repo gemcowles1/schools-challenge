@@ -3,31 +3,32 @@ import { NiheBadge } from "./NiheBadge";
 
 const QUESTIONS = [
   {
-    q: "Leaving a phone charger plugged in with no phone attached still uses electricity. True or false?",
-    options: ["True — it's called standby power", "False — it uses nothing", "Only if the light is on", "Only older chargers do this"],
-    correct: 0,
-    fact: "Standby power ('vampire energy') can account for up to 10% of a home's electricity use!",
+    q: "Approximately how many homes in Northern Ireland use oil as their main heating fuel?",
+    options: ["25%", "42%", "68%", "85%"],
+    correct: 2,
+    fact: "68% of homes in NI use oil heating — the highest rate in the UK! That's why the NI Housing Executive runs the Oil Savings Network. Join at oilsavings@nihe.gov.uk and save £10–£35 on your next delivery.",
+    oilTip: true,
   },
   {
-    q: "Which uses MORE energy?",
-    options: ["Boiling a full kettle once", "Leaving a light on for 1 hour", "Running a laptop for 30 mins", "Boiling a full kettle uses the most"],
-    correct: 3,
-    fact: "A full kettle uses around 0.15 kWh — more than a low-energy bulb left on for hours!",
-  },
-  {
-    q: "Turning the heating down by just 1°C can reduce a school's heating bill by approximately how much?",
+    q: "Turning the heating down by just 1°C can reduce a NI school's heating bill by approximately how much?",
     options: ["1%", "8%", "25%", "50%"],
     correct: 1,
-    fact: "Every 1°C reduction saves roughly 8% on heating costs. Small changes make a big difference!",
+    fact: "Every 1°C reduction saves roughly 8% on heating costs — with oil prices in NI, that adds up fast!",
   },
   {
-    q: "Which of these is a renewable energy source?",
-    options: ["Natural gas", "Coal", "Wind power", "Oil"],
+    q: "Northern Ireland generates renewable electricity mainly from which source?",
+    options: ["Solar panels", "Wave power", "Wind turbines", "Hydroelectric"],
     correct: 2,
-    fact: "Wind, solar, and hydro are all renewable — they won't run out and produce no direct carbon emissions.",
+    fact: "NI has over 1,000 wind turbines and gets around 45% of its electricity from renewables — mostly wind!",
   },
   {
-    q: "What does the 'Energy' topic in Eco-Schools ask pupils to do?",
+    q: "Leaving a phone charger plugged in with no phone still uses electricity. True or false?",
+    options: ["True — it's called standby power", "False — it uses nothing", "Only if the light is on", "Only older chargers"],
+    correct: 0,
+    fact: "Standby 'vampire energy' can account for up to 10% of a home's electricity use — unplug to save!",
+  },
+  {
+    q: "What does the 'Energy' topic in Eco-Schools NI ask pupils to do?",
     options: [
       "Only use solar panels",
       "Audit energy use and take action to reduce it",
@@ -164,9 +165,25 @@ export function QuizSection() {
             </div>
 
             {showFact && (
-              <div className="mt-5 bg-secondary border-4 border-foreground rounded-xl p-4">
-                <p className="font-black text-white text-sm uppercase mb-1">💡 Did you know?</p>
-                <p className="font-bold text-white/90">{q.fact}</p>
+              <div className="mt-5 space-y-3">
+                <div className="bg-secondary border-4 border-foreground rounded-xl p-4">
+                  <p className="font-black text-white text-sm uppercase mb-1">💡 Did you know?</p>
+                  <p className="font-bold text-white/90">{q.fact}</p>
+                </div>
+                {"oilTip" in q && q.oilTip && (
+                  <div className="bg-yellow-50 border-4 border-yellow-400 rounded-xl p-4 comic-shadow">
+                    <p className="font-black text-foreground text-sm uppercase mb-2">🛢️ Oil Savings Network — NI Housing Executive</p>
+                    <p className="font-bold text-foreground/80 text-sm mb-3">
+                      If your home uses oil heating, joining the Oil Savings Network could save your family <strong>£10–£35</strong> on every delivery through group buying power.
+                    </p>
+                    <a
+                      href="mailto:oilsavings@nihe.gov.uk"
+                      className="inline-block bg-yellow-400 border-4 border-foreground font-black px-4 py-2 rounded-xl comic-shadow hover:scale-105 transition-transform text-foreground text-sm"
+                    >
+                      ✉️ Join: oilsavings@nihe.gov.uk
+                    </a>
+                  </div>
+                )}
               </div>
             )}
           </div>
