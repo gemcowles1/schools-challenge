@@ -15,10 +15,16 @@ export function WhyEnterSection() {
       rotate: "rotate-1",
     },
     {
-      emoji: "🏆",
-      title: "Win Great Prizes",
-      body: "Win a laptop, earn points towards your Energy Eco-Flag, and get free entry to the Energy Challenge competition.",
+      emoji: "💻",
+      title: "Win 1 of 5 Laptops!",
+      body: "Five schools will each win a laptop for their Eco-Committee. Enter your mission statement for your chance to be one of the five winners!",
       rotate: "-rotate-1",
+    },
+    {
+      emoji: "⭐",
+      title: "Earn Points & More",
+      body: "Earn points towards your Energy Eco-Flag award and get free entry to the Energy Challenge competition — just for taking part!",
+      rotate: "rotate-1",
     },
     {
       emoji: "📣",
@@ -36,10 +42,10 @@ export function WhyEnterSection() {
           <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
             WHY ENTER?
           </h2>
-          <p className="text-xl font-bold text-foreground/70">Four great reasons to get your class involved</p>
+          <p className="text-xl font-bold text-foreground/70">Five great reasons to get your class involved</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
           {reasons.map((r) => (
             <div
               key={r.title}
