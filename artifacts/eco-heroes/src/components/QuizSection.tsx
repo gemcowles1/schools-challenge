@@ -99,12 +99,18 @@ export function QuizSection() {
                   ? "Great work! You know your energy stuff."
                   : "Good effort — keep learning and try again!"}
               </p>
-              <button
-                onClick={restart}
-                className="bg-white text-foreground border-4 border-foreground font-black px-8 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform text-lg"
-              >
-                🔄 Try Again
-              </button>
+              {score === 5 ? (
+                <p className="text-3xl font-black text-white drop-shadow-[2px_2px_0_rgba(0,0,0,0.3)]">
+                  ⚡ You're an Energy Hero! ⚡
+                </p>
+              ) : (
+                <button
+                  onClick={restart}
+                  className="bg-white text-foreground border-4 border-foreground font-black px-8 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform text-lg"
+                >
+                  🔄 Try Again
+                </button>
+              )}
             </div>
           </div>
         </div>
