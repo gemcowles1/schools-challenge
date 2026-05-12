@@ -52,6 +52,16 @@ export function MissionBuilderSection() {
   // Why it matters free text (builder mode)
   const [whyMatters, setWhyMatters] = useState("");
 
+  // Auto-prefix the freetext with school name when switching to freetext mode
+  function handleSchoolChangeFreetext(name: string) {
+    setSchool(name);
+    const prefix = name.trim() ? `We are ${name.trim()} and we pledge to ` : "";
+    // Only update textarea if it's empty or still just the auto-prefix
+    if (!freeText || freeText.startsWith("We are ")) {
+      setFreeText(prefix);
+    }
+  }
+
   const [submitted, setSubmitted] = useState(false);
   const [flagGreen, setFlagGreen] = useState(false);
   const [confetti, setConfetti] = useState(false);
@@ -67,8 +77,8 @@ export function MissionBuilderSection() {
       alert("Please fill in your school name and choose a target date!");
       return;
     }
-    if (missionMode === "freetext" && !freeText.trim()) {
-      alert("Please write your mission statement first!");
+    if (missionMode === "freetext" && (!school.trim() || !freeText.trim())) {
+      alert("Please enter your school name and write your mission statement!");
       return;
     }
     const missionText = getMissionText();
@@ -415,20 +425,32 @@ export function MissionBuilderSection() {
           </>
         ) : (
           <>
-            <div className="bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow mb-6">
-              <label className="block font-black text-foreground mb-3 uppercase tracking-wide text-lg">
-                ✍️ Write or paste your own mission statement
-              </label>
-              <textarea
-                value={freeText}
-                onChange={(e) => setFreeText(e.target.value)}
-                rows={6}
-                placeholder="e.g. We are St. Mary's PS and we pledge to switch off every light and screen when not in use, so that we can reduce our carbon footprint and earn our Eco-Schools Green Flag by June 2026."
-                className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary resize-none leading-relaxed"
-              />
-              <p className="text-sm font-medium text-foreground/50 mt-2">
-                Tip: Include your school name, your pledge, why it matters, and a target date.
-              </p>
+            <div className="bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow mb-6 space-y-5">
+              <div>
+                <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
+                <input
+                  type="text"
+                  value={school}
+                  onChange={(e) => handleSchoolChangeFreetext(e.target.value)}
+                  placeholder="e.g. St. Mary's Primary School"
+                  className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary"
+                />
+              </div>
+              <div>
+                <label className="block font-black text-foreground mb-3 uppercase tracking-wide text-lg">
+                  ✍️ Write your own mission statement
+                </label>
+                <textarea
+                  value={freeText}
+                  onChange={(e) => setFreeText(e.target.value)}
+                  rows={6}
+                  placeholder="e.g. We are St. Mary's PS and we pledge to switch off every light and screen when not in use, so that we can reduce our carbon footprint and earn our Eco-Schools Green Flag by June 2026."
+                  className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary resize-none leading-relaxed"
+                />
+                <p className="text-sm font-medium text-foreground/50 mt-2">
+                  Tip: Your school name is added automatically — just complete your pledge, why it matters, and a target date.
+                </p>
+              </div>
             </div>
 
             {freeText.trim() && (
