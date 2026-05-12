@@ -174,7 +174,7 @@ export function QuizSection() {
                   <div className="bg-yellow-50 border-4 border-yellow-400 rounded-xl p-4 comic-shadow">
                     <p className="font-black text-foreground text-sm uppercase mb-2">🛢️ Oil Savings Network — NI Housing Executive</p>
                     <p className="font-bold text-foreground/80 text-sm mb-3">
-                      If your home uses oil heating, joining the Oil Savings Network could save your family <strong>£10–£35</strong> on every delivery through group buying power.
+                      If your home uses oil heating, joining the Oil Savings Network could save your family <strong>£10–£35</strong> on every delivery. Generally open to every postcode.
                     </p>
                     <a
                       href="mailto:oilsavings@nihe.gov.uk"
