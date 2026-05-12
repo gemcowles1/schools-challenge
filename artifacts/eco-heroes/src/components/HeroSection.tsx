@@ -78,7 +78,7 @@ export function HeroSection() {
             <img 
               src="/winning-heroes.png" 
               alt="The Eco-Heroes Squad" 
-              className="w-full max-w-2xl mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
+              className="w-full max-w-xl mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
             />
             <div className="text-center mt-6">
               <p className="text-6xl md:text-8xl font-black font-display text-secondary drop-shadow-[4px_4px_0_hsl(var(--primary))] animate-bounce">
