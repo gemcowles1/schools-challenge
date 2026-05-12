@@ -14,11 +14,15 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 animate-in slide-in-from-bottom-8 duration-700">
-            <div className="flex justify-center mb-4">
-              <span className="text-8xl drop-shadow-lg" role="img" aria-label="Laptop for your Eco-Committee">💻</span>
+            <div className="flex justify-center gap-1 mb-4">
+              <span className="text-5xl drop-shadow-lg" role="img" aria-label="5 Laptops to be won">💻</span>
+              <span className="text-5xl drop-shadow-lg">💻</span>
+              <span className="text-5xl drop-shadow-lg">💻</span>
+              <span className="text-5xl drop-shadow-lg">💻</span>
+              <span className="text-5xl drop-shadow-lg">💻</span>
             </div>
             <p className="text-xl md:text-3xl font-black uppercase tracking-wide mb-3 drop-shadow-[2px_2px_0_rgba(0,0,0,0.15)]">
-              <span className="text-secondary">🏆 Win a Laptop</span>
+              <span className="text-secondary">🏆 5 Laptops to Win</span>
               <span className="text-foreground/30 mx-2">·</span>
               <span className="text-primary">Eco-Flag Points</span>
               <span className="text-foreground/30 mx-2">·</span>
