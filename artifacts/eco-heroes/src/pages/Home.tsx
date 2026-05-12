@@ -50,11 +50,6 @@ export default function Home() {
       <GoalSection />
 
       <footer className="bg-foreground text-white text-center">
-        {/* White logo stripe */}
-        <div className="bg-white border-b-2 border-gray-100 flex items-center justify-between px-4 py-3">
-          <img src="/nihe-logo.jpg" alt="NI Housing Executive" className="h-[60px] w-auto object-contain" />
-          <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="h-[200px] w-auto object-contain" />
-        </div>
         {/* Navy content */}
         <div className="container mx-auto px-4 py-10 flex flex-col items-center gap-3">
           <p className="font-bold text-xl font-display">Powered by NIEAS Energy Awareness Programme</p>
