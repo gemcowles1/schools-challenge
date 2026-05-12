@@ -53,13 +53,13 @@ export function HeroSection() {
             </p>
           </div>
 
-          <div className="relative mt-12 mb-16 animate-in zoom-in-95 duration-1000 delay-300">
+          <div className="relative mt-8 mb-10 animate-in zoom-in-95 duration-1000 delay-300">
             <div className="absolute -inset-2 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl opacity-50 blur-lg"></div>
-            <div className="relative bg-white border-4 border-foreground rounded-3xl p-8 md:p-12 comic-shadow transform rotate-1">
-              <h2 className="text-3xl font-display font-black text-accent mb-6 uppercase tracking-wider">
+            <div className="relative bg-white border-4 border-foreground rounded-3xl p-5 md:p-8 comic-shadow transform rotate-1">
+              <h2 className="text-2xl font-display font-black text-accent mb-4 uppercase tracking-wider">
                 The Eco-Hero Mission
               </h2>
-              <div className="space-y-4 text-xl md:text-2xl font-bold text-foreground leading-relaxed">
+              <div className="space-y-3 text-lg md:text-xl font-bold text-foreground leading-relaxed">
                 <p>We switch off the lights when we leave the room, 💡</p>
                 <p>We turn down the heat to stop the planet's doom, 🌡️</p>
                 <p>We unplug our chargers at the end of the day, 🔌</p>
