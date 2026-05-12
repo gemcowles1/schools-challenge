@@ -9,6 +9,7 @@ const LINKS = [
   { label: "Wall of Fame", href: "#fame" },
   { label: "Prizes", href: "#prizes" },
   { label: "Dates", href: "#dates" },
+  { label: "Teachers", href: "#teacher-packs" },
 ];
 
 export function NavBar() {

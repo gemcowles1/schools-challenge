@@ -1,17 +1,37 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Confetti } from "@/components/Confetti";
 import { NiheBadge } from "@/components/NiheBadge";
 
-const ACTIONS = [
-  "reduce our energy use by 10%",
-  "switch off lights in every empty room",
-  "keep every door closed to trap heat",
-  "use natural light instead of electric lights",
-  "turn off all whiteboards and screens when not in use",
-  "wear our jumpers before asking to turn up the heating",
-  "unplug all chargers at the end of every day",
-  "reduce our paper use and print only when necessary",
-];
+const ACTIONS_BY_AGE: Record<string, string[]> = {
+  "5-7": [
+    "switch off the lights when we leave a room",
+    "turn off the tap while we wash our hands",
+    "wear an extra jumper instead of turning up the heat",
+    "remind our teacher to switch off the whiteboard",
+    "walk or cycle to school instead of getting a lift",
+    "open the curtains to use sunlight instead of electric lights",
+  ],
+  "8-11": [
+    "reduce our energy use by 10% this term",
+    "switch off lights in every empty room",
+    "keep every door closed to trap heat",
+    "use natural light instead of electric lights",
+    "turn off all whiteboards and screens when not in use",
+    "wear our jumpers before asking to turn up the heating",
+    "unplug all chargers at the end of every day",
+    "do a classroom energy audit and share our findings",
+  ],
+  "12-14": [
+    "conduct a full school energy audit and present results to governors",
+    "design and run an energy-saving campaign across the whole school",
+    "reduce our school's carbon footprint by 15% this academic year",
+    "install and monitor a school energy dashboard",
+    "lead a student assembly on climate change and energy saving",
+    "create a school energy policy co-written by pupils and staff",
+    "research and propose renewable energy options for our school",
+    "partner with a local business on a joint energy-saving initiative",
+  ],
+};
 
 const OUTCOMES = [
   "help fight climate change",
@@ -31,36 +51,29 @@ const NEXT_FLAG_TIPS = [
   { emoji: "🌍", topic: "Global Citizenship", desc: "Link your eco-work to global sustainability goals." },
 ];
 
-type Step = "eco-school" | "energy-flag" | "next-flag" | "mission";
+const AGE_BANDS = [
+  { id: "5-7",  label: "Ages 5–7",   emoji: "⭐", desc: "Foundation & Key Stage 1", color: "bg-yellow-100 border-yellow-400" },
+  { id: "8-11", label: "Ages 8–11",  emoji: "🚀", desc: "Key Stage 2",              color: "bg-green-100 border-primary" },
+  { id: "12-14",label: "Ages 12–14", emoji: "🔬", desc: "Key Stage 3",              color: "bg-blue-100 border-blue-500" },
+];
+
+type Step = "age-band" | "eco-school" | "energy-flag" | "next-flag" | "mission";
 type MissionMode = "builder" | "freetext";
 
 export function MissionBuilderSection() {
-  const [step, setStep] = useState<Step>("eco-school");
+  const [step, setStep] = useState<Step>("age-band");
+  const [ageBand, setAgeBand] = useState<string | null>(null);
   const [isEcoSchool, setIsEcoSchool] = useState<boolean | null>(null);
   const [hasEnergyFlag, setHasEnergyFlag] = useState<boolean | null>(null);
   const [missionMode, setMissionMode] = useState<MissionMode>("builder");
 
-  // Builder fields
+  const actions = ageBand ? ACTIONS_BY_AGE[ageBand] : ACTIONS_BY_AGE["8-11"];
+
   const [school, setSchool] = useState("");
-  const [action, setAction] = useState(ACTIONS[0]);
-  const [outcome, setOutcome] = useState(OUTCOMES[0]);
+  const [action, setAction] = useState(actions[0]);
   const [date, setDate] = useState("");
-
-  // Free-text field
   const [freeText, setFreeText] = useState("");
-
-  // Why it matters free text (builder mode)
   const [whyMatters, setWhyMatters] = useState("");
-
-  // Auto-prefix the freetext with school name when switching to freetext mode
-  function handleSchoolChangeFreetext(name: string) {
-    setSchool(name);
-    const prefix = name.trim() ? `We are ${name.trim()} and we pledge to ` : "";
-    // Only update textarea if it's empty or still just the auto-prefix
-    if (!freeText || freeText.startsWith("We are ")) {
-      setFreeText(prefix);
-    }
-  }
 
   const [submitted, setSubmitted] = useState(false);
   const [flagGreen, setFlagGreen] = useState(false);
@@ -72,6 +85,20 @@ export function MissionBuilderSection() {
     : "[choose a date]";
   const schoolDisplay = school.trim() || "[Your School]";
 
+  function handleAgeBand(id: string) {
+    setAgeBand(id);
+    setAction(ACTIONS_BY_AGE[id][0]);
+    setStep("eco-school");
+  }
+
+  function handleSchoolChangeFreetext(name: string) {
+    setSchool(name);
+    const prefix = name.trim() ? `We are ${name.trim()} and we pledge to ` : "";
+    if (!freeText || freeText.startsWith("We are ")) {
+      setFreeText(prefix);
+    }
+  }
+
   function handleSubmit() {
     if (missionMode === "builder" && (!school.trim() || !date)) {
       alert("Please fill in your school name and choose a target date!");
@@ -82,8 +109,9 @@ export function MissionBuilderSection() {
       return;
     }
     const missionText = getMissionText();
-    const subject = encodeURIComponent("Eco-Hero Mission Statement — " + (school.trim() || "Our School"));
-    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nSubmitted via Eco Heroes NI`);
+    const bandLabel = ageBand ? `Ages ${ageBand}` : "";
+    const subject = encodeURIComponent(`Eco-Hero Mission Statement — ${school.trim() || "Our School"}${bandLabel ? " (" + bandLabel + ")" : ""}`);
+    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nAge Group: ${bandLabel || "Not specified"}\nSubmitted via Eco Heroes NI`);
     window.open(`mailto:Nienergyadvice@nihe.gov.uk?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
     setConfetti(true);
@@ -113,6 +141,7 @@ export function MissionBuilderSection() {
            <span class="highlight">${dateStr}</span>.`
         : `<span class="highlight">${freeText}</span>`;
 
+    const bandLabel = ageBand ? `Ages ${ageBand}` : "";
     const base = window.location.origin;
     const printWindow = window.open("", "_blank");
     if (!printWindow) return;
@@ -126,6 +155,7 @@ export function MissionBuilderSection() {
           .logos img { height:72px; width:auto; object-fit:contain; }
           .logos .niseeap { height:72px; width:72px; border-radius:50%; object-fit:cover; border:2px solid #e0e0e0; }
           h1 { color:#1a5c26; font-size:1.9rem; margin-bottom:6px; }
+          .band { display:inline-block; background:#d4edda; color:#1a5c26; font-weight:bold; font-size:.85rem; padding:3px 12px; border-radius:20px; margin-bottom:6px; }
           .sub { color:#888; font-size:.9rem; margin-bottom:0; }
           .mission { font-size:1.35rem; line-height:1.9; color:#333; margin:28px 0; font-style:italic; border-left:4px solid #22c55e; padding-left:18px; text-align:left; }
           .highlight { color:#1a5c26; font-weight:bold; }
@@ -137,9 +167,7 @@ export function MissionBuilderSection() {
             const imgs = document.images;
             let loaded = 0;
             if (imgs.length === 0) { window.print(); return; }
-            for (let i = 0; i < imgs.length; i++) {
-              if (imgs[i].complete) loaded++;
-            }
+            for (let i = 0; i < imgs.length; i++) { if (imgs[i].complete) loaded++; }
             if (loaded === imgs.length) { window.print(); }
             else { setTimeout(tryPrint, 200); }
           }
@@ -152,6 +180,7 @@ export function MissionBuilderSection() {
             <img src="${base}/niseeap-logo.jpg" alt="Schools Energy" class="niseeap" />
           </div>
           <h1>🌿 Eco-Hero Mission Statement</h1>
+          ${bandLabel ? `<div class="band">${bandLabel}</div>` : ""}
           <p class="sub">Eco-Schools Northern Ireland — Energy Challenge 2026</p>
           <div class="mission">${missionHtml}</div>
           <div class="footer">Sponsored by NI Housing Executive / NIEAS Energy Awareness Programme<br>Green Flag Energy Topic Challenge — Northern Ireland Schools</div>
@@ -162,7 +191,8 @@ export function MissionBuilderSection() {
   }
 
   function reset() {
-    setStep("eco-school");
+    setStep("age-band");
+    setAgeBand(null);
     setIsEcoSchool(null);
     setHasEnergyFlag(null);
     setSubmitted(false);
@@ -174,31 +204,32 @@ export function MissionBuilderSection() {
     setWhyMatters("");
   }
 
-  // ── Step 1: Are you already an Eco-School? ──────────────────────────────
-  if (step === "eco-school") {
+  // ── Step 0: Age Band ─────────────────────────────────────────────────────
+  if (step === "age-band") {
     return (
       <SectionShell>
         <Heading />
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="bg-white border-4 border-foreground rounded-2xl p-10 comic-shadow">
-            <div className="text-5xl mb-4">🏫</div>
-            <h3 className="text-3xl font-black font-display text-foreground mb-6">
-              Is your school already an Eco-School?
+            <div className="text-5xl mb-4">🎒</div>
+            <h3 className="text-3xl font-black font-display text-foreground mb-2">
+              What age group are you?
             </h3>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ChoiceBtn
-                label="✅ Yes, we are!"
-                onClick={() => { setIsEcoSchool(true); setStep("energy-flag"); }}
-                primary
-              />
-              <ChoiceBtn
-                label="🌱 Not yet"
-                onClick={() => { setIsEcoSchool(false); setStep("mission"); }}
-              />
-              <ChoiceBtn
-                label="🤔 Not sure"
-                onClick={() => { setIsEcoSchool(false); setStep("mission"); }}
-              />
+            <p className="text-foreground/60 font-medium mb-8">
+              We'll give you challenges that are just right for your class.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {AGE_BANDS.map((b) => (
+                <button
+                  key={b.id}
+                  onClick={() => handleAgeBand(b.id)}
+                  className={`${b.color} border-4 rounded-2xl p-6 comic-shadow hover:scale-105 transition-transform text-center`}
+                >
+                  <div className="text-5xl mb-3">{b.emoji}</div>
+                  <div className="font-black text-2xl text-foreground mb-1">{b.label}</div>
+                  <div className="text-sm font-bold text-foreground/60">{b.desc}</div>
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -206,7 +237,31 @@ export function MissionBuilderSection() {
     );
   }
 
-  // ── Step 2: Do you have your Energy Flag? ───────────────────────────────
+  // ── Step 1: Are you already an Eco-School? ───────────────────────────────
+  if (step === "eco-school") {
+    return (
+      <SectionShell>
+        <Heading />
+        <div className="max-w-2xl mx-auto text-center">
+          <AgeBadge ageBand={ageBand} />
+          <div className="bg-white border-4 border-foreground rounded-2xl p-10 comic-shadow">
+            <div className="text-5xl mb-4">🏫</div>
+            <h3 className="text-3xl font-black font-display text-foreground mb-6">
+              Is your school already an Eco-School?
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <ChoiceBtn label="✅ Yes, we are!" onClick={() => { setIsEcoSchool(true); setStep("energy-flag"); }} primary />
+              <ChoiceBtn label="🌱 Not yet" onClick={() => { setIsEcoSchool(false); setStep("mission"); }} />
+              <ChoiceBtn label="🤔 Not sure" onClick={() => { setIsEcoSchool(false); setStep("mission"); }} />
+            </div>
+          </div>
+          <button onClick={() => setStep("age-band")} className="mt-4 text-sm font-bold text-foreground/50 underline">← Back</button>
+        </div>
+      </SectionShell>
+    );
+  }
+
+  // ── Step 2: Do you have your Energy Flag? ────────────────────────────────
   if (step === "energy-flag") {
     function handleYes() {
       setFlagGreen(true);
@@ -218,14 +273,10 @@ export function MissionBuilderSection() {
       <SectionShell>
         <Heading />
         <div className="max-w-2xl mx-auto text-center">
+          <AgeBadge ageBand={ageBand} />
           <div className="bg-white border-4 border-foreground rounded-2xl p-10 comic-shadow">
-
-            {/* Animated flag */}
             <div className="flex justify-center mb-6">
-              <div
-                className="relative w-44 h-44"
-                style={{ transition: "transform 0.4s", transform: flagGreen ? "scale(1.15)" : "scale(1)" }}
-              >
+              <div className="relative w-44 h-44" style={{ transition: "transform 0.4s", transform: flagGreen ? "scale(1.15)" : "scale(1)" }}>
                 <img
                   src="/eco-flag-logo.png"
                   alt="Eco-Schools Green Flag"
@@ -235,39 +286,22 @@ export function MissionBuilderSection() {
                     transition: "filter 1.2s ease, transform 0.4s ease",
                   }}
                 />
-                {flagGreen && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-ping rounded-full bg-green-400 opacity-20" />
-                )}
+                {flagGreen && <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-ping rounded-full bg-green-400 opacity-20" />}
               </div>
             </div>
-
             <h3 className="text-3xl font-black font-display text-foreground mb-2">
               Have you already earned your <span className="text-primary">Energy Flag</span>?
             </h3>
-            <p className="text-foreground/60 font-medium mb-8">
-              (The Energy topic is one of the 11 Eco-Schools topics)
-            </p>
+            <p className="text-foreground/60 font-medium mb-8">(The Energy topic is one of the 11 Eco-Schools topics)</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ChoiceBtn
-                label="⚡ Yes — we have it!"
-                onClick={handleYes}
-                primary
-              />
-              <ChoiceBtn
-                label="🚀 Not yet — working on it"
-                onClick={() => { setHasEnergyFlag(false); setStep("mission"); }}
-              />
+              <ChoiceBtn label="⚡ Yes — we have it!" onClick={handleYes} primary />
+              <ChoiceBtn label="🚀 Not yet — working on it" onClick={() => { setHasEnergyFlag(false); setStep("mission"); }} />
             </div>
-
             {flagGreen && (
               <div className="mt-6">
-                <p className="text-2xl font-black text-primary animate-bounce mb-4">
-                  🎉 Brilliant — your flag is GREEN!</p>
+                <p className="text-2xl font-black text-primary animate-bounce mb-4">🎉 Brilliant — your flag is GREEN!</p>
                 <div className="w-full bg-gray-200 rounded-full h-3 border-2 border-foreground overflow-hidden">
-                  <div
-                    className="h-full bg-primary rounded-full"
-                    style={{ animation: "flagProgress 6s linear forwards" }}
-                  />
+                  <div className="h-full bg-primary rounded-full" style={{ animation: "flagProgress 6s linear forwards" }} />
                 </div>
                 <p className="text-sm font-bold text-foreground/50 mt-2">Loading your next steps…</p>
                 <style>{`@keyframes flagProgress { from { width: 0% } to { width: 100% } }`}</style>
@@ -280,12 +314,13 @@ export function MissionBuilderSection() {
     );
   }
 
-  // ── Step 3: Already have the Energy Flag — suggest next topics ──────────
+  // ── Step 3: Already have the Energy Flag ─────────────────────────────────
   if (step === "next-flag") {
     return (
       <SectionShell>
         <Heading />
         <div className="max-w-4xl mx-auto">
+          <AgeBadge ageBand={ageBand} />
           <div className="text-center mb-8">
             <div className="text-6xl mb-3">🎉</div>
             <h3 className="text-4xl font-black font-display text-primary drop-shadow-[2px_2px_0_hsl(var(--foreground))] mb-2">
@@ -296,7 +331,6 @@ export function MissionBuilderSection() {
               And here are some ideas for <strong>your next Eco-Schools topic</strong>:
             </p>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {NEXT_FLAG_TIPS.map((t, i) => {
               const rots = ["-rotate-1","rotate-1","-rotate-1","rotate-1","-rotate-1","rotate-1"];
@@ -309,7 +343,6 @@ export function MissionBuilderSection() {
               );
             })}
           </div>
-
           <div className="text-center bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow mb-4">
             <p className="text-xl font-bold text-foreground mb-4">
               You can still enter the Eco-Hero competition and show off your energy work! 🌟
@@ -328,6 +361,7 @@ export function MissionBuilderSection() {
   return (
     <SectionShell>
       <Heading />
+      <AgeBadge ageBand={ageBand} />
 
       {!submitted && (
         <div className="max-w-3xl mx-auto mb-6 flex justify-center gap-3">
@@ -358,22 +392,13 @@ export function MissionBuilderSection() {
               "{getMissionText()}"
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                onClick={handleCopy}
-                className="bg-white text-primary border-4 border-white/50 font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform"
-              >
+              <button onClick={handleCopy} className="bg-white text-primary border-4 border-white/50 font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform">
                 {copied ? "✅ Copied!" : "📋 Copy to Clipboard"}
               </button>
-              <button
-                onClick={handlePrint}
-                className="bg-white text-primary border-4 border-white/50 font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform"
-              >
+              <button onClick={handlePrint} className="bg-white text-primary border-4 border-white/50 font-black px-6 py-3 rounded-xl comic-shadow hover:scale-105 transition-transform">
                 🖨️ Print Poster
               </button>
-              <button
-                onClick={reset}
-                className="bg-white/20 text-white border-4 border-white/50 font-black px-6 py-3 rounded-xl hover:bg-white/30 transition-colors"
-              >
+              <button onClick={reset} className="bg-white/20 text-white border-4 border-white/50 font-black px-6 py-3 rounded-xl hover:bg-white/30 transition-colors">
                 Start Again
               </button>
             </div>
@@ -390,7 +415,7 @@ export function MissionBuilderSection() {
                 <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your Energy-Saving Action</label>
                 <select value={action} onChange={(e) => setAction(e.target.value)}
                   className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg bg-white focus:outline-none focus:border-primary">
-                  {ACTIONS.map((a) => <option key={a} value={a}>{a}</option>)}
+                  {actions.map((a) => <option key={a} value={a}>{a}</option>)}
                 </select>
               </div>
               <div>
@@ -482,6 +507,19 @@ export function MissionBuilderSection() {
         )}
       </div>
     </SectionShell>
+  );
+}
+
+function AgeBadge({ ageBand }: { ageBand: string | null }) {
+  if (!ageBand) return null;
+  const band = AGE_BANDS.find((b) => b.id === ageBand);
+  if (!band) return null;
+  return (
+    <div className="flex justify-center mb-6">
+      <span className={`${band.color} border-4 rounded-full px-5 py-2 font-black text-foreground text-sm uppercase tracking-wide comic-shadow`}>
+        {band.emoji} {band.label} — {band.desc}
+      </span>
+    </div>
   );
 }
 

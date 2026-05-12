@@ -10,6 +10,7 @@ import { TipsSection } from "@/components/TipsSection";
 import { PrizesSection } from "@/components/PrizesSection";
 import { KeyDatesSection } from "@/components/KeyDatesSection";
 import { GoalSection } from "@/components/GoalSection";
+import { TeacherPacksSection } from "@/components/TeacherPacksSection";
 
 export default function Home() {
   return (
@@ -42,6 +43,9 @@ export default function Home() {
       </div>
       <div id="dates">
         <KeyDatesSection />
+      </div>
+      <div id="teacher-packs">
+        <TeacherPacksSection />
       </div>
       <GoalSection />
 
