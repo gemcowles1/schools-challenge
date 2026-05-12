@@ -43,7 +43,7 @@ export function TeacherPacksSection() {
             📦 TEACHER PACKS
           </h2>
           <p className="text-xl font-bold text-foreground/70">
-            Free interactive PDFs — download, fill in on-screen or print
+            Free fillable PDFs — download and complete on-screen or save to share
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">📄</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Pupil Worksheets</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              Differentiated for each age group. Fillable PDF — pupils can type answers directly or print and write.
+              Differentiated for each age group. Fillable PDF — pupils can type answers directly on-screen.
             </p>
             <div className="flex flex-col gap-2">
               <DownloadBtn onClick={() => downloadWorksheet("5-7")} color="bg-yellow-100 border-yellow-400">
@@ -74,7 +74,7 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">🏆</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Eco-Hero Certificate</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              Fillable PDF — type the pupil's name and school directly in the document, then print or share digitally.
+              Fillable PDF — type the pupil's name and school directly in the document, then save or share digitally.
             </p>
             <DownloadBtn onClick={downloadCertificate} color="bg-yellow-100 border-yellow-400">
               Download Eco-Hero Certificate
@@ -86,7 +86,7 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">📽️</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Assembly Slides</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              5 landscape A4 slides covering the challenge, prizes and next steps. Display on screen or print as a guide.
+              5 landscape A4 slides covering the challenge, prizes and next steps. Display on screen or share with your team.
             </p>
             <DownloadBtn onClick={downloadAssemblySlides} color="bg-blue-100 border-blue-400">
               Download Assembly Slides PDF
