@@ -9,7 +9,7 @@ export function NiheBadge({ className = "" }: { className?: string }) {
       <img
         src="/niseeap-logo.jpg"
         alt="NI Schools Energy Efficiency Awareness Programme"
-        className="h-[300px] w-auto object-contain"
+        className="h-[200px] w-auto object-contain"
       />
     </div>
   );
