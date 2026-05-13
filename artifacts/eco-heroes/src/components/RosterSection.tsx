@@ -5,45 +5,45 @@ const heroes: EcoHero[] = [
   {
     id: "electric-laoise",
     name: "Electric Laoise",
-    studentName: "Light Guardian",
-    power: "Lights out, planet saved!",
-    description: "Electric Laoise crackles with energy — literally! She patrols every hallway and classroom, zapping lights off the moment a room is empty. Nothing escapes her electric senses. Every watt saved is a win!",
+    studentName: "EV Champion",
+    power: "Converting NI's roads to electric!",
+    description: "Electric Laoise is on a mission to get diesel and petrol off Northern Ireland's roads for good. She champions electric vehicles and helps families and schools understand how switching to an EV can slash emissions and cut running costs. One conversion at a time, she's charging toward a cleaner future!",
     color: "bg-pink-300",
     imageSrc: "/hero-laoise.jpg"
   },
   {
-    id: "water",
-    name: "Water",
-    studentName: "Heat Keeper",
-    power: "Stay warm, waste less!",
-    description: "Calm, cool and in complete control — Water monitors every radiator and keeps heat exactly where it's needed. She makes sure doors and windows stay closed in winter, conserving precious warmth and energy.",
-    color: "bg-green-300",
+    id: "ashara",
+    name: "Ashara",
+    studentName: "Water Guardian",
+    power: "Every drop counts!",
+    description: "Calm, determined and crystal-clear in her mission — Ashara protects Northern Ireland's most precious resource: water. She teaches her school how to cut water waste, fix dripping taps and understand how saving water also saves the energy used to heat and pump it. Together, every drop counts!",
+    color: "bg-cyan-300",
     imageSrc: "/hero-water.jpg"
   },
   {
     id: "veggie-man",
     name: "Veggie Man",
-    studentName: "Renewable Ranger",
-    power: "Sun, wind and water power us!",
-    description: "Soaring above Northern Ireland's wind farms and solar panels, Veggie Man champions renewable energy. He teaches his classmates how the power of nature — sun, wind and water — can fuel our future cleanly!",
+    studentName: "Plant Power Hero",
+    power: "Save the planet, one meal at a time!",
+    description: "Veggie Man knows that what we eat matters as much as how we heat our homes. He champions vegetarian and vegan choices, showing exactly how much carbon is saved every time we swap meat for plants. One meal at a time, he's feeding a greener Northern Ireland!",
     color: "bg-yellow-300",
     imageSrc: "/hero-veggieman.jpg"
   },
   {
     id: "heather-ohare",
     name: "Heather O'Hare",
-    studentName: "Plug Puller",
-    power: "Standby is energy wasted!",
-    description: "With lightning-fast reflexes and a sixth sense for standby lights, Heather O'Hare pulls the plug on energy vampires! Tablets, smartboards, computers — nothing gets left on her watch.",
+    studentName: "Mind & Mine Keeper",
+    power: "Protect the land, protect each other!",
+    description: "Heather O'Hare has the biggest mission of all — looking after both the land beneath our feet and the wellbeing of the people above it. She champions the responsible use of Northern Ireland's natural resources and the mental health of her community. Strong land, strong minds!",
     color: "bg-purple-300",
     imageSrc: "/hero-heather.jpg"
   },
   {
     id: "kaizen-ken",
     name: "Kaizen Ken",
-    studentName: "Energy Auditor",
-    power: "We measure, we improve!",
-    description: "The brains behind the squad! Kaizen Ken tracks every unit of electricity and heating used in school. Armed with data and determination, he spots waste, charts progress and proves the Eco-Heroes are making a real difference.",
+    studentName: "Renewable Ranger",
+    power: "Wind, retrofit and renewables for all!",
+    description: "Kaizen Ken believes every improvement moves us forward. He promotes wind turbines, solar panels and home retrofits across Northern Ireland, helping families insulate their homes and switch to renewable energy. Better every day, stronger every way!",
     color: "bg-blue-300",
     imageSrc: "/hero-kaizen.jpg"
   }
