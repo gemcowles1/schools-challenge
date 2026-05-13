@@ -70,6 +70,7 @@ export function MissionBuilderSection() {
   const actions = ageBand ? ACTIONS_BY_AGE[ageBand] : ACTIONS_BY_AGE["8-11"];
 
   const [school, setSchool] = useState("");
+  const [postcode, setPostcode] = useState("");
   const [action, setAction] = useState(actions[0]);
   const [date, setDate] = useState("");
   const [freeText, setFreeText] = useState("");
@@ -111,7 +112,7 @@ export function MissionBuilderSection() {
     const missionText = getMissionText();
     const bandLabel = ageBand ? `Ages ${ageBand}` : "";
     const subject = encodeURIComponent(`Eco-Hero Mission Statement — ${school.trim() || "Our School"}${bandLabel ? " (" + bandLabel + ")" : ""}`);
-    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nAge Group: ${bandLabel || "Not specified"}\nSubmitted via Eco Heroes NI`);
+    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nAge Group: ${bandLabel || "Not specified"}\nSchool Postcode: ${postcode.trim() || "Not provided"}\nSubmitted via Eco Heroes NI`);
     window.open(`mailto:Nienergyadvice@nihe.gov.uk?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
     setConfetti(true);
@@ -200,6 +201,7 @@ export function MissionBuilderSection() {
     setFlagGreen(false);
     setFreeText("");
     setSchool("");
+    setPostcode("");
     setDate("");
     setWhyMatters("");
   }
@@ -406,10 +408,17 @@ export function MissionBuilderSection() {
         ) : missionMode === "builder" ? (
           <>
             <div className="bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow space-y-6 mb-6">
-              <div>
-                <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
-                <input type="text" value={school} onChange={(e) => setSchool(e.target.value)} placeholder="e.g. Oakgrove Integrated PS"
-                  className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary" />
+              <div className="flex gap-3">
+                <div className="flex-1">
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
+                  <input type="text" value={school} onChange={(e) => setSchool(e.target.value)} placeholder="e.g. Oakgrove Integrated PS"
+                    className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary" />
+                </div>
+                <div className="w-36">
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Postcode</label>
+                  <input type="text" value={postcode} onChange={(e) => setPostcode(e.target.value.toUpperCase())} placeholder="e.g. BT12 6AJ"
+                    className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary uppercase" />
+                </div>
               </div>
               <div>
                 <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your Energy-Saving Action</label>
@@ -451,15 +460,27 @@ export function MissionBuilderSection() {
         ) : (
           <>
             <div className="bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow mb-6 space-y-5">
-              <div>
-                <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
-                <input
-                  type="text"
-                  value={school}
-                  onChange={(e) => handleSchoolChangeFreetext(e.target.value)}
-                  placeholder="e.g. St. Mary's Primary School"
-                  className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary"
-                />
+              <div className="flex gap-3">
+                <div className="flex-1">
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
+                  <input
+                    type="text"
+                    value={school}
+                    onChange={(e) => handleSchoolChangeFreetext(e.target.value)}
+                    placeholder="e.g. St. Mary's Primary School"
+                    className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary"
+                  />
+                </div>
+                <div className="w-36">
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Postcode</label>
+                  <input
+                    type="text"
+                    value={postcode}
+                    onChange={(e) => setPostcode(e.target.value.toUpperCase())}
+                    placeholder="e.g. BT12 6AJ"
+                    className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary uppercase"
+                  />
+                </div>
               </div>
               <div>
                 <label className="block font-black text-foreground mb-3 uppercase tracking-wide text-lg">
