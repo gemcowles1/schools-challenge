@@ -7,7 +7,7 @@ import {
   downloadClassTracker,
 } from "@/lib/pdfGenerators";
 
-function DownloadBtn({
+function OpenBtn({
   onClick,
   children,
   color = "bg-white border-foreground",
@@ -27,8 +27,8 @@ function DownloadBtn({
       disabled={loading}
       className={`w-full ${color} border-4 font-black px-4 py-3 rounded-xl hover:scale-105 transition-transform text-left text-sm disabled:opacity-60 disabled:scale-100 flex items-center gap-2 comic-shadow`}
     >
-      <span>{loading ? "⏳" : "⬇️"}</span>
-      <span>{loading ? "Generating PDF…" : children}</span>
+      <span>{loading ? "⏳" : "📂"}</span>
+      <span>{loading ? "Opening…" : children}</span>
     </button>
   );
 }
@@ -43,7 +43,7 @@ export function TeacherPacksSection() {
             📦 TEACHER PACKS
           </h2>
           <p className="text-xl font-bold text-foreground/70">
-            Free fillable PDFs — download and complete on-screen or save to share
+            Free fillable resources — opens in a new tab, fill in on-screen and save as PDF
           </p>
         </div>
 
@@ -54,18 +54,18 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">📄</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Pupil Worksheets</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              Differentiated for each age group. Fillable PDF — pupils can type answers directly on-screen.
+              Differentiated for each age group. Fillable — pupils can type answers directly on-screen, then save as PDF.
             </p>
             <div className="flex flex-col gap-2">
-              <DownloadBtn onClick={() => downloadWorksheet("5-7")} color="bg-yellow-100 border-yellow-400">
+              <OpenBtn onClick={() => downloadWorksheet("5-7")} color="bg-yellow-100 border-yellow-400">
                 Ages 5–7 Worksheet (Foundation / KS1)
-              </DownloadBtn>
-              <DownloadBtn onClick={() => downloadWorksheet("8-11")} color="bg-green-100 border-primary">
+              </OpenBtn>
+              <OpenBtn onClick={() => downloadWorksheet("8-11")} color="bg-green-100 border-primary">
                 Ages 8–11 Worksheet (KS2)
-              </DownloadBtn>
-              <DownloadBtn onClick={() => downloadWorksheet("12-14")} color="bg-blue-100 border-blue-500">
+              </OpenBtn>
+              <OpenBtn onClick={() => downloadWorksheet("12-14")} color="bg-blue-100 border-blue-500">
                 Ages 12–14 Energy Audit Sheet (KS3)
-              </DownloadBtn>
+              </OpenBtn>
             </div>
           </div>
 
@@ -74,11 +74,11 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">🏆</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Eco-Hero Certificate</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              Fillable PDF — type the pupil's name and school directly in the document, then save or share digitally.
+              Fillable certificate — type the pupil's name and school directly on-screen, then save as PDF to share digitally.
             </p>
-            <DownloadBtn onClick={downloadCertificate} color="bg-yellow-100 border-yellow-400">
-              Download Eco-Hero Certificate
-            </DownloadBtn>
+            <OpenBtn onClick={downloadCertificate} color="bg-yellow-100 border-yellow-400">
+              Open Eco-Hero Certificate
+            </OpenBtn>
           </div>
 
           {/* Assembly Slides */}
@@ -86,11 +86,11 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">📽️</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Assembly Slides</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              5 landscape A4 slides covering the challenge, prizes and next steps. Display on screen or share with your team.
+              5 slides covering the challenge, prizes and next steps. Opens in a new tab — display on screen or save as PDF.
             </p>
-            <DownloadBtn onClick={downloadAssemblySlides} color="bg-blue-100 border-blue-400">
-              Download Assembly Slides PDF
-            </DownloadBtn>
+            <OpenBtn onClick={downloadAssemblySlides} color="bg-blue-100 border-blue-400">
+              Open Assembly Slides
+            </OpenBtn>
           </div>
 
           {/* Class Tracker */}
@@ -98,11 +98,11 @@ export function TeacherPacksSection() {
             <div className="text-5xl mb-3">📋</div>
             <h3 className="font-black text-2xl text-foreground font-display mb-1">Class Tracker Sheet</h3>
             <p className="text-foreground/60 font-medium text-sm mb-5">
-              Interactive A4 landscape PDF. Type pupil names, tick daily checkboxes, add the class mission statement and teacher notes — all in the document.
+              Fillable weekly tracker — type pupil names, tick daily checkboxes, add mission statement and teacher notes on-screen.
             </p>
-            <DownloadBtn onClick={downloadClassTracker} color="bg-green-100 border-primary">
-              Download Class Tracker PDF
-            </DownloadBtn>
+            <OpenBtn onClick={downloadClassTracker} color="bg-green-100 border-primary">
+              Open Class Tracker
+            </OpenBtn>
           </div>
 
         </div>
