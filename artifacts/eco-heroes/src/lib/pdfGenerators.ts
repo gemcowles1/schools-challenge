@@ -1,3 +1,13 @@
+/* Competition brand colours (matching index.css) */
+const GREEN  = "#25a244";   /* primary  hsl(142,71%,45%) */
+const NAVY   = "#0f1f3d";   /* foreground hsl(222,47%,11%) */
+const YELLOW = "#f5a800";   /* secondary hsl(45,93%,47%) */
+const LGREY  = "#f0fdf4";   /* light green tint */
+
+function logoUrl(file: string) {
+  return `${window.location.origin}${import.meta.env.BASE_URL}${file}`;
+}
+
 function openResource(html: string) {
   const w = window.open("", "_blank");
   if (!w) return;
@@ -5,48 +15,76 @@ function openResource(html: string) {
   w.document.close();
 }
 
+/* ── Shared CSS ─────────────────────────────────────────────────────────────*/
 const BASE_CSS = `
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, sans-serif; color: #111; background: #fff; }
+  body { font-family: Arial, sans-serif; color: ${NAVY}; background: #fff; }
+
+  /* Save bar */
   .save-bar {
-    background: #1a5c26; color: #fff; padding: 10px 20px;
-    display: flex; align-items: center; justify-content: space-between;
+    background: ${NAVY}; color: #fff; padding: 10px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
     print-color-adjust: exact; -webkit-print-color-adjust: exact;
   }
-  .save-bar span { font-size: 13px; }
+  .save-bar span { font-size: 12px; }
   .save-btn {
-    background: #fff; color: #1a5c26; border: none; padding: 6px 16px;
-    font-weight: bold; font-size: 13px; border-radius: 4px; cursor: pointer;
+    background: ${YELLOW}; color: ${NAVY}; border: none; padding: 6px 18px;
+    font-weight: 900; font-size: 13px; border-radius: 4px; cursor: pointer;
+    white-space: nowrap; flex-shrink: 0;
   }
-  .page { padding: 24px 32px; max-width: 800px; margin: 0 auto; }
-  .header {
-    background: #1a5c26; color: #fff; padding: 14px 20px; border-radius: 6px;
-    margin-bottom: 18px; print-color-adjust: exact; -webkit-print-color-adjust: exact;
+
+  /* Logo header */
+  .logo-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 24px; border-bottom: 3px solid ${GREEN};
+    background: #fff;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
   }
-  .header h1 { font-size: 18px; margin-bottom: 2px; }
-  .header p { font-size: 11px; color: #b2f0c0; }
-  .info-row { display: flex; gap: 20px; margin-bottom: 18px; flex-wrap: wrap; }
-  .info-field { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 120px; }
-  .info-field label { font-size: 10px; font-weight: bold; text-transform: uppercase; color: #555; }
+  .logo-bar img { height: 52px; width: auto; object-fit: contain; }
+  .logo-bar .centre { text-align: center; flex: 1; }
+  .logo-bar .centre h2 { font-size: 13px; font-weight: 900; color: ${NAVY}; letter-spacing: 1px; text-transform: uppercase; }
+  .logo-bar .centre p  { font-size: 10px; color: ${GREEN}; font-weight: bold; }
+
+  /* Section header */
+  .section-header {
+    background: ${GREEN}; color: #fff; padding: 12px 24px;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  .section-header h1 { font-size: 17px; font-weight: 900; }
+  .section-header p  { font-size: 10px; color: #b2f0c0; margin-top: 2px; }
+
+  .page { padding: 20px 24px 24px; max-width: 820px; margin: 0 auto; }
+
+  /* Form rows */
+  .info-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .info-field { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 110px; }
+  .info-field label { font-size: 9px; font-weight: bold; text-transform: uppercase; color: #555; }
   .info-field input, .info-field textarea {
-    border: 1px solid #bbb; border-radius: 4px; padding: 5px 8px;
-    font-size: 13px; font-family: Arial, sans-serif; width: 100%;
+    border: 1.5px solid #bbb; border-radius: 4px; padding: 5px 8px;
+    font-size: 12px; font-family: Arial; width: 100%; outline: none;
+    accent-color: ${GREEN};
   }
-  .question { margin-bottom: 16px; }
-  .question-label {
-    background: #edfbf0; border-left: 4px solid #1a5c26;
-    padding: 6px 10px; font-size: 12px; font-weight: bold;
-    color: #1a5c26; margin-bottom: 6px; border-radius: 0 4px 4px 0;
+  .info-field input:focus, .info-field textarea:focus { border-color: ${GREEN}; }
+
+  /* Questions */
+  .question { margin-bottom: 14px; }
+  .q-label {
+    background: ${LGREY}; border-left: 4px solid ${GREEN};
+    padding: 5px 10px; font-size: 11px; font-weight: bold; color: ${NAVY};
+    margin-bottom: 5px; border-radius: 0 4px 4px 0;
   }
   .answer-box {
-    border: 1px solid #bbb; border-radius: 4px; padding: 6px 8px;
-    font-size: 13px; font-family: Arial, sans-serif; width: 100%;
-    resize: none;
+    border: 1.5px solid #bbb; border-radius: 4px; padding: 6px 8px;
+    font-size: 12px; font-family: Arial; width: 100%; resize: none; outline: none;
   }
-  .footer {
-    margin-top: 24px; padding-top: 10px; border-top: 1px solid #ddd;
-    font-size: 10px; color: #888; text-align: center;
+  .answer-box:focus { border-color: ${GREEN}; }
+
+  /* Footer */
+  .page-footer {
+    margin-top: 20px; padding-top: 10px; border-top: 2px solid ${GREEN};
+    font-size: 9px; color: #888; text-align: center;
   }
+
   @media print {
     .save-bar { display: none; }
     body { margin: 0; }
@@ -54,19 +92,32 @@ const BASE_CSS = `
   }
 `;
 
+function logoBar(subtitle = "") {
+  return `
+  <div class="logo-bar">
+    <img src="${logoUrl("nihe-logo.jpg")}" alt="NI Housing Executive" />
+    <div class="centre">
+      <h2>NI Schools Energy Challenge 2026</h2>
+      <p>${subtitle || "Sponsored by NI Housing Executive / NIEAS"}</p>
+    </div>
+    <img src="${logoUrl("niseeap-logo.jpg")}" alt="NI Schools Energy Efficiency Awareness Programme" />
+  </div>`;
+}
+
 function saveBar() {
   return `<div class="save-bar">
-    <span>✅ This page is ready — fill it in here, or save it as a PDF to share.</span>
+    <span>✅ Fill in on-screen, then click Save as PDF to keep a copy.</span>
     <button class="save-btn" onclick="window.print()">💾 Save as PDF</button>
   </div>`;
 }
 
-function footer() {
-  return `<div class="footer">Sponsored by NI Housing Executive / NIEAS · Eco-Schools Northern Ireland · Energy Challenge 2026</div>`;
+function pageFooter() {
+  return `<div class="page-footer">
+    Sponsored by NI Housing Executive / NIEAS Energy Awareness Programme · Eco-Schools Northern Ireland · eco-energy-challenge.replit.app
+  </div>`;
 }
 
-// ── WORKSHEETS ───────────────────────────────────────────────────────────────
-
+/* ── WORKSHEETS ─────────────────────────────────────────────────────────────*/
 type AgeBand = "5-7" | "8-11" | "12-14";
 
 const WORKSHEET_CONFIG: Record<AgeBand, {
@@ -110,7 +161,7 @@ export function downloadWorksheet(age: AgeBand): Promise<void> {
   const cfg = WORKSHEET_CONFIG[age];
   const questions = cfg.questions.map(q => `
     <div class="question">
-      <div class="question-label">${q.label}</div>
+      <div class="q-label">${q.label}</div>
       <textarea class="answer-box" rows="${q.lines}" placeholder="Write your answer here…"></textarea>
     </div>`).join("");
 
@@ -118,82 +169,86 @@ export function downloadWorksheet(age: AgeBand): Promise<void> {
     <meta charset="UTF-8"><title>${cfg.title}</title>
     <style>${BASE_CSS}</style></head><body>
     ${saveBar()}
+    ${logoBar(cfg.badge)}
+    <div class="section-header">
+      <h1>${cfg.title}</h1>
+      <p>Eco-Schools Northern Ireland — Energy Challenge 2026</p>
+    </div>
     <div class="page">
-      <div class="header">
-        <h1>${cfg.title}</h1>
-        <p>Eco-Schools NI — Energy Challenge 2026 · ${cfg.badge}</p>
-      </div>
       <div class="info-row">
-        <div class="info-field"><label>Name</label><input type="text" placeholder="Pupil name"/></div>
-        <div class="info-field"><label>Class</label><input type="text" placeholder="Class"/></div>
+        <div class="info-field"><label>Pupil Name</label><input type="text" placeholder="Full name"/></div>
+        <div class="info-field"><label>Class</label><input type="text" placeholder="e.g. P5B"/></div>
+        <div class="info-field"><label>School</label><input type="text" placeholder="School name"/></div>
         <div class="info-field"><label>Date</label><input type="date"/></div>
       </div>
       ${questions}
-      ${footer()}
+      ${pageFooter()}
     </div></body></html>`);
   return Promise.resolve();
 }
 
-// ── CERTIFICATE ──────────────────────────────────────────────────────────────
-
+/* ── CERTIFICATE ─────────────────────────────────────────────────────────────*/
 export function downloadCertificate(): Promise<void> {
   openResource(`<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8"><title>Eco-Hero Certificate</title>
     <style>${BASE_CSS}
-      .cert { border: 6px solid #1a5c26; border-radius: 12px; padding: 36px; max-width: 680px; margin: 24px auto; text-align: center; }
-      .cert-header { background: #1a5c26; color: #fff; padding: 20px; border-radius: 6px; margin-bottom: 28px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .cert-header .stars { font-size: 24px; margin-bottom: 6px; }
-      .cert-header h1 { font-size: 28px; }
-      .cert-header p { font-size: 11px; color: #b2f0c0; }
-      .cert-field { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 16px auto; max-width: 400px; }
-      .cert-field label { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; }
-      .cert-field input { border: none; border-bottom: 2px solid #1a5c26; width: 100%; text-align: center; font-size: 20px; font-weight: bold; padding: 6px; outline: none; color: #1a5c26; }
-      .cert-body { font-size: 14px; font-style: italic; color: #444; margin: 8px 0; }
-      .cert-challenge { font-weight: bold; color: #1a5c26; font-size: 15px; margin: 14px 0; }
-      .laptops { font-size: 28px; margin: 16px 0; }
-      .sig-row { display: flex; gap: 20px; margin-top: 28px; }
-      .sig-field { flex: 1; display: flex; flex-direction: column; gap: 4px; }
-      .sig-field label { font-size: 10px; font-weight: bold; text-transform: uppercase; color: #888; }
-      .sig-field input { border: none; border-bottom: 1px solid #aaa; padding: 4px; font-size: 13px; width: 100%; outline: none; }
+      .cert-wrap { max-width: 680px; margin: 20px auto; border: 6px solid ${GREEN}; border-radius: 12px; overflow: hidden; }
+      .cert-body  { padding: 28px 36px; text-align: center; }
+      .stars      { font-size: 26px; color: ${YELLOW}; margin-bottom: 6px; letter-spacing: 8px; }
+      .cert-title { font-size: 30px; font-weight: 900; color: ${NAVY}; margin-bottom: 4px; }
+      .cert-sub   { font-size: 12px; color: ${GREEN}; font-weight: bold; margin-bottom: 24px; }
+      .certifies  { font-size: 13px; font-style: italic; color: #555; margin-bottom: 8px; }
+      .cert-name-field { border: none; border-bottom: 2.5px solid ${GREEN}; width: 80%; text-align: center;
+        font-size: 22px; font-weight: 900; color: ${GREEN}; padding: 6px; outline: none; margin: 0 auto 6px; display: block; }
+      .cert-label { font-size: 9px; text-transform: uppercase; color: #aaa; font-weight: bold; margin-bottom: 16px; }
+      .cert-mid   { font-size: 13px; font-style: italic; color: #555; margin-bottom: 8px; }
+      .cert-challenge { font-size: 14px; font-weight: 900; color: ${NAVY}; margin: 16px 0; }
+      .cert-challenge span { color: ${GREEN}; }
+      .laptops    { font-size: 30px; letter-spacing: 4px; margin: 12px 0; }
+      .sig-row    { display: flex; gap: 24px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 20px; }
+      .sig-field  { flex: 1; display: flex; flex-direction: column; gap: 4px; text-align: left; }
+      .sig-field label { font-size: 9px; text-transform: uppercase; color: #aaa; font-weight: bold; }
+      .sig-field input { border: none; border-bottom: 1.5px solid #bbb; padding: 4px; font-size: 13px; width: 100%; outline: none; }
+      .sig-field input:focus { border-color: ${GREEN}; }
+      .yellow-band { background: ${YELLOW}; padding: 8px 24px; text-align: center;
+        font-size: 11px; font-weight: 900; color: ${NAVY}; letter-spacing: 1px;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact; }
     </style></head><body>
     ${saveBar()}
+    ${logoBar("Eco-Hero Award Certificate")}
     <div class="page">
-      <div class="cert">
-        <div class="cert-header">
-          <div class="stars">★  ★  ★</div>
-          <p>Eco-Schools Northern Ireland</p>
-          <h1>Eco-Hero Certificate</h1>
-        </div>
-        <p class="cert-body">This certifies that</p>
-        <div class="cert-field">
-          <input type="text" placeholder="Pupil's full name"/>
-          <label>Pupil Name</label>
-        </div>
-        <p class="cert-body">has shown outstanding commitment to energy saving at</p>
-        <div class="cert-field">
-          <input type="text" placeholder="School name"/>
-          <label>School Name</label>
-        </div>
-        <p class="cert-challenge">as part of the NI Schools Energy Challenge 2026</p>
-        <div class="laptops">💻  💻  💻  💻  💻</div>
-        <div class="sig-row">
-          <div class="sig-field">
-            <input type="text" placeholder="Teacher signature"/>
-            <label>Teacher Signature</label>
-          </div>
-          <div class="sig-field">
-            <input type="date"/>
-            <label>Date</label>
+      <div class="cert-wrap">
+        <div class="yellow-band">⭐ &nbsp; NI SCHOOLS ENERGY CHALLENGE 2026 &nbsp; ⭐</div>
+        <div class="cert-body">
+          <div class="stars">★ &nbsp; ★ &nbsp; ★</div>
+          <div class="cert-title">Eco-Hero Certificate</div>
+          <div class="cert-sub">Eco-Schools Northern Ireland</div>
+          <p class="certifies">This certifies that</p>
+          <input type="text" class="cert-name-field" placeholder="Pupil's full name"/>
+          <div class="cert-label">Pupil Name</div>
+          <p class="cert-mid">has shown outstanding commitment to energy saving at</p>
+          <input type="text" class="cert-name-field" placeholder="School name"/>
+          <div class="cert-label">School Name</div>
+          <p class="cert-challenge">as part of the <span>NI Schools Energy Challenge 2026</span></p>
+          <div class="laptops">💻 💻 💻 💻 💻</div>
+          <div class="sig-row">
+            <div class="sig-field">
+              <label>Teacher Signature</label>
+              <input type="text" placeholder="Signature"/>
+            </div>
+            <div class="sig-field">
+              <label>Date Awarded</label>
+              <input type="date"/>
+            </div>
           </div>
         </div>
       </div>
-      ${footer()}
+      ${pageFooter()}
     </div></body></html>`);
   return Promise.resolve();
 }
 
-// ── ASSEMBLY SLIDES ──────────────────────────────────────────────────────────
-
+/* ── ASSEMBLY SLIDES ─────────────────────────────────────────────────────────*/
 const SLIDES = [
   { title: "Our School Eco-Heroes", emoji: "🌿", bullets: ["Welcome to the NI Schools Energy Challenge 2026", "Sponsored by NI Housing Executive & NIEAS", "💻 5 Laptops to Win for 5 Schools!", "⭐ Points towards your Eco-Schools Green Flag", "🎟 Free competition entry"] },
   { title: "Why Does Energy Matter?", emoji: "⚡", bullets: ["Schools in NI spend £millions on energy every year", "68% of NI homes use oil — the highest rate in the UK", "Energy use creates CO₂ — heating our planet", "Simple actions can cut school energy bills by 10–20%", "That money could fund books, trips & equipment!"] },
@@ -207,67 +262,73 @@ export function downloadAssemblySlides(): Promise<void> {
     <div class="slide" style="${i > 0 ? "page-break-before:always;" : ""}">
       <div class="slide-header">
         <span class="slide-emoji">${slide.emoji}</span>
-        <div>
+        <div class="slide-title-wrap">
           <div class="slide-title">${slide.title}</div>
           <div class="slide-sub">NI Schools Energy Challenge 2026 · Eco-Schools Northern Ireland</div>
         </div>
         <span class="slide-num">${i + 1} / ${SLIDES.length}</span>
       </div>
       <div class="slide-body">
-        ${slide.bullets.map(b => `<div class="bullet ${b.startsWith("💻") ? "highlight" : ""}">${b}</div>`).join("")}
+        ${slide.bullets.map(b => `<div class="bullet ${b.startsWith("💻") ? "hi" : b.startsWith('"') || b.startsWith("so") ? "quote" : ""}">${b}</div>`).join("")}
       </div>
     </div>`).join("");
 
   openResource(`<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8"><title>Assembly Slides — Eco-Heroes Energy Challenge</title>
+    <meta charset="UTF-8"><title>Assembly Slides — NI Schools Energy Challenge 2026</title>
     <style>${BASE_CSS}
-      .slide { border: 3px solid #1a5c26; border-radius: 8px; margin: 24px auto; max-width: 760px; overflow: hidden; background: #f4fff6; }
-      .slide-header { background: #1a5c26; color: #fff; padding: 18px 20px; display: flex; align-items: center; gap: 16px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .slide-emoji { font-size: 36px; }
-      .slide-title { font-size: 22px; font-weight: bold; }
-      .slide-sub { font-size: 10px; color: #b2f0c0; }
-      .slide-num { margin-left: auto; font-size: 12px; color: #b2f0c0; white-space: nowrap; }
-      .slide-body { padding: 20px 24px; }
-      .bullet { font-size: 16px; padding: 8px 12px; margin-bottom: 6px; border-radius: 4px; }
-      .bullet.highlight { background: #fffde0; font-weight: bold; font-size: 18px; }
+      .slide { border: 3px solid ${GREEN}; border-radius: 8px; margin: 20px auto; max-width: 780px; overflow: hidden; background: ${LGREY}; }
+      .slide-header { background: ${NAVY}; color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 16px;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .slide-emoji  { font-size: 38px; flex-shrink: 0; }
+      .slide-title  { font-size: 22px; font-weight: 900; color: ${YELLOW}; }
+      .slide-sub    { font-size: 10px; color: #a0c4ff; margin-top: 2px; }
+      .slide-num    { margin-left: auto; font-size: 11px; color: #aaa; white-space: nowrap; flex-shrink: 0; }
+      .slide-body   { padding: 18px 24px; }
+      .bullet       { font-size: 15px; padding: 8px 12px; margin-bottom: 5px; border-radius: 4px; color: ${NAVY}; }
+      .bullet.hi    { background: ${YELLOW}; font-weight: 900; font-size: 17px; color: ${NAVY};
+        print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .bullet.quote { color: ${GREEN}; font-style: italic; font-weight: bold; padding-left: 24px; }
     </style></head><body>
     ${saveBar()}
-    <div class="page">${slides}${footer()}</div>
+    ${logoBar("Assembly Guide — Eco-Schools NI")}
+    <div class="page">${slides}${pageFooter()}</div>
     </body></html>`);
   return Promise.resolve();
 }
 
-// ── CLASS TRACKER ────────────────────────────────────────────────────────────
-
+/* ── CLASS TRACKER ───────────────────────────────────────────────────────────*/
 export function downloadClassTracker(): Promise<void> {
   const rows = Array.from({ length: 12 }, (_, i) => `
-    <tr style="background:${i % 2 === 0 ? "#f4fff6" : "#fff"}">
-      <td><input type="text" placeholder="Pupil ${i + 1} name" style="width:100%;border:none;border-bottom:1px solid #ccc;padding:3px;font-size:12px;outline:none;"/></td>
-      ${["Mon","Tue","Wed","Thu","Fri"].map(d => `<td style="text-align:center"><input type="checkbox" title="${d}"/></td>`).join("")}
+    <tr style="background:${i % 2 === 0 ? LGREY : "#fff"}">
+      <td><input type="text" placeholder="Pupil ${i + 1} name" style="width:100%;border:none;border-bottom:1px solid #ccc;padding:3px;font-size:11px;outline:none;font-family:Arial;"/></td>
+      ${["Mon","Tue","Wed","Thu","Fri"].map(() => `<td style="text-align:center"><input type="checkbox" style="accent-color:${GREEN};width:16px;height:16px;"/></td>`).join("")}
     </tr>`).join("");
 
   openResource(`<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8"><title>Class Eco Tracker</title>
+    <meta charset="UTF-8"><title>Class Eco Tracker — Energy Challenge 2026</title>
     <style>${BASE_CSS}
-      table { width: 100%; border-collapse: collapse; margin-top: 14px; }
-      th { background: #1a5c26; color: #fff; padding: 8px 10px; font-size: 12px; text-align: center; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; }
+      th { background: ${NAVY}; color: #fff; padding: 8px 10px; font-size: 11px; text-align: center;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact; }
       th:first-child { text-align: left; }
-      td { padding: 6px 10px; border-bottom: 1px solid #e0e0e0; font-size: 12px; }
-      .meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
-      .meta-field { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 120px; }
-      .meta-field label { font-size: 10px; font-weight: bold; text-transform: uppercase; color: #555; }
-      .meta-field input { border: 1px solid #bbb; border-radius: 4px; padding: 4px 8px; font-size: 12px; width: 100%; }
-      .bottom-row { display: flex; gap: 16px; margin-top: 16px; }
-      .bottom-box { flex: 1; border: 1px solid #1a5c26; border-radius: 6px; padding: 10px; background: #f4fff6; }
-      .bottom-box label { font-size: 10px; font-weight: bold; text-transform: uppercase; color: #1a5c26; display: block; margin-bottom: 4px; }
-      .bottom-box textarea { width: 100%; border: none; background: transparent; font-size: 12px; font-family: Arial; resize: none; outline: none; }
+      td { padding: 5px 10px; border-bottom: 1px solid #e0e0e0; }
+      .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+      .meta-field { flex: 1; min-width: 110px; display: flex; flex-direction: column; gap: 3px; }
+      .meta-field label { font-size: 9px; font-weight: bold; text-transform: uppercase; color: #555; }
+      .meta-field input { border: 1.5px solid #bbb; border-radius: 4px; padding: 4px 8px; font-size: 12px; width: 100%; outline: none; }
+      .meta-field input:focus { border-color: ${GREEN}; }
+      .bottom-row { display: flex; gap: 14px; margin-top: 14px; }
+      .bottom-box { flex: 1; border: 2px solid ${GREEN}; border-radius: 6px; padding: 10px; background: ${LGREY}; }
+      .bottom-box label { font-size: 9px; font-weight: bold; text-transform: uppercase; color: ${GREEN}; display: block; margin-bottom: 4px; }
+      .bottom-box textarea { width: 100%; border: none; background: transparent; font-size: 11px; font-family: Arial; resize: none; outline: none; }
     </style></head><body>
     ${saveBar()}
+    ${logoBar("Weekly Class Energy Tracker")}
+    <div class="section-header">
+      <h1>📋 Class Eco Tracker — Weekly Energy-Saving Habits</h1>
+      <p>NI Schools Energy Challenge 2026</p>
+    </div>
     <div class="page">
-      <div class="header">
-        <h1>📋 Class Eco Tracker — Weekly Energy-Saving Habits</h1>
-        <p>NI Schools Energy Challenge 2026</p>
-      </div>
       <div class="meta">
         <div class="meta-field"><label>Class</label><input type="text" placeholder="e.g. 6B"/></div>
         <div class="meta-field"><label>Teacher</label><input type="text" placeholder="Teacher name"/></div>
@@ -275,7 +336,7 @@ export function downloadClassTracker(): Promise<void> {
       </div>
       <table>
         <thead><tr>
-          <th style="width:40%">Pupil Name</th>
+          <th style="width:42%">Pupil Name</th>
           <th>Mon ✓</th><th>Tue ✓</th><th>Wed ✓</th><th>Thu ✓</th><th>Fri ✓</th>
         </tr></thead>
         <tbody>${rows}</tbody>
@@ -290,7 +351,7 @@ export function downloadClassTracker(): Promise<void> {
           <textarea rows="3" placeholder="Notes for next week…"></textarea>
         </div>
       </div>
-      ${footer()}
+      ${pageFooter()}
     </div></body></html>`);
   return Promise.resolve();
 }
