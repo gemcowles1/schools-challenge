@@ -53,3 +53,9 @@ id = "fswcUIT8IS9H1YBPY4vMy"
 uri = "file://eco-heroes-export.tar"
 type = "unspecified"
 title = "eco-heroes-export.tar"
+
+[[outputs]]
+id = "z_mdOjLobhDoD2CA5dQja"
+uri = "file://artifacts/eco-heroes/dist/standalone/eco-heroes-standalone.tar.gz"
+type = "unspecified"
+title = "Eco Heroes — Standalone HTML (compressed)"
