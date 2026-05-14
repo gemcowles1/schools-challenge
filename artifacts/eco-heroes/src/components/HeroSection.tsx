@@ -3,7 +3,7 @@ import { NiheBadge } from "./NiheBadge";
 
 export function HeroSection() {
   return (
-    <section className="relative pb-16 md:pb-24 overflow-hidden">
+    <section className="relative pb-6 md:pb-10 overflow-hidden">
       <NiheBadge />
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full mix-blend-multiply filter blur-2xl animate-float"></div>
@@ -83,6 +83,9 @@ export function HeroSection() {
             <div className="text-center mt-6">
               <p className="text-6xl md:text-8xl font-black font-display text-secondary drop-shadow-[4px_4px_0_hsl(var(--primary))] animate-bounce">
                 WE'RE BACK!!
+              </p>
+              <p className="mt-4 text-base md:text-lg font-bold text-foreground/70 max-w-xl mx-auto leading-snug">
+                Write your school's Eco-Hero mission statement, earn points towards your <span className="text-primary font-black">Eco-Schools Green Flag</span>, and be in with a chance to win one of <span className="text-secondary font-black">5 laptops</span> for your Eco-Committee.
               </p>
             </div>
           </div>
