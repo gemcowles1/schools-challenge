@@ -59,3 +59,9 @@ id = "z_mdOjLobhDoD2CA5dQja"
 uri = "file://artifacts/eco-heroes/dist/standalone/eco-heroes-standalone.tar.gz"
 type = "unspecified"
 title = "Eco Heroes — Standalone HTML (compressed)"
+
+[[outputs]]
+id = "2pxOirU3fOWIRh9Y16nI8"
+uri = "file://artifacts/eco-heroes/dist/standalone/eco-heroes-full.tar.gz"
+type = "unspecified"
+title = "Eco Heroes — Full Standalone HTML (all images included)"
