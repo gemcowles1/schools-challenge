@@ -36,7 +36,7 @@ export function HeroSection() {
                 Our Eco-Hero Competition
               </p>
               <p className="text-xs md:text-sm font-bold text-red-400 mt-2 animate-pulse tracking-wide uppercase whitespace-nowrap">
-                ⚠️ Self destructs in 1 week! ⚠️
+                ⚠️ Closes Fri 12 June! ⚠️
               </p>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-primary drop-shadow-[0_4px_0_hsl(var(--foreground))]">
