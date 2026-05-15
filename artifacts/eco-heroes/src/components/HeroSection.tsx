@@ -60,12 +60,12 @@ export function HeroSection() {
                 The Eco-Hero Mission
               </h2>
               <div className="space-y-3 text-lg md:text-xl font-bold text-foreground leading-relaxed">
-                <p>We switch off the lights when we leave the room, 💡</p>
-                <p>We turn down the heat to stop the planet's doom, 🌡️</p>
-                <p>We unplug our chargers at the end of the day, 🔌</p>
-                <p>We choose green energy every single way, 🌿</p>
+                <p>We switch off the lights when we leave the room, ✋</p>
+                <p>We turn down the heat to stop the planet's doom, 🧥</p>
+                <p>We unplug our chargers at the end of the day, ⚡</p>
+                <p>We choose green energy every single way, ☀️</p>
                 <p className="text-2xl md:text-3xl text-primary mt-6 uppercase">
-                  Together we heroes keep waste away! 🦸‍♂️🦸‍♀️
+                  Together we heroes keep waste away! 💪🌍
                 </p>
               </div>
               <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border-4 border-foreground comic-shadow bg-white overflow-hidden animate-wiggle">
