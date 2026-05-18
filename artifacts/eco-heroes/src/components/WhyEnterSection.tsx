@@ -42,12 +42,15 @@ export function WhyEnterSection() {
           <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
             WHY ENTER?
           </h2>
-          <p className="text-2xl font-black text-foreground mb-2">
-            💻 Win one of <span className="text-secondary">5 Laptops</span> for your school
+          <p className="text-2xl font-black text-foreground mb-4">
+            💻 WIN ONE OF <span className="text-secondary">5X LAPTOPS</span> for your school
           </p>
-          <p className="text-xl font-bold text-foreground/70">
-            Earn points towards your Eco-Flag · Free competition entry · Pupil voice in action
-          </p>
+          <p className="text-lg font-bold text-foreground/70 mb-1">Earn points towards:</p>
+          <div className="flex flex-wrap justify-center gap-3 mt-2">
+            <span className="bg-primary text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">⭐ Your Eco-Flag</span>
+            <span className="bg-accent text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">🎟 Free Entry</span>
+            <span className="bg-secondary text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">📣 Pupil Voice in Action</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
