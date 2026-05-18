@@ -42,8 +42,8 @@ const BASE_CSS = `
   }
   .logo-bar img { height: 52px; width: auto; object-fit: contain; }
   .logo-bar .centre { text-align: center; flex: 1; }
-  .logo-bar .centre h2 { font-size: 13px; font-weight: 900; color: ${NAVY}; letter-spacing: 1px; text-transform: uppercase; }
-  .logo-bar .centre p  { font-size: 10px; color: ${GREEN}; font-weight: bold; }
+  .logo-bar .centre h2 { font-size: 20px; font-weight: 900; color: ${NAVY}; letter-spacing: 1px; text-transform: uppercase; }
+  .logo-bar .centre p  { font-size: 15px; color: ${GREEN}; font-weight: bold; }
 
   /* Section header */
   .section-header {
