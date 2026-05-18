@@ -91,7 +91,7 @@ export function SavingsCalculatorSection() {
           </div>
 
           <p className="text-center text-sm text-foreground/40 font-medium mt-4">
-            * Estimates based on typical NI primary school energy data. Actual savings will vary.
+            Estimates based on typical schools energy data (and Energy Saving Trust). Actual savings will vary.
           </p>
         </div>
       </div>
