@@ -276,21 +276,21 @@ export function downloadAssemblySlides(): Promise<void> {
   openResource(`<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8"><title>Assembly Slides — NI Schools Energy Challenge 2026</title>
     <style>${BASE_CSS}
-      .slide { border: 3px solid ${GREEN}; border-radius: 8px; margin: 20px auto; max-width: 780px; overflow: hidden; background: ${LGREY}; }
-      .slide-header { background: ${NAVY}; color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 16px;
+      .slide { border: 4px solid ${NAVY}; border-radius: 10px; margin: 24px auto; max-width: 780px; overflow: hidden; background: #fff; box-shadow: 4px 4px 0 ${GREEN}; }
+      .slide-header { background: ${NAVY}; color: #fff; padding: 18px 24px; display: flex; align-items: center; gap: 16px;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact; border-bottom: 5px solid ${GREEN}; }
+      .slide-emoji  { font-size: 40px; flex-shrink: 0; }
+      .slide-title  { font-size: 24px; font-weight: 900; color: ${YELLOW}; letter-spacing: 0.5px; }
+      .slide-sub    { font-size: 11px; color: #7ec8e3; margin-top: 3px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+      .slide-num    { margin-left: auto; font-size: 12px; color: ${YELLOW}; white-space: nowrap; flex-shrink: 0; font-weight: bold; }
+      .slide-body   { padding: 20px 28px; background: #fff; }
+      .bullet       { font-size: 15px; padding: 9px 14px; margin-bottom: 6px; border-radius: 6px; color: ${NAVY}; border-left: 4px solid ${GREEN}; background: #f8fffe; }
+      .bullet.hi    { background: ${YELLOW}; font-weight: 900; font-size: 18px; color: ${NAVY}; border-left: 4px solid ${NAVY}; letter-spacing: 1px;
         print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .slide-emoji  { font-size: 38px; flex-shrink: 0; }
-      .slide-title  { font-size: 22px; font-weight: 900; color: ${YELLOW}; }
-      .slide-sub    { font-size: 10px; color: #a0c4ff; margin-top: 2px; }
-      .slide-num    { margin-left: auto; font-size: 11px; color: #aaa; white-space: nowrap; flex-shrink: 0; }
-      .slide-body   { padding: 18px 24px; }
-      .bullet       { font-size: 15px; padding: 8px 12px; margin-bottom: 5px; border-radius: 4px; color: ${NAVY}; }
-      .bullet.hi    { background: ${YELLOW}; font-weight: 900; font-size: 17px; color: ${NAVY};
-        print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .bullet.quote { color: ${GREEN}; font-style: italic; font-weight: bold; padding-left: 24px; }
+      .bullet.quote { color: ${GREEN}; font-style: italic; font-weight: bold; padding-left: 24px; border-left: 4px solid ${YELLOW}; background: #f0fdf4; }
     </style></head><body>
     ${saveBar()}
-    ${logoBar("Assembly Guide — Eco-Schools NI")}
+    ${logoBar("Schools Energy Competition — Assembly Slides")}
     <div class="page">${slides}${pageFooter()}</div>
     </body></html>`);
   return Promise.resolve();

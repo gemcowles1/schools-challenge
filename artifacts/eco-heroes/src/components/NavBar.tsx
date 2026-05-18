@@ -39,7 +39,7 @@ export function NavBar() {
           onClick={() => scrollTo("#home")}
           className="font-black text-secondary text-lg font-display tracking-wide hover:text-primary transition-colors"
         >
-          🌿 ECO-HEROES
+          🌿 Eco-Heroes Competition
         </button>
 
         {/* Desktop links */}

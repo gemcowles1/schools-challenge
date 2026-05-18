@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NiheBadge } from "./NiheBadge";
 
-const DEADLINE = new Date("2026-06-15T23:59:59");
+const DEADLINE = new Date("2026-06-16T23:59:59");
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -23,9 +23,9 @@ function useCountdown(target: Date) {
 }
 
 const dates = [
-  { date: "Mon 18 May", label: "Competition Opens", emoji: "🚀", rotate: "-rotate-1" },
-  { date: "Fri 15 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
-  { date: "17 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
+  { date: "Weds 20 May", label: "Competition Opens", emoji: "🚀", rotate: "-rotate-1" },
+  { date: "Tues 16 June", label: "Submissions Close", emoji: "📬", rotate: "rotate-1" },
+  { date: "Thurs 18 June", label: "Winners Announced", emoji: "🏆", rotate: "-rotate-1" },
 ];
 
 function Pad(n: number) {

@@ -47,9 +47,9 @@ export function WhyEnterSection() {
           </p>
           <p className="text-lg font-bold text-foreground/70 mb-1">Earn points towards:</p>
           <div className="flex flex-wrap justify-center gap-3 mt-2">
-            <span className="bg-primary text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">⭐ Your Eco-Flag</span>
-            <span className="bg-accent text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">🎟 Free Entry</span>
-            <span className="bg-secondary text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">📣 Pupil Voice in Action</span>
+            <span className="bg-primary text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">Your Eco-Flag</span>
+            <span className="bg-accent text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">Free Entry</span>
+            <span className="bg-secondary text-white font-black px-4 py-2 rounded-full uppercase tracking-wide">Pupil Voice in Action</span>
           </div>
         </div>
 
