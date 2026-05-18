@@ -36,7 +36,7 @@ export function HeroSection() {
                 Our Eco-Hero Competition
               </p>
               <p className="text-xs md:text-sm font-bold text-red-400 mt-2 animate-pulse tracking-wide uppercase whitespace-nowrap">
-                ⚠️ This message will self-destruct by Thurs 16 June ⚠️
+                ⚠️ This message will self-destruct<br /><span className="whitespace-nowrap">by Thurs 16 June ⚠️</span>
               </p>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-primary drop-shadow-[0_4px_0_hsl(var(--foreground))]">
