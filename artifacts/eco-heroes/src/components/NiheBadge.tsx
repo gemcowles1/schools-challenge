@@ -8,7 +8,7 @@ export function NiheBadge({ className = "" }: { className?: string }) {
       />
       <div className="text-center px-4">
         <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Sponsored by<br /><span className="whitespace-nowrap">NI Energy Advice Service</span></p>
-        <h2 className="text-2xl md:text-4xl font-black uppercase tracking-wide text-gray-800 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wide text-gray-800 leading-tight">
           Schools Energy<br />Competition
         </h2>
       </div>

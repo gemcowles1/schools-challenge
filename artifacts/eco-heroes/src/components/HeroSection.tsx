@@ -26,7 +26,7 @@ export function HeroSection() {
               <span className="text-foreground/30 mx-2">·</span>
               <span className="text-primary">Eco-Flag Points</span>
               <span className="text-foreground/30 mx-2">·</span>
-              <span className="text-accent">Free Entry</span>
+              <span className="text-accent whitespace-nowrap">Free Entry</span>
             </p>
             <div className="mb-5 bg-foreground text-background rounded-2xl px-4 md:px-6 py-4 block w-full max-w-sm mx-auto border-4 border-foreground comic-shadow">
               <p className="text-xs md:text-base font-bold tracking-wide uppercase text-background/70 mb-1 text-balance">
