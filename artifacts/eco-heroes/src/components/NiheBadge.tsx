@@ -2,7 +2,7 @@ export function NiheBadge({ className = "" }: { className?: string }) {
   return (
     <div className={`relative z-10 bg-white border-b-2 border-gray-100 flex items-center justify-between px-2 md:px-8 py-3 ${className}`}>
       <img
-        src="/nihe-logo.jpg"
+        src={`${import.meta.env.BASE_URL}eco-heroes-export/images/nihe-logo.jpg`}
         alt="NI Housing Executive"
         className="h-[40px] md:h-[60px] w-auto object-contain flex-shrink-0"
       />
@@ -13,7 +13,7 @@ export function NiheBadge({ className = "" }: { className?: string }) {
         </h2>
       </div>
       <img
-        src="/niseeap-logo.jpg"
+        src={`${import.meta.env.BASE_URL}eco-heroes-export/images/niseeap-logo.jpg`}
         alt="NI Schools Energy Efficiency Awareness Programme"
         className="hidden sm:block h-[80px] md:h-[200px] w-auto object-contain flex-shrink-0"
       />

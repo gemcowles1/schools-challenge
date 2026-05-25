@@ -1,6 +1,8 @@
 import { EcoHero, HeroCard } from "./HeroCard";
 import { NiheBadge } from "./NiheBadge";
 
+const IMG = (name: string) => `${import.meta.env.BASE_URL}eco-heroes-export/images/${name}`;
+
 const heroes: EcoHero[] = [
   {
     id: "electric-laoise",
@@ -9,7 +11,7 @@ const heroes: EcoHero[] = [
     power: "Converting NI's roads to electric!",
     description: "Electric Laoise is on a mission to get diesel and petrol off Northern Ireland's roads for good. She champions electric vehicles and helps families and schools understand how switching to an EV can slash emissions and cut running costs. One conversion at a time, she's charging toward a cleaner future!",
     color: "bg-pink-300",
-    imageSrc: "/hero-laoise.jpg"
+    imageSrc: IMG("hero-laoise.jpg"),
   },
   {
     id: "ashara",
@@ -18,7 +20,7 @@ const heroes: EcoHero[] = [
     power: "Every drop counts!",
     description: "Calm, determined and crystal-clear in her mission — Ashara protects Northern Ireland's most precious resource: water. She teaches her school how to cut water waste, fix dripping taps and understand how saving water also saves the energy used to heat and pump it. Together, every drop counts!",
     color: "bg-cyan-300",
-    imageSrc: "/hero-water.jpg"
+    imageSrc: IMG("hero-water.jpg"),
   },
   {
     id: "veggie-man",
@@ -27,7 +29,7 @@ const heroes: EcoHero[] = [
     power: "Save the planet, one meal at a time!",
     description: "Veggie Man knows that what we eat matters as much as how we heat our homes. He champions vegetarian and vegan choices, showing exactly how much carbon is saved every time we swap meat for plants. One meal at a time, he's feeding a greener Northern Ireland!",
     color: "bg-yellow-300",
-    imageSrc: "/hero-veggieman.jpg"
+    imageSrc: IMG("hero-veggieman.jpg"),
   },
   {
     id: "heather-ohare",
@@ -36,7 +38,7 @@ const heroes: EcoHero[] = [
     power: "Protect the land, protect each other!",
     description: "Heather O'Hare has the biggest mission of all — looking after both the land beneath our feet and the wellbeing of the people above it. She champions the responsible use of Northern Ireland's natural resources and the mental health of her community. Strong land, strong minds!",
     color: "bg-purple-300",
-    imageSrc: "/hero-heather.jpg"
+    imageSrc: IMG("hero-heather.jpg"),
   },
   {
     id: "kaizen-ken",
@@ -45,7 +47,7 @@ const heroes: EcoHero[] = [
     power: "Wind, retrofit and renewables for all!",
     description: "Kaizen Ken believes every improvement moves us forward. He promotes wind turbines, solar panels and home retrofits across Northern Ireland, helping families insulate their homes and switch to renewable energy. Better every day, stronger every way!",
     color: "bg-blue-300",
-    imageSrc: "/hero-kaizen.jpg"
+    imageSrc: IMG("hero-kaizen.jpg"),
   }
 ];
 

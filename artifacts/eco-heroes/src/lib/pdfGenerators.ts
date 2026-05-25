@@ -95,12 +95,12 @@ const BASE_CSS = `
 function logoBar(subtitle = "") {
   return `
   <div class="logo-bar">
-    <img src="${logoUrl("nihe-logo.jpg")}" alt="NI Housing Executive" />
+    <img src="${logoUrl("eco-heroes-export/images/nihe-logo.jpg")}" alt="NI Housing Executive" />
     <div class="centre">
       <h2>NI Schools Energy Challenge 2026</h2>
       <p>${subtitle || "Sponsored by NI Housing Executive / NIEAS"}</p>
     </div>
-    <img src="${logoUrl("niseeap-logo.jpg")}" alt="NI Schools Energy Efficiency Awareness Programme" />
+    <img src="${logoUrl("eco-heroes-export/images/niseeap-logo.jpg")}" alt="NI Schools Energy Efficiency Awareness Programme" />
   </div>`;
 }
 

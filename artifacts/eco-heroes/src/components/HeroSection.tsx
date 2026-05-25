@@ -69,14 +69,18 @@ export function HeroSection() {
                 </p>
               </div>
               <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border-4 border-foreground comic-shadow bg-white overflow-hidden animate-wiggle">
-                <img src="/niseeap-logo.jpg" alt="NI Schools Energy Efficiency Awareness Programme" className="w-full h-full object-cover" />
+                <img
+                  src={`${import.meta.env.BASE_URL}eco-heroes-export/images/niseeap-logo.jpg`}
+                  alt="NI Schools Energy Efficiency Awareness Programme"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
           
           <div className="mt-8 animate-in fade-in duration-1000 delay-500">
             <img 
-              src="/winning-heroes.png" 
+              src={`${import.meta.env.BASE_URL}eco-heroes-export/images/winning-heroes.png`}
               alt="The Eco-Heroes Squad" 
               className="w-full max-w-xl mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
             />

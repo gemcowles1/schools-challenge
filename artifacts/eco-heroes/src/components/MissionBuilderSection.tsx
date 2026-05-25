@@ -143,7 +143,7 @@ export function MissionBuilderSection() {
         : `<span class="highlight">${freeText}</span>`;
 
     const bandLabel = ageBand ? `Ages ${ageBand}` : "";
-    const base = window.location.origin;
+    const base = window.location.origin + import.meta.env.BASE_URL;
     const printWindow = window.open("", "_blank");
     if (!printWindow) return;
     printWindow.document.write(`
@@ -177,8 +177,8 @@ export function MissionBuilderSection() {
       </head><body>
         <div class="poster">
           <div class="logos">
-            <img src="${base}/nihe-logo.jpg" alt="NI Housing Executive" />
-            <img src="${base}/niseeap-logo.jpg" alt="Schools Energy" class="niseeap" />
+            <img src="${base}eco-heroes-export/images/nihe-logo.jpg" alt="NI Housing Executive" />
+            <img src="${base}eco-heroes-export/images/niseeap-logo.jpg" alt="Schools Energy" class="niseeap" />
           </div>
           <h1>🌿 Eco-Hero Mission Statement</h1>
           ${bandLabel ? `<div class="band">${bandLabel}</div>` : ""}
@@ -280,7 +280,7 @@ export function MissionBuilderSection() {
             <div className="flex justify-center mb-6">
               <div className="relative w-44 h-44" style={{ transition: "transform 0.4s", transform: flagGreen ? "scale(1.15)" : "scale(1)" }}>
                 <img
-                  src="/eco-flag-logo.png"
+                  src={`${import.meta.env.BASE_URL}eco-heroes-export/images/eco-flag-logo.png`}
                   alt="Eco-Schools Green Flag"
                   className="w-full h-full object-contain"
                   style={{
