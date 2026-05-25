@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: pnpm --filter @workspace/eco-heroes run build
         env:
-          BASE_PATH: /
+          BASE_PATH: /schools-challenge/
           PORT: 3000
 
       - name: Setup Pages
