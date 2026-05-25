@@ -41,6 +41,9 @@ jobs:
           BASE_PATH: /schools-challenge/
           PORT: 3000
 
+      - name: Copy index.html to 404.html for SPA routing
+        run: cp artifacts/eco-heroes/dist/public/index.html artifacts/eco-heroes/dist/public/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
