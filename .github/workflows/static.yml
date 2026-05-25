@@ -36,10 +36,9 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm --filter @workspace/eco-heroes run build
+        run: pnpm --filter @workspace/eco-heroes exec npx vite build --config vite.pages.ts
         env:
           BASE_PATH: /schools-challenge/
-          PORT: 3000
 
       - name: Copy index.html to 404.html for SPA routing
         run: cp artifacts/eco-heroes/dist/public/index.html artifacts/eco-heroes/dist/public/404.html
