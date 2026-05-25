@@ -27,9 +27,7 @@ export function HeroCard({ hero, index }: HeroCardProps) {
         onClick={() => setIsOpen(true)}
       >
         <div className={`h-48 ${hero.color} border-b-4 border-foreground flex items-center justify-center relative overflow-hidden`}>
-          {/* Halftone pattern overlay */}
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at center, #000 2px, transparent 2.5px)', backgroundSize: '16px 16px' }}></div>
-          
           <img 
             src={hero.imageSrc} 
             alt={hero.name} 
@@ -41,14 +39,11 @@ export function HeroCard({ hero, index }: HeroCardProps) {
           <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mb-3 -mt-10 relative z-20 border-2 border-background">
             {hero.studentName}
           </div>
-          
           <h3 className="text-2xl font-black font-display mb-2">{hero.name}</h3>
-          
           <div className="bg-muted rounded-xl p-3 border-2 border-foreground/10 mb-4">
             <p className="font-bold text-sm text-foreground/80 uppercase">Super Power:</p>
             <p className="font-black text-lg text-primary">{hero.power}</p>
           </div>
-          
           <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest group-hover:text-primary transition-colors">
             Click to view profile ⚡
           </p>
@@ -56,8 +51,9 @@ export function HeroCard({ hero, index }: HeroCardProps) {
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-md border-4 border-foreground comic-shadow rounded-3xl p-0 overflow-hidden bg-white">
-          <div className={`h-48 ${hero.color} relative border-b-4 border-foreground flex justify-center items-end`}>
+        <DialogContent className="sm:max-w-md border-4 border-foreground comic-shadow rounded-3xl p-0 overflow-hidden bg-white max-h-[90svh] flex flex-col">
+          {/* Hero image — fixed at top */}
+          <div className={`h-48 ${hero.color} relative border-b-4 border-foreground flex justify-center items-end flex-shrink-0`}>
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at center, #000 2px, transparent 2.5px)', backgroundSize: '16px 16px' }}></div>
             <img 
               src={hero.imageSrc} 
@@ -65,12 +61,16 @@ export function HeroCard({ hero, index }: HeroCardProps) {
               className="w-48 h-48 object-contain relative z-10 translate-y-6"
             />
           </div>
-          <div className="p-8 pt-12 text-center">
+
+          {/* Scrollable content */}
+          <div className="p-8 pt-12 text-center overflow-y-auto flex-1">
             <DialogHeader>
               <DialogTitle className="text-4xl font-black font-display text-center mb-2">{hero.name}</DialogTitle>
-              <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mx-auto mb-6">
-                Played by: {hero.studentName}
-              </div>
+              <DialogDescription asChild>
+                <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mx-auto mb-6">
+                  Played by: {hero.studentName}
+                </div>
+              </DialogDescription>
             </DialogHeader>
             
             <div className="bg-muted rounded-2xl p-6 border-4 border-foreground/20 text-left mb-6">
@@ -88,12 +88,15 @@ export function HeroCard({ hero, index }: HeroCardProps) {
                 {hero.description}
               </p>
             </div>
-            
+          </div>
+
+          {/* Sticky close button — always visible at bottom */}
+          <div className="flex-shrink-0 px-8 py-4 border-t-2 border-foreground/10 bg-white">
             <button 
               onClick={() => setIsOpen(false)}
-              className="mt-8 bg-primary text-white font-black text-xl py-3 px-8 rounded-xl border-4 border-foreground comic-shadow hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all"
+              className="w-full bg-primary text-white font-black text-lg py-3 px-8 rounded-xl border-4 border-foreground comic-shadow hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all"
             >
-              AWESOME!
+              ← Back to Heroes
             </button>
           </div>
         </DialogContent>
