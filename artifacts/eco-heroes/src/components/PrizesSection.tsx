@@ -10,7 +10,7 @@ export function PrizesSection() {
             🏆 WHAT YOU CAN WIN
           </h2>
           <p className="text-xl font-bold text-foreground/70">
-            Five laptops for five Eco-Committees — one per winning school!
+            Five eco-refurbished laptops for five Eco-Committees — one per winning school!
           </p>
         </div>
 
@@ -23,10 +23,10 @@ export function PrizesSection() {
               ))}
             </div>
             <h3 className="text-3xl md:text-4xl font-black font-display text-secondary mb-2 uppercase">
-              5 Laptops to Be Won!
+              5 Eco-Refurbished Laptops to Be Won!
             </h3>
             <p className="text-lg font-bold text-white/80">
-              One laptop for each of the <span className="text-secondary font-black">5 winning school Eco-Committees</span>
+              One eco-refurbished laptop for each of the <span className="text-secondary font-black">5 winning school Eco-Committees</span>
             </p>
           </div>
         </div>
@@ -35,8 +35,8 @@ export function PrizesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           <div className="bg-yellow-100 border-4 border-yellow-400 rounded-2xl p-8 comic-shadow -rotate-2 hover:rotate-0 transition-transform duration-300 text-center">
             <div className="text-6xl mb-4">💻</div>
-            <h3 className="font-black text-xl text-foreground mb-2 font-display">5 Laptops</h3>
-            <p className="text-foreground/70 font-medium text-sm">One laptop per winning school Eco-Committee — 5 schools, 5 prizes!</p>
+            <h3 className="font-black text-xl text-foreground mb-2 font-display">5 Eco-Refurbished Laptops</h3>
+            <p className="text-foreground/70 font-medium text-sm">One eco-refurbished laptop per winning school Eco-Committee — 5 schools, 5 prizes!</p>
           </div>
           <div className="bg-green-50 border-4 border-primary rounded-2xl p-8 comic-shadow rotate-1 hover:rotate-0 transition-transform duration-300 text-center">
             <div className="text-6xl mb-4">🏴</div>

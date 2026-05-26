@@ -16,8 +16,8 @@ export function WhyEnterSection() {
     },
     {
       emoji: "💻",
-      title: "Win 1 of 5 Laptops!",
-      body: "Five schools will each win a laptop for their Eco-Committee. Enter your mission statement for your chance to be one of the five winners!",
+      title: "Win 1 of 5 Eco-Refurbished Laptops!",
+      body: "Five schools will each win an eco-refurbished laptop for their Eco-Committee. Enter your mission statement for your chance to be one of the five winners!",
       rotate: "-rotate-1",
     },
     {
@@ -43,7 +43,7 @@ export function WhyEnterSection() {
             WHY ENTER?
           </h2>
           <p className="text-2xl font-black text-foreground mb-4">
-            💻 WIN ONE OF <span className="text-secondary">5X LAPTOPS</span> for your school
+            💻 WIN ONE OF <span className="text-secondary">5X ECO-REFURBISHED LAPTOPS</span> for your school
           </p>
           <p className="text-lg font-bold text-foreground/70 mb-1">Earn points towards:</p>
           <div className="flex flex-wrap justify-center gap-3 mt-2">

@@ -250,10 +250,10 @@ export function downloadCertificate(): Promise<void> {
 
 /* ── ASSEMBLY SLIDES ─────────────────────────────────────────────────────────*/
 const SLIDES = [
-  { title: "Our School Eco-Heroes", emoji: "🌿", bullets: ["Welcome to the NI Schools Energy Challenge 2026", "Sponsored by NI Housing Executive & NIEAS", "💻 5 Laptops to Win for 5 Schools!", "⭐ Points towards your Eco-Schools Green Flag", "🎟 Free competition entry"] },
+  { title: "Our School Eco-Heroes", emoji: "🌿", bullets: ["Welcome to the NI Schools Energy Challenge 2026", "Sponsored by NI Housing Executive & NIEAS", "💻 5 Eco-Refurbished Laptops to Win for 5 Schools!", "⭐ Points towards your Eco-Schools Green Flag", "🎟 Free competition entry"] },
   { title: "Why Does Energy Matter?", emoji: "⚡", bullets: ["Schools in NI spend £millions on energy every year", "68% of NI homes use oil — the highest rate in the UK", "Energy use creates CO₂ — heating our planet", "Simple actions can cut school energy bills by 10–20%", "That money could fund books, trips & equipment!"] },
   { title: "The Challenge", emoji: "🎯", bullets: ['Write a Mission Statement for your Eco-Committee:', '"We are [School] and we pledge to [action]', 'so that we can [outcome] by [date]."', "Submit at eco-energy-challenge.replit.app"] },
-  { title: "What You Can Win", emoji: "🏆", bullets: ["💻 💻 💻 💻 💻", "5 Laptops — one per winning school Eco-Committee", "⭐ Points towards your Eco-Schools Green Flag", "🎟 Free entry to the Energy Challenge competition", "📣 Your school featured as an Eco Champion!"] },
+  { title: "What You Can Win", emoji: "🏆", bullets: ["💻 💻 💻 💻 💻", "5 Eco-Refurbished Laptops — one per winning school Eco-Committee", "⭐ Points towards your Eco-Schools Green Flag", "🎟 Free entry to the Energy Challenge competition", "📣 Your school featured as an Eco Champion!"] },
   { title: "What To Do Next", emoji: "🚀", bullets: ["1. Talk to your Eco-Committee", "2. Choose your energy-saving action", "3. Pick your age group on the website", "4. Write your Mission Statement online", "5. Submit before the deadline", "6. Start saving energy — right now!"] },
 ];
 

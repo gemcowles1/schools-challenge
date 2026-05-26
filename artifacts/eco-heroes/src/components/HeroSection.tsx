@@ -15,14 +15,14 @@ export function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 animate-in slide-in-from-bottom-8 duration-700">
             <div className="flex justify-center gap-1 mb-4">
-              <span className="text-5xl drop-shadow-lg" role="img" aria-label="5 Laptops to be won">💻</span>
+              <span className="text-5xl drop-shadow-lg" role="img" aria-label="5 Eco-Refurbished Laptops to be won">💻</span>
               <span className="text-5xl drop-shadow-lg">💻</span>
               <span className="text-5xl drop-shadow-lg">💻</span>
               <span className="text-5xl drop-shadow-lg">💻</span>
               <span className="text-5xl drop-shadow-lg">💻</span>
             </div>
             <p className="text-xl md:text-3xl font-black uppercase tracking-wide mb-3 drop-shadow-[2px_2px_0_rgba(0,0,0,0.15)]">
-              <span className="text-secondary">🏆 5x Laptops to Be Won</span>
+              <span className="text-secondary">🏆 5x Eco-Refurbished Laptops to Be Won</span>
               <span className="text-foreground/30 mx-2">·</span>
               <span className="text-primary">Eco-Flag Points</span>
               <span className="text-foreground/30 mx-2">·</span>
@@ -89,7 +89,7 @@ export function HeroSection() {
                 WE'RE BACK!!
               </p>
               <p className="mt-4 text-base md:text-lg font-bold text-foreground/70 max-w-xl mx-auto leading-snug">
-                Write your school's <span className="whitespace-nowrap">Eco-Hero</span> mission statement, earn points towards your <span className="text-primary font-black whitespace-nowrap">Eco-Schools Green Flag</span>, and be in with a chance to win one of <span className="text-secondary font-black whitespace-nowrap">5 laptops</span> for your <span className="whitespace-nowrap">Eco-Committee</span>.
+                Write your school's <span className="whitespace-nowrap">Eco-Hero</span> mission statement, earn points towards your <span className="text-primary font-black whitespace-nowrap">Eco-Schools Green Flag</span>, and be in with a chance to win one of <span className="text-secondary font-black whitespace-nowrap">5 eco-refurbished laptops</span> for your <span className="whitespace-nowrap">Eco-Committee</span>.
               </p>
             </div>
           </div>
