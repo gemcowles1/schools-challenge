@@ -24,7 +24,7 @@ export function HeroSection() {
             <p className="text-xl md:text-3xl font-black uppercase tracking-wide mb-3 drop-shadow-[2px_2px_0_rgba(0,0,0,0.15)]">
               <span className="text-secondary">🏆 5x Eco-Refurbished Laptops to Be Won</span>
               <span className="text-foreground/30 mx-2">·</span>
-              <span className="text-primary">Eco-Flag Points</span>
+              <span className="text-primary">ECO-FLAGS</span>
               <span className="text-foreground/30 mx-2">·</span>
               <span className="text-accent whitespace-nowrap">Free Entry</span>
             </p>
