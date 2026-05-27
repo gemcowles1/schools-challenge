@@ -52,8 +52,8 @@ export default function Home() {
       <footer className="bg-foreground text-white text-center">
         {/* Navy content */}
         <div className="container mx-auto px-4 py-10 flex flex-col items-center gap-3">
-          <p className="font-bold text-xl font-display">Powered by NIEAS Energy Awareness Programme</p>
-          <p className="text-white/80 font-bold text-lg">Housing Executive for Eco-Schools NI</p>
+          <p className="font-bold text-xl font-display">Powered by NIEAS for Schools Energy Awareness Programme</p>
+          <p className="text-white/80 font-bold text-lg">Housing Executive Sponsor · Eco-Schools NI Energy Topic</p>
           <p className="text-white/50 font-medium text-sm">Designed for the Green Flag Energy Challenge</p>
         </div>
       </footer>

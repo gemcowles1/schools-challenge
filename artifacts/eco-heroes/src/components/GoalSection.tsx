@@ -59,7 +59,7 @@ export function GoalSection() {
                 THE ECO-SCHOOLS GREEN FLAG
               </h3>
               <p className="text-lg font-bold text-white/90">
-                Sponsored by the <strong>NI Housing Executive</strong> — supporting the Energy Flag &amp; Topic across NI Schools
+                Powered by <strong>NIEAS for Schools Energy Awareness Programme</strong> · Housing Executive Sponsor · Eco-Schools NI Energy Topic
               </p>
             </div>
 
