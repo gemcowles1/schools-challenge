@@ -355,3 +355,137 @@ export function downloadClassTracker(): Promise<void> {
     </div></body></html>`);
   return Promise.resolve();
 }
+
+/* ── SENSORY ENERGY AUDIT ────────────────────────────────────────────────────*/
+export function downloadSensoryAudit(): Promise<void> {
+  const PURPLE = "#7c3aed";
+  openResource(`<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"><title>Sensory Energy Audit</title>
+    <style>${BASE_CSS}
+      .sense-card { background: #f5f3ff; border: 3px solid ${PURPLE}; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
+      .sense-title { font-size: 18px; font-weight: 900; color: ${PURPLE}; margin-bottom: 8px; }
+      .sense-q { font-size: 14px; font-weight: bold; color: ${NAVY}; margin-bottom: 6px; line-height: 1.5; }
+      .tick-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
+      .tick-box { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: bold; }
+      .intro-box { background: #f0fdf4; border: 3px solid ${GREEN}; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; font-size: 13px; font-weight: bold; line-height: 1.7; }
+    </style></head><body>
+    ${saveBar()}
+    ${logoBar("Sensory Energy Audit — All Abilities")}
+    <div class="section-header">
+      <h1>🌟 Sensory Energy Audit</h1>
+      <p>Use your senses to find energy being wasted in your school</p>
+    </div>
+    <div class="page">
+      <div class="info-row">
+        <div class="info-field"><label>Pupil Name</label><input type="text" placeholder="Full name"/></div>
+        <div class="info-field"><label>Class</label><input type="text" placeholder="e.g. P5B"/></div>
+        <div class="info-field"><label>School</label><input type="text" placeholder="School name"/></div>
+        <div class="info-field"><label>Date</label><input type="date"/></div>
+      </div>
+      <div class="intro-box">
+        👋 You are an Eco-Hero Detective! Use your senses — touch, sight, hearing — to find energy being wasted in your school. Tick YES or NO for each question, then write or draw what you found.
+      </div>
+      <div class="sense-card">
+        <div class="sense-title">👀 Using Your EYES (Sight)</div>
+        <div class="sense-q">Can you see any lights switched on in an empty room?</div>
+        <div class="tick-row">
+          <label class="tick-box"><input type="checkbox" /> YES — lights are on that should be off</label>
+          <label class="tick-box"><input type="checkbox" /> NO — all lights are being used</label>
+        </div>
+        <div class="sense-q">Can you see any screens (TVs, whiteboards, computers) on but not being used?</div>
+        <div class="tick-row">
+          <label class="tick-box"><input type="checkbox" /> YES</label>
+          <label class="tick-box"><input type="checkbox" /> NO</label>
+        </div>
+        <textarea class="answer-box" rows="2" placeholder="Write or draw what you noticed with your eyes…"></textarea>
+      </div>
+      <div class="sense-card">
+        <div class="sense-title">✋ Using Your HANDS (Touch)</div>
+        <div class="sense-q">Can you feel heat from a radiator with a window or door open nearby?</div>
+        <div class="tick-row">
+          <label class="tick-box"><input type="checkbox" /> YES — heat is escaping</label>
+          <label class="tick-box"><input type="checkbox" /> NO — doors and windows are closed</label>
+        </div>
+        <div class="sense-q">Can you feel warmth from a charger, computer, or printer left on standby?</div>
+        <div class="tick-row">
+          <label class="tick-box"><input type="checkbox" /> YES</label>
+          <label class="tick-box"><input type="checkbox" /> NO</label>
+        </div>
+        <textarea class="answer-box" rows="2" placeholder="Write or draw what you noticed with your hands…"></textarea>
+      </div>
+      <div class="sense-card">
+        <div class="sense-title">👂 Using Your EARS (Hearing)</div>
+        <div class="sense-q">Can you hear a machine, fan, or computer humming when no one is using it?</div>
+        <div class="tick-row">
+          <label class="tick-box"><input type="checkbox" /> YES — I can hear something running</label>
+          <label class="tick-box"><input type="checkbox" /> NO — it is quiet</label>
+        </div>
+        <textarea class="answer-box" rows="2" placeholder="Write or draw what you noticed with your ears…"></textarea>
+      </div>
+      <div class="sense-card">
+        <div class="sense-title">🌟 My Eco-Hero Action</div>
+        <div class="sense-q">What ONE thing will you do today to save energy?</div>
+        <textarea class="answer-box" rows="3" placeholder="I will…"></textarea>
+      </div>
+      ${pageFooter()}
+    </div></body></html>`);
+  return Promise.resolve();
+}
+
+/* ── EASY READ WORKSHEET ─────────────────────────────────────────────────────*/
+export function downloadEasyReadWorksheet(): Promise<void> {
+  openResource(`<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"><title>Easy Read Energy Worksheet</title>
+    <style>${BASE_CSS}
+      .er-card { background: #f5f3ff; border: 4px solid #7c3aed; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
+      .er-q { font-size: 22px; font-weight: 900; color: ${NAVY}; margin-bottom: 12px; line-height: 1.4; }
+      .er-hint { font-size: 15px; color: #555; font-weight: bold; margin-bottom: 10px; }
+      .er-big-box { border: 3px solid #bbb; border-radius: 8px; width: 100%; padding: 12px; font-size: 18px; font-family: Arial; min-height: 80px; resize: none; outline: none; }
+      .er-big-box:focus { border-color: #7c3aed; }
+      .er-choice { display: flex; flex-direction: column; gap: 10px; }
+      .er-choice label { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: bold; background: white; border: 3px solid #ddd; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+      .er-choice label:hover { border-color: #7c3aed; }
+      .er-choice input[type=checkbox] { width: 24px; height: 24px; accent-color: #7c3aed; flex-shrink: 0; }
+    </style></head><body>
+    ${saveBar()}
+    ${logoBar("Easy Read — All Abilities")}
+    <div class="section-header" style="background:#7c3aed;print-color-adjust:exact;-webkit-print-color-adjust:exact;">
+      <h1>♿ Easy Read Energy Worksheet</h1>
+      <p>Eco-Schools Northern Ireland — Energy Challenge 2026</p>
+    </div>
+    <div class="page">
+      <div class="info-row">
+        <div class="info-field"><label>My Name</label><input type="text" placeholder="Write your name here" style="font-size:16px;padding:8px;"/></div>
+        <div class="info-field"><label>My School</label><input type="text" placeholder="Write your school name" style="font-size:16px;padding:8px;"/></div>
+        <div class="info-field"><label>Date</label><input type="date" style="font-size:16px;padding:8px;"/></div>
+      </div>
+      <div class="er-card">
+        <div class="er-q">1. 💡 Name something in your classroom that uses electricity.</div>
+        <div class="er-hint">Think about lights, screens, computers…</div>
+        <textarea class="er-big-box" placeholder="Write or draw your answer here…"></textarea>
+      </div>
+      <div class="er-card">
+        <div class="er-q">2. 🔌 What should you do when you leave a room?</div>
+        <div class="er-choice">
+          <label><input type="checkbox" /> Switch OFF the lights ✅</label>
+          <label><input type="checkbox" /> Leave the lights ON ❌</label>
+        </div>
+      </div>
+      <div class="er-card">
+        <div class="er-q">3. ❄️ How can you stay warm WITHOUT turning up the heating?</div>
+        <div class="er-hint">Tick all the things you could do:</div>
+        <div class="er-choice">
+          <label><input type="checkbox" /> Put on an extra jumper 🧥</label>
+          <label><input type="checkbox" /> Close the doors and windows 🚪</label>
+          <label><input type="checkbox" /> Use a blanket or extra layer 🛋️</label>
+          <label><input type="checkbox" /> Turn the heating up as high as it goes 🔥</label>
+        </div>
+      </div>
+      <div class="er-card">
+        <div class="er-q">4. 🌟 I am an Eco-Hero! Today I will…</div>
+        <textarea class="er-big-box" placeholder="Write your pledge here — e.g. I will switch off the lights when I leave a room."></textarea>
+      </div>
+      ${pageFooter()}
+    </div></body></html>`);
+  return Promise.resolve();
+}

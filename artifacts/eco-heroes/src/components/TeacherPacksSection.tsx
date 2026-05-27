@@ -5,6 +5,8 @@ import {
   downloadCertificate,
   downloadAssemblySlides,
   downloadClassTracker,
+  downloadSensoryAudit,
+  downloadEasyReadWorksheet,
 } from "@/lib/pdfGenerators";
 
 function OpenBtn({
@@ -103,6 +105,26 @@ export function TeacherPacksSection() {
             <OpenBtn onClick={downloadClassTracker} color="bg-green-100 border-primary">
               Open Class Tracker
             </OpenBtn>
+          </div>
+
+          {/* Inclusive Access */}
+          <div className="bg-purple-50 border-4 border-purple-400 rounded-2xl p-8 comic-shadow -rotate-1 hover:rotate-0 transition-transform duration-300 md:col-span-2">
+            <div className="text-5xl mb-3">♿</div>
+            <h3 className="font-black text-2xl text-foreground font-display mb-1">Inclusive Access Pack</h3>
+            <p className="text-foreground/60 font-medium text-sm mb-2">
+              Resources for pupils of all abilities — including sensory learners, pupils with motor difficulties, and those who find reading or writing challenging.
+            </p>
+            <p className="text-foreground/60 font-medium text-sm mb-5">
+              <strong>Can't type a mission statement?</strong> Pupils can also submit by voice note or video — email <a href="mailto:Nienergyadvice@nihe.gov.uk" className="text-purple-600 underline font-bold">Nienergyadvice@nihe.gov.uk</a> directly with a recording attached.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <OpenBtn onClick={downloadEasyReadWorksheet} color="bg-purple-100 border-purple-400">
+                Easy Read Worksheet (All Abilities)
+              </OpenBtn>
+              <OpenBtn onClick={downloadSensoryAudit} color="bg-purple-100 border-purple-400">
+                Sensory Energy Audit (Touch / Sight / Hearing)
+              </OpenBtn>
+            </div>
           </div>
 
         </div>

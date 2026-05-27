@@ -32,7 +32,7 @@ export function PrizesSection() {
         </div>
 
         {/* Prize cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           <div className="bg-yellow-100 border-4 border-yellow-400 rounded-2xl p-8 comic-shadow -rotate-2 hover:rotate-0 transition-transform duration-300 text-center">
             <div className="text-6xl mb-4">💻</div>
             <h3 className="font-black text-xl text-foreground mb-2 font-display">5 Eco-Refurbished Laptops</h3>
@@ -47,6 +47,11 @@ export function PrizesSection() {
             <div className="text-6xl mb-4">🎟️</div>
             <h3 className="font-black text-xl text-foreground mb-2 font-display">Free Entry</h3>
             <p className="text-foreground/70 font-medium text-sm">Free entry to the Energy Challenge competition</p>
+          </div>
+          <div className="bg-purple-50 border-4 border-purple-400 rounded-2xl p-8 comic-shadow rotate-2 hover:rotate-0 transition-transform duration-300 text-center">
+            <div className="text-6xl mb-4">♿</div>
+            <h3 className="font-black text-xl text-foreground mb-2 font-display">All Abilities Champion</h3>
+            <p className="text-foreground/70 font-medium text-sm">Special recognition for schools where pupils of all abilities lead the Eco-Hero Challenge</p>
           </div>
         </div>
       </div>

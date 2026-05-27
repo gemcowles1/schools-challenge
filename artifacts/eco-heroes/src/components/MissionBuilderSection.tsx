@@ -3,6 +3,14 @@ import { Confetti } from "@/components/Confetti";
 import { NiheBadge } from "@/components/NiheBadge";
 
 const ACTIONS_BY_AGE: Record<string, string[]> = {
+  "all-abilities": [
+    "switch off the lights when we leave a room",
+    "turn off the tap when not using it",
+    "put on an extra jumper instead of turning up the heat",
+    "remind our friends to switch off screens and computers",
+    "use sunlight through the window instead of electric lights",
+    "tell an adult when something is left on that should be off",
+  ],
   "5-7": [
     "switch off the lights when we leave a room",
     "turn off the tap while we wash our hands",
@@ -52,9 +60,10 @@ const NEXT_FLAG_TIPS = [
 ];
 
 const AGE_BANDS = [
-  { id: "5-7",  label: "Ages 5–7",   emoji: "⭐", desc: "Foundation & Key Stage 1", color: "bg-yellow-100 border-yellow-400" },
-  { id: "8-11", label: "Ages 8–11",  emoji: "🚀", desc: "Key Stage 2",              color: "bg-green-100 border-primary" },
-  { id: "12-14",label: "Ages 12–14", emoji: "🔬", desc: "Key Stage 3",              color: "bg-blue-100 border-blue-500" },
+  { id: "5-7",          label: "Ages 5–7",      emoji: "⭐", desc: "Foundation & Key Stage 1",         color: "bg-yellow-100 border-yellow-400" },
+  { id: "8-11",         label: "Ages 8–11",     emoji: "🚀", desc: "Key Stage 2",                      color: "bg-green-100 border-primary" },
+  { id: "12-14",        label: "Ages 12–14",    emoji: "🔬", desc: "Key Stage 3",                      color: "bg-blue-100 border-blue-500" },
+  { id: "all-abilities",label: "All Abilities", emoji: "♿", desc: "Accessible prompts — all learners", color: "bg-purple-100 border-purple-400" },
 ];
 
 type Step = "age-band" | "eco-school" | "energy-flag" | "next-flag" | "mission";
@@ -220,7 +229,7 @@ export function MissionBuilderSection() {
             <p className="text-foreground/60 font-medium mb-8">
               We'll give you challenges that are just right for your class.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {AGE_BANDS.map((b) => (
                 <button
                   key={b.id}
