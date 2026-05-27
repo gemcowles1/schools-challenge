@@ -65,3 +65,9 @@ id = "2pxOirU3fOWIRh9Y16nI8"
 uri = "file://artifacts/eco-heroes/dist/standalone/eco-heroes-full.tar.gz"
 type = "unspecified"
 title = "Eco Heroes — Full Standalone HTML (all images included)"
+
+[[outputs]]
+id = "7ywLxY-k1r0a53rXtbuC9"
+uri = "file://screenshots/circuit-ciara-preview.jpg"
+type = "image"
+title = "Circuit Ciara — Hero Card Preview"
