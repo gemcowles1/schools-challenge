@@ -73,7 +73,7 @@ export default function CircuitCiara() {
             </div>
 
             <h3 style={{ fontSize: 26, fontWeight: 900, margin: "0 0 12px", color: "#0f1f3d" }}>
-              Circuit Ciara
+              Circuit Katie
             </h3>
 
             <div style={{
@@ -123,7 +123,7 @@ export default function CircuitCiara() {
           <div style={{ padding: 24 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
               <div>
-                <div style={{ fontWeight: 900, fontSize: 22, color: "#0f1f3d" }}>Circuit Ciara</div>
+                <div style={{ fontWeight: 900, fontSize: 22, color: "#0f1f3d" }}>Circuit Katie</div>
                 <div style={{ fontSize: 13, color: "#25a244", fontWeight: 700, textTransform: "uppercase" }}>Access &amp; Energy Champion</div>
               </div>
             </div>
