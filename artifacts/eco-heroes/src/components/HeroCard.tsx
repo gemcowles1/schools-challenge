@@ -38,15 +38,15 @@ export function HeroCard({ hero, index }: HeroCardProps) {
         </div>
         
         <div className="p-6 text-center">
-          <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mb-3 -mt-10 relative z-20 border-2 border-background">
+          <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mb-1 -mt-10 relative z-20 border-2 border-background">
             {hero.studentName}
           </div>
+          {hero.designer && (
+            <p className="text-xs font-semibold text-foreground/70 mb-2 tracking-wide">✏️ Created by {hero.designer}</p>
+          )}
           <h3 className="text-2xl font-black font-display mb-1">{hero.name}</h3>
           {hero.pronunciation && (
             <p className="text-xs font-medium text-foreground/50 mb-1 tracking-wide">🔊 Say: <em>{hero.pronunciation}</em></p>
-          )}
-          {hero.designer && (
-            <p className="text-xs font-medium text-foreground/40 mb-2 tracking-wide">✏️ Created by {hero.designer}</p>
           )}
           <div className="bg-muted rounded-xl p-3 border-2 border-foreground/10 mb-4">
             <p className="font-bold text-sm text-foreground/80 uppercase">Super Power:</p>
