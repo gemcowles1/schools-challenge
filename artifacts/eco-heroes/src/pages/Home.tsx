@@ -12,6 +12,7 @@ import { PrizesSection } from "@/components/PrizesSection";
 import { KeyDatesSection } from "@/components/KeyDatesSection";
 import { GoalSection } from "@/components/GoalSection";
 import { TeacherPacksSection } from "@/components/TeacherPacksSection";
+import { HattieSection } from "@/components/HattieSection";
 
 export default function Home() {
   return (
@@ -52,6 +53,9 @@ export default function Home() {
         <TeacherPacksSection />
       </div>
       <GoalSection />
+      <div id="hattie">
+        <HattieSection />
+      </div>
 
       <footer className="bg-foreground text-white text-center">
         {/* Navy content */}
