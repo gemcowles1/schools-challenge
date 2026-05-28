@@ -82,7 +82,7 @@ export function HeroCard({ hero, index }: HeroCardProps) {
 
             <div className="text-left">
               <h4 className="font-black text-xl mb-2 flex items-center gap-2">
-                <span className="text-2xl">📖</span> MISSION DOSSIER
+                <span className="text-2xl">📖</span> MISSION
               </h4>
               <p className="text-lg font-medium text-foreground/80 leading-relaxed">
                 {hero.description}
