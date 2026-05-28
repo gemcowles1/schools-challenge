@@ -7,6 +7,7 @@ const heroes: EcoHero[] = [
   {
     id: "electric-laoise",
     name: "Electric Laoise",
+    pronunciation: "Lee-sha",
     studentName: "EV Champion",
     power: "Converting NI roads to electric!",
     description: "Electric Laoise is on a mission to get diesel and petrol off Northern Ireland's roads for good. She champions electric vehicles and helps families and schools understand how switching to an EV can slash emissions and cut running costs. One conversion at a time, she's charging toward a cleaner future!",

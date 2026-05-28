@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 export interface EcoHero {
   id: string;
   name: string;
+  pronunciation?: string;
   studentName: string;
   power: string;
   description: string;
@@ -40,7 +41,10 @@ export function HeroCard({ hero, index }: HeroCardProps) {
           <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mb-3 -mt-10 relative z-20 border-2 border-background">
             {hero.studentName}
           </div>
-          <h3 className="text-2xl font-black font-display mb-2">{hero.name}</h3>
+          <h3 className="text-2xl font-black font-display mb-1">{hero.name}</h3>
+          {hero.pronunciation && (
+            <p className="text-xs font-medium text-foreground/50 mb-2 tracking-wide">🔊 Say: <em>{hero.pronunciation}</em></p>
+          )}
           <div className="bg-muted rounded-xl p-3 border-2 border-foreground/10 mb-4">
             <p className="font-bold text-sm text-foreground/80 uppercase">Super Power:</p>
             <p className="font-black text-lg text-primary">{hero.power}</p>
@@ -66,7 +70,10 @@ export function HeroCard({ hero, index }: HeroCardProps) {
           {/* Scrollable content */}
           <div className="p-8 pt-12 text-center overflow-y-auto flex-1">
             <DialogHeader>
-              <DialogTitle className="text-4xl font-black font-display text-center mb-2">{hero.name}</DialogTitle>
+              <DialogTitle className="text-4xl font-black font-display text-center mb-1">{hero.name}</DialogTitle>
+              {hero.pronunciation && (
+                <p className="text-sm font-medium text-foreground/50 text-center mb-1">🔊 Say: <em>{hero.pronunciation}</em></p>
+              )}
               <DialogDescription asChild>
                 <div className="inline-block px-4 py-1 rounded-full bg-foreground text-background font-black text-sm uppercase tracking-wider mx-auto mb-6">
                   Played by: {hero.studentName}
