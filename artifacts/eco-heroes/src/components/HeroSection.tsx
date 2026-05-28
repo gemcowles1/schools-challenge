@@ -88,9 +88,11 @@ export function HeroSection() {
               <p className="text-6xl md:text-8xl font-black font-display text-secondary drop-shadow-[4px_4px_0_hsl(var(--primary))] animate-bounce">
                 WE'RE BACK!!
               </p>
-              <p className="mt-4 text-base md:text-lg font-bold text-foreground/70 max-w-xl mx-auto leading-snug">
-                Write your school's <span className="whitespace-nowrap">Eco-Hero</span> mission statement, earn points towards your <span className="text-primary font-black whitespace-nowrap">Eco-Schools Green Flag</span>, and be in with a chance to win one of <span className="text-secondary font-black whitespace-nowrap">5 eco-refurbished laptops</span> for your <span className="whitespace-nowrap">Eco-Committee</span> — or for your school if you're just starting your eco-flag journey.
-              </p>
+              <ul className="mt-4 text-base md:text-lg font-bold text-foreground/70 max-w-xl mx-auto leading-relaxed text-left space-y-2 list-none pl-0">
+                <li>✏️ Write your school's <span className="whitespace-nowrap">Eco-Hero</span> mission statement</li>
+                <li>🌿 Earn points towards your <span className="text-primary font-black whitespace-nowrap">Eco-Schools Green Flag</span></li>
+                <li>💻 Be in with a chance to win one of <span className="text-secondary font-black whitespace-nowrap">5 eco-refurbished laptops</span> for your <span className="whitespace-nowrap">Eco-Committee</span> — or for your school if you're just starting your eco-flag journey</li>
+              </ul>
             </div>
           </div>
         </div>
