@@ -134,7 +134,7 @@ export function ReadAloudBar() {
       )}
 
       {state === "idle" && (
-        <span className="text-white/50 text-xs font-medium">
+        <span className="text-white text-xs font-medium">
           Hear the full page read aloud in English
         </span>
       )}
