@@ -7,7 +7,7 @@ export function NiheBadge({ className = "" }: { className?: string }) {
         className="h-[40px] md:h-[60px] w-auto object-contain flex-shrink-0"
       />
       <div className="text-center px-2 md:px-4 flex-1 min-w-0">
-        <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Powered by <span className="whitespace-nowrap">NIEAS for Schools Energy Awareness Programme</span><br /><span className="whitespace-nowrap">Housing Executive Sponsor · Eco-Schools NI Energy Topic</span></p>
+        <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Powered by <span className="whitespace-nowrap">NIEAS for our Schools Energy Awareness Programme</span><br /><span className="whitespace-nowrap">Housing Executive Sponsor · Eco-Schools NI Energy Topic</span></p>
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide text-gray-800 leading-tight whitespace-nowrap">
           Schools Energy Competition
         </h2>
