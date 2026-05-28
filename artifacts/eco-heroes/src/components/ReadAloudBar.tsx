@@ -3,7 +3,7 @@ import { useState, useRef, useCallback } from "react";
 const PAGE_SCRIPT = [
   "Welcome to Eco Heroes — the Schools Energy Competition for Northern Ireland.",
   "We challenge your school Eco-Committee to take on the Energy topic and earn points towards your Eco-Schools Green Flag.",
-  "Five schools will each win eco-refurbished laptops for their Eco-Committee.",
+  "Five schools will each win eco-refurbished laptops for their Eco-Committee, or school if you're just starting out.",
   "The competition opens on Monday the 1st of June and closes on Tuesday the 16th of June. Winners are announced on Thursday the 18th of June.",
   "Meet our five Eco Heroes. Electric Leisha is the EV Champion — her mission is converting NI roads to electric, helping families and schools switch to electric vehicles to slash emissions and cut running costs. Akshara is the Water Guardian — every drop counts, and she teaches schools how saving water also saves the energy used to heat and pump it. Veggie Man is the Plant Power Hero — save the planet one meal at a time, showing how swapping meat for plants cuts carbon with every bite. Heather O'Hare is the Mind and Mine Keeper — protecting both the land beneath our feet and the wellbeing of the people above it, championing responsible use of Northern Ireland's natural resources. And Kaizen Ken is the Renewable Ranger — wind, retrofit and renewables for all, promoting solar panels, wind turbines and home insulation across Northern Ireland.",
   "Why enter? You get eco-refurbished laptops for your committee, points towards your Eco-Schools Green Flag, a free Digital Certificate, and your school featured as an Eco Hero Champion.",

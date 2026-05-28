@@ -89,7 +89,7 @@ export function HeroSection() {
                 WE'RE BACK!!
               </p>
               <p className="mt-4 text-base md:text-lg font-bold text-foreground/70 max-w-xl mx-auto leading-snug">
-                Write your school's <span className="whitespace-nowrap">Eco-Hero</span> mission statement, earn points towards your <span className="text-primary font-black whitespace-nowrap">Eco-Schools Green Flag</span>, and be in with a chance to win one of <span className="text-secondary font-black whitespace-nowrap">5 eco-refurbished laptops</span> for your <span className="whitespace-nowrap">Eco-Committee</span>.
+                Write your school's <span className="whitespace-nowrap">Eco-Hero</span> mission statement, earn points towards your <span className="text-primary font-black whitespace-nowrap">Eco-Schools Green Flag</span>, and be in with a chance to win one of <span className="text-secondary font-black whitespace-nowrap">5 eco-refurbished laptops</span> for your <span className="whitespace-nowrap">Eco-Committee (or school if you're just starting)</span>.
               </p>
             </div>
           </div>
