@@ -1,4 +1,5 @@
 import { NiheBadge } from "./NiheBadge";
+import { SectionReadAloud } from "./SectionReadAloud";
 
 export function WhyEnterSection() {
   const reasons = [
@@ -39,9 +40,12 @@ export function WhyEnterSection() {
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
+          <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-2">
             WHY ENTER?
           </h2>
+          <div className="flex justify-center mb-3">
+            <SectionReadAloud label="Why Enter" text="Why enter? Five schools will each win an eco-refurbished laptop for their Eco-Committee — or for your school if you're just starting your eco-flag journey. You earn points towards your Eco-Schools Green Flag, receive a free Digital Certificate, and your school is featured as an Eco Hero Champion. Pupil voice in action — your school, your mission, your impact." />
+          </div>
           <p className="text-2xl font-black text-foreground mb-4">
             💻 WIN ONE OF <span className="text-secondary">5X ECO-REFURBISHED LAPTOPS</span> for your school
           </p>

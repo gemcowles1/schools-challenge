@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NiheBadge } from "./NiheBadge";
+import { SectionReadAloud } from "./SectionReadAloud";
 import {
   downloadWorksheet,
   downloadCertificate,
@@ -41,9 +42,12 @@ export function TeacherPacksSection() {
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
+          <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-2">
             📦 TEACHER PACKS
           </h2>
+          <div className="flex justify-center mb-3">
+            <SectionReadAloud label="Teacher Packs" text="Teacher Packs: Free downloadable resources for your school. Download a worksheet, assembly slides, a class tracker, and an Inclusive Access Pack — including an Easy Read worksheet and a Sensory Energy Audit. Pupils can also submit by voice note or video if they prefer. All resources open in a new tab, fill in on-screen and save as PDF." />
+          </div>
           <p className="text-xl font-bold text-foreground/70">
             Free fillable resources — opens in a new tab, fill in on-screen and save as PDF
           </p>

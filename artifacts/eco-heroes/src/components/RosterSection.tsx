@@ -1,5 +1,6 @@
 import { EcoHero, HeroCard } from "./HeroCard";
 import { NiheBadge } from "./NiheBadge";
+import { SectionReadAloud } from "./SectionReadAloud";
 
 const IMG = (name: string) => `${import.meta.env.BASE_URL}eco-heroes-export/images/${name}`;
 
@@ -70,9 +71,12 @@ export function RosterSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black font-display text-white mb-4 drop-shadow-[0_4px_0_hsl(var(--primary))]">
+          <h2 className="text-5xl md:text-6xl font-black font-display text-white mb-3 drop-shadow-[0_4px_0_hsl(var(--primary))]">
             MEET THE SQUAD
           </h2>
+          <div className="flex justify-center mb-3">
+            <SectionReadAloud label="Listen to the Squad" text="Meet our Eco-Heroes Eco-Committee. Electric Leisha is the EV Champion — converting NI roads to electric, helping families and schools switch to electric vehicles. Akshara is the Water Guardian — every drop counts, and saving water saves the energy used to heat and pump it. Veggie Man is the Plant Power Hero — save the planet one meal at a time, swapping meat for plants cuts carbon with every bite. Heather O'Hare is the Mind and Mine Keeper — protect the land and the wellbeing of the people above it. Kaizen Ken is the Renewable Ranger and Green-skills Champion — wind, retrofit and renewables for all. Click on any hero to learn more about their mission." />
+          </div>
           <p className="text-xl font-bold text-background/80 max-w-2xl mx-auto">
             Click on each Committee hero to learn more about their energy-saving superpowers — and help bring down energy!
           </p>

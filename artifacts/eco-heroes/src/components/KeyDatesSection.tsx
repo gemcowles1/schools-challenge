@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NiheBadge } from "./NiheBadge";
+import { SectionReadAloud } from "./SectionReadAloud";
 
 const DEADLINE = new Date("2026-06-16T23:59:59");
 
@@ -40,9 +41,12 @@ export function KeyDatesSection() {
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-black font-display text-secondary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
+          <h2 className="text-5xl font-black font-display text-secondary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-2">
             📅 KEY DATES
           </h2>
+          <div className="flex justify-center mb-3">
+            <SectionReadAloud label="Key Dates" text="Key dates for the competition: The competition opens on Monday the 1st of June 2026 and closes on Tuesday the 16th of June 2026. Winners are announced on Thursday the 18th of June 2026. Mark these in your diary!" />
+          </div>
           <p className="text-xl font-bold text-foreground/70">Mark these in your diary!</p>
         </div>
 

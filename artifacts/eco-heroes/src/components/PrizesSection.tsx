@@ -1,4 +1,5 @@
 import { NiheBadge } from "./NiheBadge";
+import { SectionReadAloud } from "./SectionReadAloud";
 
 export function PrizesSection() {
   return (
@@ -6,9 +7,12 @@ export function PrizesSection() {
       <NiheBadge />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-black font-display text-accent drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-3">
+          <h2 className="text-5xl font-black font-display text-accent drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-2">
             🏆 WHAT YOU CAN WIN
           </h2>
+          <div className="flex justify-center mb-3">
+            <SectionReadAloud label="Prizes" text="What you can win: Five eco-refurbished laptops — one per winning school Eco-Committee, or for your school if you're just starting your eco-flag journey. Five schools, five prizes. Plus points towards your Eco-Schools Green Flag, a free Digital Certificate, free competition entry, and All Abilities Champion recognition for schools where pupils of all abilities lead the challenge." />
+          </div>
           <p className="text-xl font-bold text-foreground/70">
             Five eco-refurbished laptops for five Eco-Committees — or for your school if you're just starting your eco-flag journey!
           </p>
