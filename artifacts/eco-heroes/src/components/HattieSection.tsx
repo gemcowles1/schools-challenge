@@ -112,6 +112,75 @@ export function HattieSection() {
           </div>
         </div>
 
+        {/* Reporting & Support */}
+        <div className="mt-8 bg-foreground border-4 border-foreground rounded-3xl comic-shadow p-6 md:p-10">
+          <h3 className="text-3xl font-black font-display text-secondary mb-2 uppercase tracking-wide">
+            🛠️ Reporting &amp; Support Resources
+          </h3>
+          <p className="text-white/70 font-bold mb-6">
+            If you are an NIHE tenant currently dealing with damp, mould, or condensation issues in your home, help is available:
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {/* Report a Repair */}
+            <div className="bg-white/10 rounded-2xl p-5 border-2 border-white/20 flex flex-col gap-2">
+              <span className="text-3xl">🔧</span>
+              <p className="font-black text-white text-lg uppercase tracking-wide">Report a Repair</p>
+              <ul className="space-y-2 text-sm font-bold text-white/80">
+                <li>
+                  🌐{" "}
+                  <a
+                    href="https://www.nihe.gov.uk/my-housing-executive"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-secondary transition-colors"
+                  >
+                    My Housing Executive portal
+                  </a>
+                </li>
+                <li>📱 Text <span className="text-secondary font-black">REPAIR</span> with your address to <span className="text-secondary font-black whitespace-nowrap">07507 302 011</span></li>
+                <li>📞 Phone repairs line: <span className="text-secondary font-black whitespace-nowrap">03448 920 901</span></li>
+              </ul>
+            </div>
+
+            {/* Energy & Mould Advice */}
+            <div className="bg-white/10 rounded-2xl p-5 border-2 border-white/20 flex flex-col gap-2">
+              <span className="text-3xl">💡</span>
+              <p className="font-black text-white text-lg uppercase tracking-wide">Energy &amp; Mould Advice</p>
+              <ul className="space-y-2 text-sm font-bold text-white/80">
+                <li>Expert advice on treating damp and managing heating from the <span className="text-secondary font-black">NI Energy Advice Service</span></li>
+                <li>📞 <a href="tel:08001114455" className="text-secondary underline hover:text-white transition-colors font-black">0800 111 4455</a></li>
+                <li>
+                  ✉️{" "}
+                  <a
+                    href="mailto:NIEnergyadvice@nihe.gov.uk"
+                    className="underline hover:text-secondary transition-colors break-all"
+                  >
+                    NIEnergyadvice@nihe.gov.uk
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Official Guidance */}
+            <div className="bg-white/10 rounded-2xl p-5 border-2 border-white/20 flex flex-col gap-2">
+              <span className="text-3xl">📄</span>
+              <p className="font-black text-white text-lg uppercase tracking-wide">Official Guidance</p>
+              <p className="text-sm font-bold text-white/80">
+                Download the official leaflet for comprehensive prevention steps.
+              </p>
+              <a
+                href="https://www.nihe.gov.uk/documents/guides/dealing-with-damp-and-mould"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-block bg-secondary text-foreground font-black text-sm px-4 py-2 rounded-xl border-2 border-foreground hover:bg-yellow-300 transition-colors text-center"
+              >
+                📥 Dealing with Damp &amp; Mould Leaflet
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
