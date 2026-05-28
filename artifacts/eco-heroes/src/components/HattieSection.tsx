@@ -181,6 +181,48 @@ export function HattieSection() {
           </div>
         </div>
 
+        {/* Get Involved CTA */}
+        <div className="mt-8 bg-primary border-4 border-foreground rounded-3xl comic-shadow p-6 md:p-10 transform rotate-1">
+          <h3 className="text-3xl font-black font-display text-white mb-3 uppercase tracking-wide">
+            🤝 Get Involved
+          </h3>
+          <p className="text-white/90 font-bold text-lg mb-4 leading-relaxed">
+            Are you a <span className="text-secondary font-black">housing association</span> or <span className="text-secondary font-black">local authority</span> interested in piloting this initiative with your residents?
+          </p>
+          <p className="text-white/80 font-bold mb-4 leading-relaxed">
+            M3 has complimentary Hattie the House books available* and would welcome the opportunity to collaborate with you. This proven approach could help your organisation address damp and mould challenges whilst building stronger, more informed communities.
+          </p>
+          <a
+            href="mailto:marketing@m3h.co.uk"
+            className="inline-block bg-secondary text-foreground font-black text-base px-6 py-3 rounded-2xl border-4 border-foreground hover:bg-yellow-300 transition-colors comic-shadow"
+          >
+            ✉️ Contact marketing@m3h.co.uk
+          </a>
+          <p className="mt-4 text-white/50 text-xs font-bold">
+            *Number of copies per organisation is limited.
+          </p>
+        </div>
+
+        {/* Video highlights */}
+        <div className="mt-8 bg-white border-4 border-foreground rounded-3xl comic-shadow p-6 md:p-10 transform -rotate-1">
+          <h3 className="text-3xl font-black font-display text-amber-700 mb-4 uppercase tracking-wide">
+            🎬 Watch Video Highlights
+          </h3>
+          <div className="aspect-video bg-amber-50 border-4 border-foreground rounded-2xl flex items-center justify-center text-foreground/30 font-bold text-center p-6">
+            <div>
+              <span className="text-6xl block mb-3">▶️</span>
+              <p className="text-lg font-black text-foreground/40">Video coming soon</p>
+              <p className="text-sm mt-1 text-foreground/30">Highlights from the Hattie the House school sessions</p>
+            </div>
+          </div>
+          <div className="mt-6 pt-4 border-t-2 border-foreground/10 text-center">
+            <p className="text-sm font-bold text-foreground/50 uppercase tracking-widest mb-1">With thanks to</p>
+            <p className="font-black text-foreground text-base">
+              🏠 Housing Executive &amp; Business in the Community Northern Ireland
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );
