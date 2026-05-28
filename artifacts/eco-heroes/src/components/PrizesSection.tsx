@@ -10,7 +10,7 @@ export function PrizesSection() {
             🏆 WHAT YOU CAN WIN
           </h2>
           <p className="text-xl font-bold text-foreground/70">
-            Five eco-refurbished laptops for five Eco-Committees — or for your school if you're just starting your eco-schools journey!
+            Five eco-refurbished laptops for five Eco-Committees — or for your school if you're just starting your eco-flag journey!
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export function PrizesSection() {
               5 Eco-Refurbished Laptops to Be Won!
             </h3>
             <p className="text-lg font-bold text-white/80">
-              One eco-refurbished laptop for each of the <span className="text-secondary font-black">5 winning school Eco-Committees</span> — or for your school if you're just starting your eco-schools journey
+              One eco-refurbished laptop for each of the <span className="text-secondary font-black">5 winning school Eco-Committees</span> — or for your school if you're just starting your eco-flag journey
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export function PrizesSection() {
           <div className="bg-yellow-100 border-4 border-yellow-400 rounded-2xl p-8 comic-shadow -rotate-2 hover:rotate-0 transition-transform duration-300 text-center">
             <div className="text-6xl mb-4">💻</div>
             <h3 className="font-black text-xl text-foreground mb-2 font-display">5 Eco-Refurbished Laptops</h3>
-            <p className="text-foreground/70 font-medium text-sm">One eco-refurbished laptop per winning school Eco-Committee — or for your school if you're just starting your eco-schools journey. 5 schools, 5 prizes!</p>
+            <p className="text-foreground/70 font-medium text-sm">One eco-refurbished laptop per winning school Eco-Committee — or for your school if you're just starting your eco-flag journey. 5 schools, 5 prizes!</p>
           </div>
           <div className="bg-green-50 border-4 border-primary rounded-2xl p-8 comic-shadow rotate-1 hover:rotate-0 transition-transform duration-300 text-center">
             <div className="text-6xl mb-4">🏴</div>

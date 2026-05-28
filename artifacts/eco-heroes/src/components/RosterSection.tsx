@@ -48,7 +48,7 @@ const heroes: EcoHero[] = [
   {
     id: "kaizen-ken",
     name: "Kaizen Ken",
-    studentName: "Renewable Ranger",
+    studentName: "Renewable Ranger & Green-skills Champion",
     power: "Wind, retrofit and renewables for all!",
     description: "Kaizen Ken believes every improvement moves us forward. He promotes wind turbines, solar panels and home retrofits across Northern Ireland, helping families insulate their homes and switch to renewable energy. Better every day, stronger every way!",
     color: "bg-blue-300",
