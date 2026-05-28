@@ -1,4 +1,5 @@
 import { NavBar } from "@/components/NavBar";
+import { ReadAloudBar } from "@/components/ReadAloudBar";
 import { HeroSection } from "@/components/HeroSection";
 import { RosterSection } from "@/components/RosterSection";
 import { WhyEnterSection } from "@/components/WhyEnterSection";
@@ -16,7 +17,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary selection:text-white">
       <NavBar />
-      <div id="home" className="pt-14 bg-white">
+      <div className="pt-14">
+        <ReadAloudBar />
+      </div>
+      <div id="home" className="bg-white">
         <HeroSection />
       </div>
       <div id="heroes">
