@@ -9,6 +9,7 @@ export interface EcoHero {
   description: string;
   color: string;
   imageSrc: string;
+  designer?: string;
 }
 
 interface HeroCardProps {
@@ -88,6 +89,13 @@ export function HeroCard({ hero, index }: HeroCardProps) {
                 {hero.description}
               </p>
             </div>
+
+            {hero.designer && (
+              <div className="mt-6 pt-4 border-t-2 border-foreground/10 text-center">
+                <p className="text-xs font-black uppercase tracking-widest text-foreground/40 mb-1">Hero Designed by</p>
+                <p className="text-sm font-bold text-foreground/70">{hero.designer}</p>
+              </div>
+            )}
           </div>
 
           {/* Sticky close button — always visible at bottom */}
