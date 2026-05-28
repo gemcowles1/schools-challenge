@@ -45,7 +45,7 @@ export function TeacherPacksSection() {
           <h2 className="text-5xl font-black font-display text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-2">
             📦 TEACHER PACKS
           </h2>
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-start mb-3">
             <SectionReadAloud label="Teacher Packs" text="Teacher Packs available — see below. Free downloadable resources for your school. Download a worksheet, assembly slides, a class tracker, and an Inclusive Access Pack — including an Easy Read worksheet and a Sensory Energy Audit. Pupils can also submit by voice note or video if they prefer. All resources open in a new tab, fill in on-screen and save as PDF." />
           </div>
           <p className="text-xl font-bold text-foreground/70">

@@ -37,15 +37,13 @@ export function SectionReadAloud({ text, label = "Listen" }: Props) {
   return (
     <button
       onClick={handleClick}
-      aria-label={speaking ? `Stop reading ${label}` : `Read ${label} aloud`}
-      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border-2 font-bold text-xs uppercase tracking-wide transition-all focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-        speaking
-          ? "bg-yellow-400 border-yellow-500 text-gray-900 focus:ring-yellow-400"
-          : "bg-white/90 border-foreground/20 text-foreground/60 hover:border-foreground/50 hover:text-foreground focus:ring-foreground/30"
+      title={speaking ? `Stop reading ${label}` : `Listen to ${label}`}
+      aria-label={speaking ? `Stop reading ${label}` : `Listen to ${label}`}
+      className={`text-2xl leading-none transition-transform hover:scale-110 active:scale-95 focus:outline-none ${
+        speaking ? "animate-pulse" : ""
       }`}
     >
-      <span aria-hidden="true">{speaking ? "⏹" : "🔊"}</span>
-      {speaking ? "Stop" : label}
+      {speaking ? "⏹️" : "🔊"}
     </button>
   );
 }

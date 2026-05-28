@@ -10,7 +10,7 @@ export function PrizesSection() {
           <h2 className="text-5xl font-black font-display text-accent drop-shadow-[3px_3px_0_hsl(var(--foreground))] mb-2">
             🏆 WHAT YOU CAN WIN
           </h2>
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-start mb-3">
             <SectionReadAloud label="Prizes" text="What you can win: Five eco-refurbished laptops — one per winning school Eco-Committee, or for your school if you're just starting your eco-flag journey. Five schools, five prizes. Plus points towards your Eco-Schools Green Flag, a free Digital Certificate, free competition entry, and All Abilities Champion recognition for schools where pupils of all abilities lead the challenge." />
           </div>
           <p className="text-xl font-bold text-foreground/70">
