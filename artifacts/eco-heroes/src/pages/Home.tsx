@@ -53,9 +53,12 @@ export default function Home() {
         <TeacherPacksSection />
       </div>
       <GoalSection />
-      <div id="hattie">
-        <HattieSection />
-      </div>
+      {/* HATTIE SECTION — set to true to show */}
+      {false && (
+        <div id="hattie">
+          <HattieSection />
+        </div>
+      )}
 
       <footer className="bg-foreground text-white text-center">
         {/* Navy content */}

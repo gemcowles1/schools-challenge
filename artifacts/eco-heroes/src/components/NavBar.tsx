@@ -10,7 +10,7 @@ const LINKS = [
   { label: "Prizes", href: "#prizes" },
   { label: "Dates", href: "#dates" },
   { label: "Teachers", href: "#teacher-packs" },
-  { label: "Hattie", href: "#hattie" },
+  // { label: "Hattie", href: "#hattie" }, // hidden — uncomment to restore
 ];
 
 export function NavBar() {
