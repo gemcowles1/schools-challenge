@@ -10,6 +10,7 @@ const LINKS = [
   { label: "Prizes", href: "#prizes" },
   { label: "Dates", href: "#dates" },
   { label: "Teachers", href: "#teacher-packs" },
+  { label: "Hattie", href: "#hattie" },
 ];
 
 export function NavBar() {
