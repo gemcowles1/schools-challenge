@@ -17,7 +17,7 @@ export function WhyEnterSection() {
     {
       emoji: "💻",
       title: "Win 1 of 5 Eco-Refurbished Laptops!",
-      body: "Five schools will each win an eco-refurbished laptop for their Eco-Committee (or school if you're just starting). Enter your mission statement for your chance to be one of the five winners!",
+      body: "Five schools will each win an eco-refurbished laptop for their Eco-Committee — or you can win for your school if you're just starting your eco-schools journey. Enter your mission statement for your chance to be one of the five winners!",
       rotate: "-rotate-1",
     },
     {
