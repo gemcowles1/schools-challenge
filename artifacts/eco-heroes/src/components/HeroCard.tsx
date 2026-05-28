@@ -43,7 +43,10 @@ export function HeroCard({ hero, index }: HeroCardProps) {
           </div>
           <h3 className="text-2xl font-black font-display mb-1">{hero.name}</h3>
           {hero.pronunciation && (
-            <p className="text-xs font-medium text-foreground/50 mb-2 tracking-wide">🔊 Say: <em>{hero.pronunciation}</em></p>
+            <p className="text-xs font-medium text-foreground/50 mb-1 tracking-wide">🔊 Say: <em>{hero.pronunciation}</em></p>
+          )}
+          {hero.designer && (
+            <p className="text-xs font-medium text-foreground/40 mb-2 tracking-wide">✏️ Created by {hero.designer}</p>
           )}
           <div className="bg-muted rounded-xl p-3 border-2 border-foreground/10 mb-4">
             <p className="font-bold text-sm text-foreground/80 uppercase">Super Power:</p>
