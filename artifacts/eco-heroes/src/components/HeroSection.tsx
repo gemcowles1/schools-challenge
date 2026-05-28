@@ -85,7 +85,7 @@ export function HeroSection() {
               className="w-full max-w-xl mx-auto rounded-2xl border-4 border-foreground comic-shadow object-contain"
             />
             <div className="text-center mt-6">
-              <p className="text-6xl md:text-8xl font-black font-display text-secondary drop-shadow-[4px_4px_0_hsl(var(--primary))] animate-bounce">
+              <p className="text-6xl md:text-8xl font-black font-display text-accent drop-shadow-[4px_4px_0_hsl(var(--foreground))] animate-bounce">
                 WE'RE BACK!!
               </p>
               <ul className="mt-4 text-base md:text-lg font-bold text-foreground/70 max-w-xl mx-auto leading-relaxed text-left space-y-2 list-none pl-0">
