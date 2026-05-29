@@ -48,7 +48,7 @@ export function TipsSection() {
 
             <div className="mt-10 text-center">
               <p className="font-bold text-xl text-primary uppercase tracking-wide">
-                Every small action makes a HUGE difference!
+                EVERY SMALL ACTION IS MAKING A DIFFERENCE!
               </p>
             </div>
           </div>
