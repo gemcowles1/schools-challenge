@@ -19,15 +19,16 @@ export function ReadAloudBar() {
   const [lineIndex, setLineIndex] = useState(0);
   const synthRef = useRef(window.speechSynthesis);
   const currentUtterance = useRef<SpeechSynthesisUtterance | null>(null);
+  const sessionRef = useRef(0);
 
   const speakFrom = useCallback((startIndex: number) => {
     const synth = synthRef.current;
     synth.cancel();
 
-    const lines = PAGE_SCRIPT.slice(startIndex);
-    let idx = startIndex;
+    const session = ++sessionRef.current;
 
     const speakNext = (i: number) => {
+      if (session !== sessionRef.current) return;
       if (i >= PAGE_SCRIPT.length) {
         setState("idle");
         setLineIndex(0);
@@ -37,13 +38,14 @@ export function ReadAloudBar() {
       utt.lang = "en-GB";
       utt.rate = 0.92;
       utt.pitch = 1;
-      utt.onstart = () => setLineIndex(i);
-      utt.onend = () => speakNext(i + 1);
-      utt.onerror = () => setState("idle");
+      utt.onstart = () => { if (session === sessionRef.current) setLineIndex(i); };
+      utt.onend = () => { if (session === sessionRef.current) speakNext(i + 1); };
+      utt.onerror = () => { if (session === sessionRef.current) setState("idle"); };
       currentUtterance.current = utt;
       synth.speak(utt);
     };
 
+    setLineIndex(startIndex);
     speakNext(startIndex);
     setState("speaking");
   }, []);
@@ -63,13 +65,14 @@ export function ReadAloudBar() {
   };
 
   const handleStop = () => {
+    sessionRef.current++;
     synthRef.current.cancel();
     setState("idle");
     setLineIndex(0);
   };
 
   const progress = state !== "idle"
-    ? Math.round((lineIndex / PAGE_SCRIPT.length) * 100)
+    ? Math.round(((lineIndex + 1) / PAGE_SCRIPT.length) * 100)
     : 0;
 
   return (
