@@ -50,8 +50,8 @@ const heroes: EcoHero[] = [
     id: "kaizen-ken",
     name: "Kaizen Ken",
     studentName: "Renewable Ranger & Green-skills Champion",
-    power: "Wind, retrofit and renewables for all!",
-    description: "Kaizen Ken believes every improvement moves us forward. He promotes wind turbines, solar panels and home retrofits across Northern Ireland, helping families insulate their homes and switch to renewable energy. Better every day, stronger every way!",
+    power: "Solar Warrior, Sun Storer and Renewables for All!",
+    description: "Kaizen Ken believes every improvement is making a difference. He champions capturing the free energy from the sun — SOLAR — and harnessing free wind energy for everyone. To the future and beyond!",
     color: "bg-blue-300",
     imageSrc: IMG("hero-kaizen.jpg"),
     designer: "Oliver, St Anne's Primary, Belfast",
@@ -75,7 +75,7 @@ export function RosterSection() {
             MEET THE SQUAD
           </h2>
           <div className="flex justify-start mb-3">
-            <SectionReadAloud label="Listen to the Squad" text="Meet our Eco-Heroes Eco-Committee. Electric Leisha is the EV Champion — converting NI roads to electric, helping families and schools switch to electric vehicles. Akshara is the Water Guardian — every drop counts, and saving water saves the energy used to heat and pump it. Veggie Man is the Plant Power Hero — save the planet one meal at a time, swapping meat for plants cuts carbon with every bite. Heather O'Hare is the Mind and Mine Keeper — protect the land and the wellbeing of the people above it. Kaizen Ken is the Renewable Ranger and Green-skills Champion — wind, retrofit and renewables for all. Click on any hero to learn more about their mission." />
+            <SectionReadAloud label="Listen to the Squad" text="Meet our Eco-Heroes Eco-Committee. Electric Leisha is the EV Champion — converting NI roads to electric, helping families and schools switch to electric vehicles. Akshara is the Water Guardian — every drop counts, and saving water saves the energy used to heat and pump it. Veggie Man is the Plant Power Hero — save the planet one meal at a time, swapping meat for plants cuts carbon with every bite. Heather O'Hare is the Mind and Mine Keeper — protect the land and the wellbeing of the people above it. Kaizen Ken is the Renewable Ranger and Green-skills Champion — Solar Warrior, Sun Storer and Renewables for All, championing free solar and wind energy. To the future and beyond! Click on any hero to learn more about their mission." />
           </div>
           <p className="text-xl font-bold text-background/80 max-w-2xl mx-auto">
             Click on each Committee hero to learn more about their energy-saving superpowers — and help bring down energy!
