@@ -18,7 +18,7 @@ export function WhyEnterSection() {
     {
       emoji: "💻",
       title: "Win 1 of 5 Eco-Refurbished Laptops!",
-      body: "Five schools will each win an eco-refurbished laptop for their Eco-Committee. Enter your mission statement for your chance to be one of the five winners!",
+      body: "Enter your mission statement for your chance to be one of five winning school Eco-Committees!",
       rotate: "-rotate-1",
     },
     {
@@ -69,6 +69,10 @@ export function WhyEnterSection() {
             </div>
           ))}
         </div>
+
+        <p className="text-center text-base text-foreground/60 italic mt-6">
+          Not an Eco-School yet? Your mission statement can also count as your first step on the eco-flag journey.
+        </p>
 
       </div>
     </section>
