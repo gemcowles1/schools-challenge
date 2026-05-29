@@ -277,6 +277,8 @@ export function MissionBuilderSection() {
     function handleYes() {
       setFlagGreen(true);
       setHasEnergyFlag(true);
+      setConfetti(true);
+      setTimeout(() => setConfetti(false), 4000);
       setTimeout(() => setStep("next-flag"), 6000);
     }
 
