@@ -33,8 +33,11 @@ export function HeroCard({ hero, index }: HeroCardProps) {
           <img 
             src={hero.imageSrc} 
             alt={hero.name} 
-            className="w-40 h-40 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300 drop-shadow-xl"
+            className="w-36 h-36 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300 drop-shadow-xl"
           />
+          <div className="absolute bottom-0 left-0 right-0 bg-foreground/80 py-1.5 px-3 z-20 text-center">
+            <span className="font-black text-xl text-white font-display leading-tight">{hero.name}</span>
+          </div>
         </div>
         
         <div className="p-6 text-center">
