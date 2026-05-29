@@ -63,12 +63,18 @@ export function TeacherPacksSection() {
               Differentiated for each age group. Fillable — pupils can type answers directly on-screen, then save as PDF.
             </p>
             <div className="flex flex-col gap-2">
-              <OpenBtn onClick={() => downloadWorksheet("5-7")} color="bg-yellow-100 border-yellow-400">
-                Ages 5–7 Worksheet (Foundation / KS1)
-              </OpenBtn>
-              <OpenBtn onClick={() => downloadWorksheet("8-11")} color="bg-green-100 border-primary">
-                Ages 8–11 Worksheet (KS2)
-              </OpenBtn>
+              <div className="flex gap-2">
+                <div className="flex-1">
+                  <OpenBtn onClick={() => downloadWorksheet("5-7")} color="bg-yellow-100 border-yellow-400">
+                    Ages 5–7 (Foundation / KS1)
+                  </OpenBtn>
+                </div>
+                <div className="flex-1">
+                  <OpenBtn onClick={() => downloadWorksheet("8-11")} color="bg-green-100 border-primary">
+                    Ages 8–11 (KS2)
+                  </OpenBtn>
+                </div>
+              </div>
               <OpenBtn onClick={() => downloadWorksheet("12-14")} color="bg-blue-100 border-blue-500">
                 Ages 12–14 Energy Audit Sheet (KS3)
               </OpenBtn>
