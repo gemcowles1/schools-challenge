@@ -221,24 +221,24 @@ export function MissionBuilderSection() {
       <SectionShell>
         <Heading />
         <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-white border-4 border-foreground rounded-2xl p-10 comic-shadow">
-            <div className="text-5xl mb-4">🎒</div>
+          <div className="bg-white border-4 border-foreground rounded-2xl p-6 comic-shadow">
+            <div className="text-5xl mb-3">🎒</div>
             <h3 className="text-3xl font-black font-display text-foreground mb-2">
               What age group are you?
             </h3>
-            <p className="text-foreground/60 font-medium mb-8">
+            <p className="text-foreground/60 font-medium mb-6">
               We'll give you challenges that are just right for your class.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {AGE_BANDS.map((b) => (
                 <button
                   key={b.id}
                   onClick={() => handleAgeBand(b.id)}
-                  className={`${b.color} border-4 rounded-2xl p-6 comic-shadow hover:scale-105 transition-transform text-center`}
+                  className={`${b.color} border-4 rounded-2xl p-4 comic-shadow hover:scale-105 transition-transform text-center`}
                 >
-                  <div className="text-5xl mb-3">{b.emoji}</div>
-                  <div className="font-black text-2xl text-foreground mb-1">{b.label}</div>
-                  <div className="text-sm font-bold text-foreground/60">{b.desc}</div>
+                  <div className="text-4xl mb-2">{b.emoji}</div>
+                  <div className="font-black text-xl text-foreground mb-1">{b.label}</div>
+                  <div className="text-xs font-bold text-foreground/60">{b.desc}</div>
                 </button>
               ))}
             </div>
