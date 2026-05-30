@@ -68,6 +68,7 @@ const AGE_BANDS = [
 
 type Step = "age-band" | "eco-school" | "energy-flag" | "next-flag" | "mission";
 type MissionMode = "builder" | "freetext";
+type Role = "school" | "teacher" | "pupil";
 
 export function MissionBuilderSection() {
   const [step, setStep] = useState<Step>("age-band");
@@ -78,8 +79,12 @@ export function MissionBuilderSection() {
 
   const actions = ageBand ? ACTIONS_BY_AGE[ageBand] : ACTIONS_BY_AGE["8-11"];
 
+  const [role, setRole] = useState<Role>("school");
   const [school, setSchool] = useState("");
   const [postcode, setPostcode] = useState("");
+  const [teacherName, setTeacherName] = useState("");
+  const [className, setClassName] = useState("");
+  const [pupilFirstName, setPupilFirstName] = useState("");
   const [action, setAction] = useState(actions[0]);
   const [date, setDate] = useState("");
   const [freeText, setFreeText] = useState("");
@@ -121,7 +126,12 @@ export function MissionBuilderSection() {
     const missionText = getMissionText();
     const bandLabel = ageBand ? `Ages ${ageBand}` : "";
     const subject = encodeURIComponent(`Eco-Hero Mission Statement — ${school.trim() || "Our School"}${bandLabel ? " (" + bandLabel + ")" : ""}`);
-    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nAge Group: ${bandLabel || "Not specified"}\nSchool Postcode: ${postcode.trim() || "Not provided"}\nSubmitted via Eco Heroes NI`);
+    const roleDetail = role === "teacher"
+      ? `Teacher: ${teacherName.trim() || "Not provided"}, Class: ${className.trim() || "Not provided"}`
+      : role === "pupil"
+      ? `Pupil First Name: ${pupilFirstName.trim() || "Not provided"}`
+      : "Submitted by: School";
+    const body = encodeURIComponent(`Our Mission Statement:\n\n${missionText}\n\nAge Group: ${bandLabel || "Not specified"}\nRole: ${roleDetail}\nSchool Postcode: ${postcode.trim() || "Not provided"}\nSubmitted via Eco Heroes NI`);
     window.open(`mailto:Nienergyadvice@nihe.gov.uk?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
     setConfetti(true);
@@ -131,6 +141,16 @@ export function MissionBuilderSection() {
   function getMissionText() {
     if (missionMode === "freetext") return freeText;
     const why = whyMatters.trim() || "[why it matters]";
+    if (role === "pupil") {
+      const name = pupilFirstName.trim() || "[Your Name]";
+      return `I am ${name} from ${schoolDisplay} and I pledge to ${action} so that we can ${why} by ${dateStr}.`;
+    }
+    if (role === "teacher") {
+      const t = teacherName.trim();
+      const c = className.trim();
+      const who = t && c ? `${schoolDisplay}, ${t}'s ${c}` : t ? `${schoolDisplay}, ${t}` : schoolDisplay;
+      return `We are ${who} and we pledge to ${action} so that we can ${why} by ${dateStr}.`;
+    }
     return `We are ${schoolDisplay} and we pledge to ${action} so that we can ${why} by ${dateStr}.`;
   }
 
@@ -213,6 +233,10 @@ export function MissionBuilderSection() {
     setPostcode("");
     setDate("");
     setWhyMatters("");
+    setRole("school");
+    setTeacherName("");
+    setClassName("");
+    setPupilFirstName("");
   }
 
   // ── Step 0: Age Band ─────────────────────────────────────────────────────
@@ -419,9 +443,22 @@ export function MissionBuilderSection() {
         ) : missionMode === "builder" ? (
           <>
             <div className="bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow space-y-6 mb-6">
+              {/* Role selector */}
+              <div>
+                <label className="block font-black text-foreground mb-3 uppercase tracking-wide">Who is entering?</label>
+                <div className="flex gap-2">
+                  {(["school","teacher","pupil"] as Role[]).map((r) => (
+                    <button key={r} type="button" onClick={() => setRole(r)}
+                      className={`flex-1 border-4 font-black py-2 px-3 rounded-xl text-sm uppercase transition-all comic-shadow ${role === r ? "bg-primary text-white border-primary scale-105" : "bg-white text-foreground border-foreground"}`}>
+                      {r === "school" ? "🏫 School" : r === "teacher" ? "👩‍🏫 Teacher" : "🌟 Pupil"}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex gap-3">
                 <div className="flex-1">
-                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">School Name</label>
                   <input type="text" value={school} onChange={(e) => setSchool(e.target.value)} placeholder="e.g. Oakgrove Integrated PS"
                     className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary" />
                 </div>
@@ -431,6 +468,29 @@ export function MissionBuilderSection() {
                     className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary uppercase" />
                 </div>
               </div>
+
+              {role === "teacher" && (
+                <div className="flex gap-3">
+                  <div className="flex-1">
+                    <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Teacher Name</label>
+                    <input type="text" value={teacherName} onChange={(e) => setTeacherName(e.target.value)} placeholder="e.g. Mrs Murphy"
+                      className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Class Name</label>
+                    <input type="text" value={className} onChange={(e) => setClassName(e.target.value)} placeholder="e.g. P5A"
+                      className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary" />
+                  </div>
+                </div>
+              )}
+
+              {role === "pupil" && (
+                <div>
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your First Name</label>
+                  <input type="text" value={pupilFirstName} onChange={(e) => setPupilFirstName(e.target.value)} placeholder="e.g. Emma"
+                    className="w-full border-4 border-foreground rounded-xl px-4 py-3 font-bold text-lg focus:outline-none focus:border-primary" />
+                </div>
+              )}
               <div>
                 <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your Energy-Saving Action</label>
                 <select value={action} onChange={(e) => setAction(e.target.value)}
@@ -458,10 +518,30 @@ export function MissionBuilderSection() {
             <div className="bg-secondary border-4 border-dashed border-foreground rounded-2xl p-8 comic-shadow mb-6 text-center transform -rotate-1">
               <h3 className="font-black text-2xl text-white font-display mb-4 uppercase">✨ Your Mission Statement</h3>
               <p className="text-xl md:text-2xl font-bold text-white leading-relaxed italic">
-                <span className="text-white not-italic font-black">We are {schoolDisplay}</span> and we pledge to{" "}
-                <span className="text-white not-italic font-black">{action}</span> so that we can{" "}
-                <span className="text-white not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
-                <span className="text-white not-italic font-black">{dateStr}</span>.
+                {role === "pupil" ? (
+                  <>
+                    <span className="text-white not-italic font-black">I am {pupilFirstName.trim() || "[Your Name]"} from {schoolDisplay}</span> and I pledge to{" "}
+                    <span className="text-white not-italic font-black">{action}</span> so that we can{" "}
+                    <span className="text-white not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
+                    <span className="text-white not-italic font-black">{dateStr}</span>.
+                  </>
+                ) : role === "teacher" ? (
+                  <>
+                    <span className="text-white not-italic font-black">
+                      We are {schoolDisplay}{teacherName.trim() ? `, ${teacherName.trim()}` : ""}{className.trim() ? `'s ${className.trim()}` : ""}
+                    </span> and we pledge to{" "}
+                    <span className="text-white not-italic font-black">{action}</span> so that we can{" "}
+                    <span className="text-white not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
+                    <span className="text-white not-italic font-black">{dateStr}</span>.
+                  </>
+                ) : (
+                  <>
+                    <span className="text-white not-italic font-black">We are {schoolDisplay}</span> and we pledge to{" "}
+                    <span className="text-white not-italic font-black">{action}</span> so that we can{" "}
+                    <span className="text-white not-italic font-black">{whyMatters.trim() || "[why it matters]"}</span> by{" "}
+                    <span className="text-white not-italic font-black">{dateStr}</span>.
+                  </>
+                )}
               </p>
               <button onClick={handleCopy} className="mt-4 border-4 border-foreground bg-white text-foreground font-black px-5 py-2 rounded-xl comic-shadow hover:scale-105 transition-transform text-sm">
                 {copied ? "✅ Copied!" : "📋 Copy"}
@@ -471,9 +551,22 @@ export function MissionBuilderSection() {
         ) : (
           <>
             <div className="bg-white border-4 border-foreground rounded-2xl p-8 comic-shadow mb-6 space-y-5">
+              {/* Role selector */}
+              <div>
+                <label className="block font-black text-foreground mb-3 uppercase tracking-wide">Who is entering?</label>
+                <div className="flex gap-2">
+                  {(["school","teacher","pupil"] as Role[]).map((r) => (
+                    <button key={r} type="button" onClick={() => setRole(r)}
+                      className={`flex-1 border-4 font-black py-2 px-3 rounded-xl text-sm uppercase transition-all comic-shadow ${role === r ? "bg-primary text-white border-primary scale-105" : "bg-white text-foreground border-foreground"}`}>
+                      {r === "school" ? "🏫 School" : r === "teacher" ? "👩‍🏫 Teacher" : "🌟 Pupil"}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex gap-3">
                 <div className="flex-1">
-                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">Your School Name</label>
+                  <label className="block font-black text-foreground mb-2 uppercase tracking-wide">School Name</label>
                   <input
                     type="text"
                     value={school}
